@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Subarashi-JPOP</string>
+    <string name="anime_wallpaper">Anime wallpaper</string>
+    <string name="manga_wallpaper">Manga Wallpaper</string>
+    <string name="anime_world">Anime World</string>
+    <string name="manga_world">Manga World</string>
+</resources>

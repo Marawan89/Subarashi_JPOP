@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="animeButton" type="id">animeButton</item>
+    <item name="mangaButton" type="id">mangaButton</item>
+</resources>
