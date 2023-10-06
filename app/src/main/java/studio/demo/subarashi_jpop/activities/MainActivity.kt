@@ -1,9 +1,10 @@
-package studio.demo.subarashi_jpop
+package studio.demo.subarashi_jpop.activities
 
 import android.content.Intent
 import android.widget.Button
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import studio.demo.subarashi_jpop.R
 
 class MainActivity : AppCompatActivity() {
 

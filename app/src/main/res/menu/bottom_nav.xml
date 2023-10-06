@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/list"
+        android:id="@+id/menu_animeList"
+        android:icon="@drawable/list_icon"
+        android:contentDescription="@string/goes_to_the_anime_list"/>
+
+    <item
+        android:title="@string/favourite_list"
+        android:id="@+id/menu_favouriteList"
+        android:icon="@drawable/favourite_icon"
+        android:contentDescription="@string/goes_to_the_favourite_list"/>
+
+    <item
+        android:title="@string/exit"
+        android:id="@+id/menu_exit"
+        android:icon="@drawable/exit_icon"
+        android:contentDescription="@string/goes_back_to_the_animeworld_mangaworld_menu"
+
+
+
+</menu>

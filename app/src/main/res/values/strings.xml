@@ -4,4 +4,6 @@
     <string name="manga_wallpaper">Manga Wallpaper</string>
     <string name="anime_world">Anime World</string>
     <string name="manga_world">Manga World</string>
+    <string name="favourite_list">Favourite List</string>
+    <string name="goes_to_the_anime_list">Goes to the anime list</string>
 </resources>
