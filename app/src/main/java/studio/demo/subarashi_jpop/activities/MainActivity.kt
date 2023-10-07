@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
 
         animeButton = findViewById(R.id.animeButton)
         animeButton.setOnClickListener{
-            Intent(this, AnimeListActivity::class.java).also{
+            Intent(this, MangaListActivity::class.java).also{
                 startActivity(it)
             }
         }
 
         mangaButton = findViewById(R.id.mangaButton)
         mangaButton.setOnClickListener{
-            Intent(this, MangaListActivity::class.java).also{
+            Intent(this, AnimeListActivity::class.java).also{
                 startActivity(it)
             }
         }

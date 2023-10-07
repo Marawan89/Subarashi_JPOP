@@ -6,4 +6,10 @@
     <string name="manga_world">Manga World</string>
     <string name="favourite_list">Favourite List</string>
     <string name="goes_to_the_anime_list">Goes to the anime list</string>
+    <string name="list">List</string>
+    <string name="goes_to_the_favourites_list">Goes to the favourites list</string>
+    <string name="goes_back_to_the_animeworld_mangaworld_menu">Goes back to the animeworld mangaworld menu</string>
+    <string name="exit">Exit</string>
+    <string name="anime_list">Anime List</string>
+    <string name="favourites">Favourites</string>
 </resources>
