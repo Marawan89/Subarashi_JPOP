@@ -4,22 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.R.layout.activity_anime_list
-import studio.demo.subarashi_jpop.ViewModelCustomFactory
+import studio.demo.subarashi_jpop.viewmodel.ViewModelCustomFactory
 import studio.demo.subarashi_jpop.adapter.AnimeListAdapter
 import studio.demo.subarashi_jpop.entities.AnimeEntity
 import studio.demo.subarashi_jpop.listeners.OnClickListener
 import studio.demo.subarashi_jpop.model.AnimeModel
-import studio.demo.subarashi_jpop.viewmodel.FavouriteListViewModel
+import studio.demo.subarashi_jpop.viewmodel.ViewModelFavouriteList
 import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModel
 
 class AnimeListActivity : AppCompatActivity(), OnClickListener {
     private lateinit var viewModel: AnimeListViewModel
-    private lateinit var favouriteListViewModel: FavouriteListViewModel
+    private lateinit var favouriteListViewModel: ViewModelFavouriteList
     // private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: AnimeListAdapter
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -38,7 +37,7 @@ class AnimeListActivity : AppCompatActivity(), OnClickListener {
 
         favouriteListViewModel = ViewModelProvider(
             this, ViewModelCustomFactory(this, this::class.java)
-        )[FavouriteListViewModel::class.java]
+        )[ViewModelFavouriteList::class.java]
 
         adapter = AnimeListAdapter(this, this)
 

@@ -1,4 +1,4 @@
-package studio.demo.subarashi_jpop
+package studio.demo.subarashi_jpop.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.LiveData
@@ -6,14 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import studio.demo.subarashi_jpop.DAOs.AnimeDao
-import studio.demo.subarashi_jpop.DAOs.MangaDao
+import studio.demo.subarashi_jpop.FavouriteContainer
+import studio.demo.subarashi_jpop.daos.AnimeDao
+import studio.demo.subarashi_jpop.daos.MangaDao
 import studio.demo.subarashi_jpop.entities.AnimeEntity
 import studio.demo.subarashi_jpop.entities.MangaEntity
 
-class ViewModelCustomFactory (
-    context: Context
-): ViewModel(){
+class ViewModelFavouriteList (
+    context: Context): ViewModel(){
 
     private val favouriteContainer: FavouriteContainer
     private val animeDao: AnimeDao

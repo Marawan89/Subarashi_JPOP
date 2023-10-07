@@ -1,8 +1,8 @@
 package studio.demo.subarashi_jpop
 
 import androidx.lifecycle.LiveData
-import studio.demo.subarashi_jpop.DAOs.AnimeDao
-import studio.demo.subarashi_jpop.DAOs.MangaDao
+import studio.demo.subarashi_jpop.daos.AnimeDao
+import studio.demo.subarashi_jpop.daos.MangaDao
 import studio.demo.subarashi_jpop.entities.AnimeEntity
 import studio.demo.subarashi_jpop.entities.MangaEntity
 
