@@ -1,4 +1,4 @@
-package studio.demo.subarashi_jpop
+package studio.demo.subarashi_jpop.repositories
 
 import androidx.lifecycle.LiveData
 import studio.demo.subarashi_jpop.daos.AnimeDao
@@ -6,7 +6,7 @@ import studio.demo.subarashi_jpop.daos.MangaDao
 import studio.demo.subarashi_jpop.entities.AnimeEntity
 import studio.demo.subarashi_jpop.entities.MangaEntity
 
-class FavouriteContainer(private val animeDao: AnimeDao, private val mangaDao: MangaDao) {
+class FavouriteListRepository(private val animeDao: AnimeDao, private val mangaDao: MangaDao) {
     fun getAnime(): LiveData<List<AnimeEntity>>{
         return animeDao.getAnime()
     }

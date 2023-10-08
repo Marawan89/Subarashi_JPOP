@@ -2,44 +2,67 @@ package studio.demo.subarashi_jpop.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import retrofit2.Call
+import retrofit2.Response
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.R.layout.activity_anime_list
-import studio.demo.subarashi_jpop.viewmodel.ViewModelCustomFactory
 import studio.demo.subarashi_jpop.adapter.AnimeListAdapter
-import studio.demo.subarashi_jpop.entities.AnimeEntity
+import studio.demo.subarashi_jpop.databinding.ActivityAnimeListBinding
 import studio.demo.subarashi_jpop.listeners.OnClickListener
-import studio.demo.subarashi_jpop.model.AnimeModel
-import studio.demo.subarashi_jpop.viewmodel.ViewModelFavouriteList
+import studio.demo.subarashi_jpop.services.AnimeService
+import studio.demo.subarashi_jpop.topanime.TopAnime
 import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModel
+import studio.demo.subarashi_jpop.viewmodel.ViewModelFavouriteList
+import javax.security.auth.callback.Callback
 
-class AnimeListActivity : AppCompatActivity(), OnClickListener {
+class AnimeListActivity : AppCompatActivity(), /*OnClickListener*/ {
     private lateinit var viewModel: AnimeListViewModel
     private lateinit var favouriteListViewModel: ViewModelFavouriteList
-    // private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: AnimeListAdapter
     private lateinit var bottomNavigationView: BottomNavigationView
     private var TAG = "AnimeListActivity"
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(activity_anime_list)
+        val binding = ActivityAnimeListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.apply {
+            val animeService = AnimeService.create()
+            val call = animeService.getTopAnime()
+
+            call.enqueue(object : retrofit2.Callback<TopAnime>{
+
+                override fun onResponse(call: Call<TopAnime>, response: Response<TopAnime>) {
+                    if(response.body() != null){
+                        val data = response.body()!!.data              //da mettere a posto sta parte se cambio il file JSON
+                        animeRecyclerView.adapter =
+                    }
+                }
+
+                override fun onFailure(call: Call<TopAnime>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+        }
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView) //basta fare l'activity anime list
 
-        viewModel = ViewModelProvider(
+        /*viewModel = ViewModelProvider(
             this,
             ViewModelCustomFactory(this, this::class.java)
-        )[AnimeListActivity::class.java]
+        )[AnimeListActivity::class.java]*/
 
-        favouriteListViewModel = ViewModelProvider(
+        /*favouriteListViewModel = ViewModelProvider(
             this, ViewModelCustomFactory(this, this::class.java)
-        )[ViewModelFavouriteList::class.java]
+        )[ViewModelFavouriteList::class.java]*/
 
-        adapter = AnimeListAdapter(this, this)
+        // adapter = AnimeListAdapter(this, this)
 
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -64,14 +87,14 @@ class AnimeListActivity : AppCompatActivity(), OnClickListener {
         bottomNavigationView.selectedItemId = R.id.menu_favouriteList
     }
 
-    override fun ViewInfoOnClick(model: Any){
+    /*override fun ViewInfoOnClick(model: Any){
         val animeModel = model as AnimeModel
         val bundle = Bundle()
         bundle.putString("Anime Name", animeModel.name)
         bundle.putString("Plot", animeModel.plot)
 
-        /*val dialog: DialogFragment = DetailsDialogFragment()
-        dialog.show(supportFragmentManager, "DetailsDialogFragment")*/
+        val dialog: DialogFragment = DetailsDialogFragment()
+        dialog.show(supportFragmentManager, "DetailsDialogFragment")
 
     }
 
@@ -84,5 +107,5 @@ class AnimeListActivity : AppCompatActivity(), OnClickListener {
         )
         favouriteListViewModel.insertFavouriteAnime(favouriteAnime)
         Toast.makeText(this, "${favouriteAnime.name} anime added to favourites list", Toast.LENGTH_SHORT).show()
-    }
+    }*/
 }

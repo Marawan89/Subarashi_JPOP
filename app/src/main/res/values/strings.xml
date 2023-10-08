@@ -12,4 +12,7 @@
     <string name="exit">Exit</string>
     <string name="anime_list">Anime List</string>
     <string name="favourites">Favourites</string>
+    <string name="per_esempio_naruto">per esempio Naruto</string>
+    <string name="ex_naruto">ex.Naruto</string>
+    <string name="cerca">Cerca</string>
 </resources>

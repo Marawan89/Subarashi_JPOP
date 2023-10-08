@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import studio.demo.subarashi_jpop.FavouriteContainer
+import studio.demo.subarashi_jpop.repositories.FavouriteListRepository
 import studio.demo.subarashi_jpop.daos.AnimeDao
 import studio.demo.subarashi_jpop.daos.MangaDao
 import studio.demo.subarashi_jpop.entities.AnimeEntity
@@ -15,12 +15,12 @@ import studio.demo.subarashi_jpop.entities.MangaEntity
 class ViewModelFavouriteList (
     context: Context): ViewModel(){
 
-    private val favouriteContainer: FavouriteContainer
+    private val favouriteContainer: FavouriteListRepository
     private val animeDao: AnimeDao
     private val mangaDao: MangaDao
 
     init {
-        favouriteContainer = FavouriteContainer(animeDao)
+        favouriteContainer = FavouriteListRepository(animeDao)
         animeDao = AppDatabase.getInstance(context).favouriteAnimeDao()
         mangaDao = AppDatabase.getInstance(context).favouriteMangaDao()
     }
