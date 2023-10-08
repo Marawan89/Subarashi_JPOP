@@ -3,6 +3,7 @@ package studio.demo.subarashi_jpop.activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
@@ -38,8 +39,10 @@ class AnimeListActivity : AppCompatActivity(), /*OnClickListener*/ {
 
                 override fun onResponse(call: Call<TopAnime>, response: Response<TopAnime>) {
                     if(response.body() != null){
-                        val data = response.body()!!.data            //da mettere a posto sta parte se cambio il file JSON
-                        animeRecyclerView.adapter =
+                        val top = response.body()!!.top            //da mettere a posto sta parte se cambio il file JSON
+                        animeRecyclerView.adapter = AnimeListAdapter(this@AnimeListActivity, top)
+                        animeRecyclerView.layoutManager = GridLayoutManager(this@AnimeListActivity, 3)
+                        
                     }
                 }
 
