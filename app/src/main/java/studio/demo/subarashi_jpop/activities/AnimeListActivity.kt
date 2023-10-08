@@ -12,13 +12,11 @@ import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.TopAnime
 import studio.demo.subarashi_jpop.adapter.AnimeListAdapter
 import studio.demo.subarashi_jpop.databinding.ActivityAnimeListBinding
-import studio.demo.subarashi_jpop.listeners.OnClickListener
 import studio.demo.subarashi_jpop.services.AnimeService
 import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModel
 import studio.demo.subarashi_jpop.viewmodel.ViewModelFavouriteList
-import javax.security.auth.callback.Callback
 
-class AnimeListActivity : AppCompatActivity(), /*OnClickListener*/ {
+class AnimeListActivity : AppCompatActivity() /*, OnClickListener*/ {
     private lateinit var viewModel: AnimeListViewModel
     private lateinit var favouriteListViewModel: ViewModelFavouriteList
     private lateinit var recyclerView: RecyclerView

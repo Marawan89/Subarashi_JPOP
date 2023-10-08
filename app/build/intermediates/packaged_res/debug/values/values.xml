@@ -9,12 +9,23 @@
     <color name="white">#FFFFFFFF</color>
     <item name="animeButton" type="id">animeButton</item>
     <item name="mangaButton" type="id">mangaButton</item>
+    <string name="anime_list">Anime List</string>
     <string name="anime_wallpaper">Anime wallpaper</string>
     <string name="anime_world">Anime World</string>
     <string name="app_name">Subarashi-JPOP</string>
+    <string name="cerca">Cerca</string>
+    <string name="ex_naruto">ex.Naruto</string>
+    <string name="exit">Exit</string>
+    <string name="favourite_list">Favourite List</string>
+    <string name="favourites">Favourites</string>
+    <string name="goes_back_to_the_animeworld_mangaworld_menu">Goes back to the animeworld mangaworld menu</string>
+    <string name="goes_to_the_anime_list">Goes to the anime list</string>
+    <string name="goes_to_the_favourites_list">Goes to the favourites list</string>
+    <string name="list">List</string>
     <string name="manga_wallpaper">Manga Wallpaper</string>
     <string name="manga_world">Manga World</string>
-    <style name="Theme.SubarashiJPOP" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <string name="per_esempio_naruto">per esempio Naruto</string>
+    <style name="Theme.SubarashiJPOP" parent="Theme.MaterialComponents.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

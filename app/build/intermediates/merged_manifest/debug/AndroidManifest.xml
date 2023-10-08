@@ -8,6 +8,8 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="33" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <permission
         android:name="studio.demo.subarashi_jpop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -26,7 +28,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.SubarashiJPOP" >
         <activity
-            android:name="studio.demo.subarashi_jpop.MainActivity"
+            android:name="studio.demo.subarashi_jpop.activities.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +48,10 @@
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                 android:value="androidx.startup" />
         </provider>
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="studio.demo.subarashi_jpop.com.squareup.picasso"
+            android:exported="false" />
     </application>
 
 </manifest>
