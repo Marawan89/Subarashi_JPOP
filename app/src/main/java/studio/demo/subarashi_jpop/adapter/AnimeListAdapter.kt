@@ -7,12 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.searchedanime.Data
+import studio.demo.subarashi_jpop.Result
 
 class AnimeListAdapter (
     private val parentActivity: AppCompatActivity,
-    private val anime: List<Data>
+    private val anime: List<Result>
 ): RecyclerView.Adapter<AnimeListAdapter.CustomViewHolder>(){
 
     inner class CustomViewHolder(view: View): RecyclerView.ViewHolder(view)
@@ -31,5 +32,8 @@ class AnimeListAdapter (
         val view = holder.itemView
         val name = view.findViewById<TextView>(R.id.animeName)
         val image = view.findViewById<ImageView>(R.id.animeImage)
+
+        name.text = anime.title
+        Picasso.get().load(anime.imageUrl).into(image)
     }
 }

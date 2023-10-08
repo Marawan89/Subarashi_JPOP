@@ -8,11 +8,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
 import retrofit2.Response
 import studio.demo.subarashi_jpop.R
+import studio.demo.subarashi_jpop.TopAnime
 import studio.demo.subarashi_jpop.adapter.AnimeListAdapter
 import studio.demo.subarashi_jpop.databinding.ActivityAnimeListBinding
 import studio.demo.subarashi_jpop.listeners.OnClickListener
 import studio.demo.subarashi_jpop.services.AnimeService
-import studio.demo.subarashi_jpop.topanime.TopAnime
 import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModel
 import studio.demo.subarashi_jpop.viewmodel.ViewModelFavouriteList
 import javax.security.auth.callback.Callback
@@ -38,7 +38,7 @@ class AnimeListActivity : AppCompatActivity(), /*OnClickListener*/ {
 
                 override fun onResponse(call: Call<TopAnime>, response: Response<TopAnime>) {
                     if(response.body() != null){
-                        val data = response.body()!!.data              //da mettere a posto sta parte se cambio il file JSON
+                        val data = response.body()!!.data            //da mettere a posto sta parte se cambio il file JSON
                         animeRecyclerView.adapter =
                     }
                 }
