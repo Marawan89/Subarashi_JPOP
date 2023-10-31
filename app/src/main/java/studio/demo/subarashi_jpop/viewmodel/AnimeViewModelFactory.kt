@@ -1,12 +1,22 @@
 package studio.demo.subarashi_jpop.viewmodel
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import studio.demo.subarashi_jpop.activities.*
+import studio.demo.subarashi_jpop.remote.AnimeService
+import studio.demo.subarashi_jpop.remote.model.AnimeViewModel
 
-class ViewModelCustomFactory (private val context: Context, private val activityType: Class<out AppCompatActivity>):
+class AnimeViewModelFactory(private val repository: AnimeService) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(AnimeViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return AnimeViewModel() as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
+
+
+/*class ViewModelCustomFactory (private val context: Context, private val activityType: Class<out AppCompatActivity>):
         ViewModelProvider.NewInstanceFactory(){
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
        return when (activityType){
@@ -38,4 +48,4 @@ class ViewModelCustomFactory (private val context: Context, private val activity
 
        }
     }
-    }
+    }*/

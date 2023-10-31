@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-28:/values-night-v8/values-night-v8.xml",
+            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-31:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\maraw\\Desktop\\UNI\\SecondoAnno\\Secondo semestre\\Sistemi mobili\\Progetto\\Subarashi-JPOP\\app\\src\\main\\res\\values-night\\themes.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\7761ba0504b7b48a075322a94904257c\\transformed\\material-1.9.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\12f0a7efe68da53caa12e5cc9fa331eb\\transformed\\material-1.10.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

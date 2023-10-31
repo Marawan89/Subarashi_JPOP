@@ -1,33 +1,36 @@
-studio.demo.subarashi_jpop.app-emoji2-1.2.0-0 C:\Users\maraw\.gradle\caches\transforms-3\02a76fb83d4a48e5a36557a4ab412dd5\transformed\emoji2-1.2.0\res
-studio.demo.subarashi_jpop.app-emoji2-views-helper-1.2.0-1 C:\Users\maraw\.gradle\caches\transforms-3\0be660f3de0d0297c8059acdede25f83\transformed\emoji2-views-helper-1.2.0\res
-studio.demo.subarashi_jpop.app-core-ktx-1.12.0-2 C:\Users\maraw\.gradle\caches\transforms-3\0e076e32711a01af4c65f28543de013a\transformed\core-ktx-1.12.0\res
-studio.demo.subarashi_jpop.app-lifecycle-process-2.4.1-3 C:\Users\maraw\.gradle\caches\transforms-3\10f52a18ebcbeb09b7263eaa53ee5640\transformed\lifecycle-process-2.4.1\res
-studio.demo.subarashi_jpop.app-cardview-1.0.0-4 C:\Users\maraw\.gradle\caches\transforms-3\1e72dd510b973e04eec21bf38ee64401\transformed\cardview-1.0.0\res
-studio.demo.subarashi_jpop.app-appcompat-resources-1.6.1-5 C:\Users\maraw\.gradle\caches\transforms-3\21e60fe5541e4b24a19be90ac7eaceb2\transformed\appcompat-resources-1.6.1\res
-studio.demo.subarashi_jpop.app-transition-1.2.0-6 C:\Users\maraw\.gradle\caches\transforms-3\310434b0ad063a74ef354a4fa93dd4f5\transformed\transition-1.2.0\res
+studio.demo.subarashi_jpop.app-jetified-profileinstaller-1.3.0-0 C:\Users\maraw\.gradle\caches\transforms-3\0c5d67b21cb5e12fc35a15432c2aa357\transformed\jetified-profileinstaller-1.3.0\res
+studio.demo.subarashi_jpop.app-jetified-appcompat-resources-1.6.1-1 C:\Users\maraw\.gradle\caches\transforms-3\0d643c5850763ad5bbd3801399b9ac84\transformed\jetified-appcompat-resources-1.6.1\res
+studio.demo.subarashi_jpop.app-material-1.10.0-2 C:\Users\maraw\.gradle\caches\transforms-3\12f0a7efe68da53caa12e5cc9fa331eb\transformed\material-1.10.0\res
+studio.demo.subarashi_jpop.app-cardview-1.0.0-3 C:\Users\maraw\.gradle\caches\transforms-3\1e72dd510b973e04eec21bf38ee64401\transformed\cardview-1.0.0\res
+studio.demo.subarashi_jpop.app-transition-1.2.0-4 C:\Users\maraw\.gradle\caches\transforms-3\310434b0ad063a74ef354a4fa93dd4f5\transformed\transition-1.2.0\res
+studio.demo.subarashi_jpop.app-jetified-emoji2-1.2.0-5 C:\Users\maraw\.gradle\caches\transforms-3\3548930ab5c60c9c66c20dde8dfc7038\transformed\jetified-emoji2-1.2.0\res
+studio.demo.subarashi_jpop.app-lifecycle-livedata-core-2.6.2-6 C:\Users\maraw\.gradle\caches\transforms-3\3bd8a5804c9e32b39f6399cc9a7410f0\transformed\lifecycle-livedata-core-2.6.2\res
 studio.demo.subarashi_jpop.app-coordinatorlayout-1.1.0-7 C:\Users\maraw\.gradle\caches\transforms-3\3f2d3c1b5715da388bda2692da882b49\transformed\coordinatorlayout-1.1.0\res
-studio.demo.subarashi_jpop.app-core-1.12.0-8 C:\Users\maraw\.gradle\caches\transforms-3\4182ae312d16b7f082fd5581a234aefa\transformed\core-1.12.0\res
-studio.demo.subarashi_jpop.app-recyclerview-1.1.0-9 C:\Users\maraw\.gradle\caches\transforms-3\4b2142917e2048ef890c62e9c131b8c8\transformed\recyclerview-1.1.0\res
-studio.demo.subarashi_jpop.app-lifecycle-livedata-core-2.5.1-10 C:\Users\maraw\.gradle\caches\transforms-3\4dd4f3f149f5006360bba25413154ed5\transformed\lifecycle-livedata-core-2.5.1\res
-studio.demo.subarashi_jpop.app-startup-runtime-1.1.1-11 C:\Users\maraw\.gradle\caches\transforms-3\5161fec26605feced551ca603495a260\transformed\startup-runtime-1.1.1\res
-studio.demo.subarashi_jpop.app-drawerlayout-1.1.1-12 C:\Users\maraw\.gradle\caches\transforms-3\5d9b35ac561f0a7d2890cce3d3ada56d\transformed\drawerlayout-1.1.1\res
-studio.demo.subarashi_jpop.app-fragment-1.3.6-13 C:\Users\maraw\.gradle\caches\transforms-3\6651ca4403e0087e6d3108a9c13d5594\transformed\fragment-1.3.6\res
-studio.demo.subarashi_jpop.app-constraintlayout-2.1.4-14 C:\Users\maraw\.gradle\caches\transforms-3\6787fae70ab4ff23eaf831290ea85cfd\transformed\constraintlayout-2.1.4\res
-studio.demo.subarashi_jpop.app-material-1.9.0-15 C:\Users\maraw\.gradle\caches\transforms-3\7761ba0504b7b48a075322a94904257c\transformed\material-1.9.0\res
-studio.demo.subarashi_jpop.app-lifecycle-runtime-2.5.1-16 C:\Users\maraw\.gradle\caches\transforms-3\8fa0ce12e059273b7767ab4e14b0b662\transformed\lifecycle-runtime-2.5.1\res
-studio.demo.subarashi_jpop.app-savedstate-1.2.0-17 C:\Users\maraw\.gradle\caches\transforms-3\918051771c2a86fbfb7fe0acd32bcd53\transformed\savedstate-1.2.0\res
-studio.demo.subarashi_jpop.app-activity-1.6.0-18 C:\Users\maraw\.gradle\caches\transforms-3\b686272729f7781f0b3a893ff4f0d0b4\transformed\activity-1.6.0\res
-studio.demo.subarashi_jpop.app-appcompat-1.6.1-19 C:\Users\maraw\.gradle\caches\transforms-3\c06889fa13650a7e07de91ac778c9e64\transformed\appcompat-1.6.1\res
-studio.demo.subarashi_jpop.app-viewpager2-1.0.0-20 C:\Users\maraw\.gradle\caches\transforms-3\c3a56cf16cb2f917d7155aa2af8acfd0\transformed\viewpager2-1.0.0\res
-studio.demo.subarashi_jpop.app-annotation-experimental-1.3.0-21 C:\Users\maraw\.gradle\caches\transforms-3\c6df418d2c28d8a9c1838f7af0cfd776\transformed\annotation-experimental-1.3.0\res
-studio.demo.subarashi_jpop.app-lifecycle-viewmodel-2.5.1-22 C:\Users\maraw\.gradle\caches\transforms-3\d2d251ef7c8d3c57a6631270b5355620\transformed\lifecycle-viewmodel-2.5.1\res
-studio.demo.subarashi_jpop.app-browser-1.6.0-23 C:\Users\maraw\.gradle\caches\transforms-3\e3509eee4e0cc114fe23d4aa51cfde42\transformed\browser-1.6.0\res
-studio.demo.subarashi_jpop.app-lifecycle-viewmodel-savedstate-2.5.1-24 C:\Users\maraw\.gradle\caches\transforms-3\f6f3285074ffa5b119985a90d9281926\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
-studio.demo.subarashi_jpop.app-pngs-25 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\generated\res\pngs\debug
-studio.demo.subarashi_jpop.app-resValues-26 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\generated\res\resValues\debug
-studio.demo.subarashi_jpop.app-rs-27 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\generated\res\rs\debug
-studio.demo.subarashi_jpop.app-packageDebugResources-28 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-studio.demo.subarashi_jpop.app-packageDebugResources-29 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-studio.demo.subarashi_jpop.app-merged_res-30 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\intermediates\merged_res\debug
-studio.demo.subarashi_jpop.app-debug-31 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\debug\res
-studio.demo.subarashi_jpop.app-main-32 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\res
+studio.demo.subarashi_jpop.app-jetified-core-ktx-1.12.0-8 C:\Users\maraw\.gradle\caches\transforms-3\3f865b4e6b17d2ac9ede56f38b271326\transformed\jetified-core-ktx-1.12.0\res
+studio.demo.subarashi_jpop.app-core-1.12.0-9 C:\Users\maraw\.gradle\caches\transforms-3\4182ae312d16b7f082fd5581a234aefa\transformed\core-1.12.0\res
+studio.demo.subarashi_jpop.app-jetified-viewpager2-1.0.0-10 C:\Users\maraw\.gradle\caches\transforms-3\48d7268ded5265814c65a4864bc958a5\transformed\jetified-viewpager2-1.0.0\res
+studio.demo.subarashi_jpop.app-core-runtime-2.2.0-11 C:\Users\maraw\.gradle\caches\transforms-3\4a359e44b8e4de5a5e04e3ddd08e5f50\transformed\core-runtime-2.2.0\res
+studio.demo.subarashi_jpop.app-recyclerview-1.1.0-12 C:\Users\maraw\.gradle\caches\transforms-3\4b2142917e2048ef890c62e9c131b8c8\transformed\recyclerview-1.1.0\res
+studio.demo.subarashi_jpop.app-lifecycle-runtime-2.6.2-13 C:\Users\maraw\.gradle\caches\transforms-3\4cfa06f15400bbfa43aa0729934efa23\transformed\lifecycle-runtime-2.6.2\res
+studio.demo.subarashi_jpop.app-lifecycle-viewmodel-2.6.2-14 C:\Users\maraw\.gradle\caches\transforms-3\52a948dcf74a43f04bcca33d91deba47\transformed\lifecycle-viewmodel-2.6.2\res
+studio.demo.subarashi_jpop.app-drawerlayout-1.1.1-15 C:\Users\maraw\.gradle\caches\transforms-3\5d9b35ac561f0a7d2890cce3d3ada56d\transformed\drawerlayout-1.1.1\res
+studio.demo.subarashi_jpop.app-fragment-1.3.6-16 C:\Users\maraw\.gradle\caches\transforms-3\6651ca4403e0087e6d3108a9c13d5594\transformed\fragment-1.3.6\res
+studio.demo.subarashi_jpop.app-constraintlayout-2.1.4-17 C:\Users\maraw\.gradle\caches\transforms-3\6787fae70ab4ff23eaf831290ea85cfd\transformed\constraintlayout-2.1.4\res
+studio.demo.subarashi_jpop.app-jetified-lifecycle-viewmodel-savedstate-2.6.2-18 C:\Users\maraw\.gradle\caches\transforms-3\94a92ca8d2844140f41f2868885fef37\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\res
+studio.demo.subarashi_jpop.app-jetified-emoji2-views-helper-1.2.0-19 C:\Users\maraw\.gradle\caches\transforms-3\a61aa0979158f524a65a23de6b51e068\transformed\jetified-emoji2-views-helper-1.2.0\res
+studio.demo.subarashi_jpop.app-jetified-activity-1.8.0-20 C:\Users\maraw\.gradle\caches\transforms-3\a7d00ac2ccf47e33aae1755b575c8cf1\transformed\jetified-activity-1.8.0\res
+studio.demo.subarashi_jpop.app-appcompat-1.6.1-21 C:\Users\maraw\.gradle\caches\transforms-3\c06889fa13650a7e07de91ac778c9e64\transformed\appcompat-1.6.1\res
+studio.demo.subarashi_jpop.app-jetified-annotation-experimental-1.3.0-22 C:\Users\maraw\.gradle\caches\transforms-3\c9fb87901041a84ca8054b52afdd777d\transformed\jetified-annotation-experimental-1.3.0\res
+studio.demo.subarashi_jpop.app-jetified-startup-runtime-1.1.1-23 C:\Users\maraw\.gradle\caches\transforms-3\cab80a2e05fdccaab6fbdfa0a62ca502\transformed\jetified-startup-runtime-1.1.1\res
+studio.demo.subarashi_jpop.app-browser-1.6.0-24 C:\Users\maraw\.gradle\caches\transforms-3\e3509eee4e0cc114fe23d4aa51cfde42\transformed\browser-1.6.0\res
+studio.demo.subarashi_jpop.app-jetified-savedstate-1.2.1-25 C:\Users\maraw\.gradle\caches\transforms-3\ee4386d8ae4d7f9280f6886436284508\transformed\jetified-savedstate-1.2.1\res
+studio.demo.subarashi_jpop.app-lifecycle-livedata-2.6.2-26 C:\Users\maraw\.gradle\caches\transforms-3\f45f804de7d18464b40603163ed39ce9\transformed\lifecycle-livedata-2.6.2\res
+studio.demo.subarashi_jpop.app-jetified-lifecycle-process-2.6.2-27 C:\Users\maraw\.gradle\caches\transforms-3\f950fff52fedc35fbacf6e561fdcb3ba\transformed\jetified-lifecycle-process-2.6.2\res
+studio.demo.subarashi_jpop.app-pngs-28 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\generated\res\pngs\debug
+studio.demo.subarashi_jpop.app-resValues-29 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\generated\res\resValues\debug
+studio.demo.subarashi_jpop.app-rs-30 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\generated\res\rs\debug
+studio.demo.subarashi_jpop.app-packageDebugResources-31 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+studio.demo.subarashi_jpop.app-packageDebugResources-32 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+studio.demo.subarashi_jpop.app-merged_res-33 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\build\intermediates\merged_res\debug
+studio.demo.subarashi_jpop.app-debug-34 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\debug\res
+studio.demo.subarashi_jpop.app-main-35 C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\res

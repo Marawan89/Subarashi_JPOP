@@ -2,73 +2,55 @@ package studio.demo.subarashi_jpop.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import retrofit2.Call
-import retrofit2.Response
+import com.squareup.picasso.Picasso
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.TopAnime
-import studio.demo.subarashi_jpop.adapter.AnimeListAdapter
-import studio.demo.subarashi_jpop.databinding.ActivityAnimeListBinding
-import studio.demo.subarashi_jpop.services.AnimeService
-import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModel
-import studio.demo.subarashi_jpop.viewmodel.ViewModelFavouriteList
+import studio.demo.subarashi_jpop.remote.RemoteApi
+import studio.demo.subarashi_jpop.remote.model.AnimeViewModel
+import studio.demo.subarashi_jpop.viewmodel.AnimeViewModelFactory
 
-class AnimeListActivity : AppCompatActivity() /*, OnClickListener*/ {
-    private lateinit var viewModel: AnimeListViewModel
-    private lateinit var favouriteListViewModel: ViewModelFavouriteList
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: AnimeListAdapter
+class AnimeListActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
-    private var TAG = "AnimeListActivity"
+    private lateinit var titleTextView: TextView
+    private lateinit var imageView: ImageView
+    private lateinit var episodesTextView: TextView
+    private lateinit var statusTextView: TextView
+    private lateinit var airedFromTextView: TextView
+    private lateinit var airedToTextView: TextView
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityAnimeListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_anime_list)
 
-        binding.apply {
-            val animeService = AnimeService.create()
-            val call = animeService.getTopAnime()
+        titleTextView = findViewById(R.id.titleTextView)
+        imageView = findViewById(R.id.animeImage)
+        episodesTextView = findViewById(R.id.episodesTextView)
+        statusTextView = findViewById(R.id.statusTextView)
+        airedFromTextView = findViewById(R.id.airedFromTextView)
+        airedToTextView = findViewById(R.id.airedToTextView)
 
-            call.enqueue(object : retrofit2.Callback<TopAnime>{
+        val viewModel = ViewModelProvider(this, AnimeViewModelFactory(RemoteApi.service))
+            .get(AnimeViewModel::class.java)
 
-                override fun onResponse(call: Call<TopAnime>, response: Response<TopAnime>) {
-                    if(response.body() != null){
-                        val top = response.body()!!.top            //da mettere a posto sta parte se cambio il file JSON
-                        animeRecyclerView.adapter = AnimeListAdapter(this@AnimeListActivity, top)
-                        animeRecyclerView.layoutManager = GridLayoutManager(this@AnimeListActivity, 3)
-                        
-                    }
-                }
+        viewModel.animeLiveData.observe(this, Observer { anime ->
+            titleTextView.text = anime.title
+            Picasso.get().load(anime.imageUrl).into(imageView)
+            episodesTextView.text = "Episodes: ${anime.episodes ?: 0}"
+            statusTextView.text = "Status: ${anime.status ?: "Unknown"}"
+            airedFromTextView.text = "Aired From: ${anime.airedFrom ?: "Unknown"}"
+            airedToTextView.text = "Aired To: ${anime.airedTo ?: "Unknown"}"
+        })
 
-                override fun onFailure(call: Call<TopAnime>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-            })
-        }
-
-
-        bottomNavigationView = findViewById(R.id.bottomNavigationView) //basta fare l'activity anime list
-
-        /*viewModel = ViewModelProvider(
-            this,
-            ViewModelCustomFactory(this, this::class.java)
-        )[AnimeListActivity::class.java]*/
-
-        /*favouriteListViewModel = ViewModelProvider(
-            this, ViewModelCustomFactory(this, this::class.java)
-        )[ViewModelFavouriteList::class.java]*/
-
-        // adapter = AnimeListAdapter(this, this)
-
-
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
-            when (menuItem.itemId){
+            when (menuItem.itemId) {
                 R.id.menu_animeList -> {
+                    // Gestisci l'azione del menu_animeList
                     true
                 }
                 R.id.menu_favouriteList -> {
@@ -87,6 +69,31 @@ class AnimeListActivity : AppCompatActivity() /*, OnClickListener*/ {
         }
         bottomNavigationView.selectedItemId = R.id.menu_favouriteList
     }
+}
+
+
+
+
+
+
+
+
+//    private var TAG = "AnimeListActivity"
+//    private lateinit var viewModel: AnimeViewModel
+//    private lateinit var favouriteListViewModel: ViewModelFavouriteList
+//    private lateinit var recyclerView: RecyclerView
+
+/*viewModel = ViewModelProvider(
+            this,
+            ViewModelCustomFactory(this, this::class.java)
+        )[AnimeListActivity::class.java]*/
+
+    /*favouriteListViewModel = ViewModelProvider(
+        this, ViewModelCustomFactory(this, this::class.java)
+    )[ViewModelFavouriteList::class.java]*/
+
+    // adapter = AnimeListAdapter(this, this)
+
 
     /*override fun ViewInfoOnClick(model: Any){
         val animeModel = model as AnimeModel
@@ -109,4 +116,4 @@ class AnimeListActivity : AppCompatActivity() /*, OnClickListener*/ {
         favouriteListViewModel.insertFavouriteAnime(favouriteAnime)
         Toast.makeText(this, "${favouriteAnime.name} anime added to favourites list", Toast.LENGTH_SHORT).show()
     }*/
-}
+//}

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-28:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-31:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\7761ba0504b7b48a075322a94904257c\\transformed\\material-1.9.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\12f0a7efe68da53caa12e5cc9fa331eb\\transformed\\material-1.10.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

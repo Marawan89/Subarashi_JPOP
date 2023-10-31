@@ -1,106 +1,102 @@
 [
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/drawable_ic_launcher_background.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/drawable/ic_launcher_background.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/drawable_favourite_icon.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/drawable/favourite_icon.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/xml_data_extraction_rules.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/xml/data_extraction_rules.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/xml_backup_rules.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/xml/backup_rules.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-anydpi-v33/ic_launcher.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/layout_activity_anime_list.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/layout/activity_anime_list.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-anydpi-v33_ic_launcher.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-anydpi-v33/ic_launcher.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/xml_backup_rules.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/xml/backup_rules.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/drawable_anime_wall.jpg.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/drawable/anime_wall.jpg"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/drawable_ic_launcher_background.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-pngs-25:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/drawable_manga_wall.jpg.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/drawable/manga_wall.jpg"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/drawable_list_icon.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/drawable/list_icon.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/drawable_exit_icon.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/drawable/exit_icon.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/drawable_exit_icon.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/drawable/exit_icon.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/drawable_list_icon.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/drawable/list_icon.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/xml_data_extraction_rules.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/menu_bottom_nav.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/menu/bottom_nav.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/drawable_favourite_icon.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/drawable/favourite_icon.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/drawable_anime_wall.jpg.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/drawable/anime_wall.jpg"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/layout_activity_main.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/layout/activity_main.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/layout_anime_item_layout.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/layout/anime_item_layout.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/layout_activity_main.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/layout/activity_main.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/layout_anime_item_layout.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/layout/anime_item_layout.xml"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/drawable_manga_wall.jpg.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/drawable/manga_wall.jpg"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/menu_bottom_nav.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/menu/bottom_nav.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/layout_activity_anime_list.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/layout/activity_anime_list.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-30:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-32:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-33:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-35:/mipmap-xxxhdpi/ic_launcher.webp"
     }
 ]

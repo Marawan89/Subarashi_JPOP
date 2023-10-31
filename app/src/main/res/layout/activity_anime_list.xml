@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
     tools:context=".activities.AnimeListActivity">
 
+    <!-- Input per la ricerca -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/searchInputLayout"
         style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
@@ -24,30 +25,89 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </com.google.android.material.textfield.TextInputEditText>
-
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Pulsante di ricerca -->
     <Button
         android:id="@+id/buttonSearch"
         android:text="@string/cerca"
+        android:textAllCaps="false"
         app:layout_constraintTop_toTopOf="@id/searchInputLayout"
         app:layout_constraintBottom_toBottomOf="@id/searchInputLayout"
-        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/animeRecyclerView"
+    <!-- Layout per visualizzare i dati del AnimeViewModel -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/searchInputLayout"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:listitem="@layout/anime_item_layout"
-        tools:itemCount="4"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Immagine -->
+        <ImageView
+            android:id="@+id/animeImage"
+            android:layout_width="128dp"
+            android:layout_height="65dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Titolo -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="128dp"
+            android:layout_height="29dp"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animeImage" />
+
+        <!-- Numero di episodi -->
+        <TextView
+            android:id="@+id/episodesTextView"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+        <!-- Stato -->
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/episodesTextView" />
+
+        <!-- Aired From -->
+        <TextView
+            android:id="@+id/airedFromTextView"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statusTextView" />
+
+        <!-- Aired To -->
+        <TextView
+            android:id="@+id/airedToTextView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/airedFromTextView" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -55,6 +115,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav"
-        />
+        app:menu="@menu/bottom_nav" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/animeRecyclerView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/searchInputLayout"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:layout_marginBottom="8dp"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        tools:listitem="@layout/anime_item_layout"-->
+    <!--        tools:itemCount="4"/>-->
