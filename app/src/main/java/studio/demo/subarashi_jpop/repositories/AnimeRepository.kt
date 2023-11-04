@@ -10,7 +10,8 @@ class AnimeRepository(private val retrofit: Retrofit) {
     suspend fun getTopAnime(): List<AnimeModel>? {
         return try {
             val response = animeService.getTopAnime()
-            if (response.isSuccessful) {
+            if (
+               response.isSuccessful) {
                 response.body()
             } else {
                 null
