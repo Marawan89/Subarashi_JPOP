@@ -3,13 +3,13 @@ package studio.demo.subarashi_jpop.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import studio.demo.subarashi_jpop.remote.AnimeService
-import studio.demo.subarashi_jpop.remote.model.AnimeViewModel
+import studio.demo.subarashi_jpop.remote.model.AnimeModel
 
 class AnimeViewModelFactory(private val repository: AnimeService) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(AnimeViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(AnimeModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return AnimeViewModel() as T
+            return AnimeModel() as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

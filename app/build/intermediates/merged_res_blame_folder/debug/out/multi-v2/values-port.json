@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-31:/values-port/values-port.xml",
+            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-35:/values-port/values-port.xml",
             "map": [
                 {
                     "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\c06889fa13650a7e07de91ac778c9e64\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",

@@ -8,10 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.squareup.picasso.Picasso
 import studio.demo.subarashi_jpop.R
+import studio.demo.subarashi_jpop.remote.model.AnimeModel
 import studio.demo.subarashi_jpop.remote.RemoteApi
-import studio.demo.subarashi_jpop.remote.model.AnimeViewModel
 import studio.demo.subarashi_jpop.viewmodel.AnimeViewModelFactory
 
 class AnimeListActivity : AppCompatActivity() {
@@ -35,11 +34,11 @@ class AnimeListActivity : AppCompatActivity() {
         airedToTextView = findViewById(R.id.airedToTextView)
 
         val viewModel = ViewModelProvider(this, AnimeViewModelFactory(RemoteApi.service))
-            .get(AnimeViewModel::class.java)
+            .get(AnimeModel::class.java)
 
         viewModel.animeLiveData.observe(this, Observer { anime ->
             titleTextView.text = anime.title
-            Picasso.get().load(anime.imageUrl).into(imageView)
+//            Picasso.get().load(anime.imageUrl).into(imageView)
             episodesTextView.text = "Episodes: ${anime.episodes ?: 0}"
             statusTextView.text = "Status: ${anime.status ?: "Unknown"}"
             airedFromTextView.text = "Aired From: ${anime.airedFrom ?: "Unknown"}"
@@ -54,7 +53,7 @@ class AnimeListActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menu_favouriteList -> {
-                    Intent(this, AnimeFavouritesList::class.java).also {
+                    Intent(this, AnimeFavouriteList::class.java).also {
                         startActivity(it)
                     }
                     true

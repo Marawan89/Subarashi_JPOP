@@ -1,8 +1,8 @@
 package studio.demo.subarashi_jpop.activities
 
 import android.content.Intent
-import android.widget.Button
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import studio.demo.subarashi_jpop.R
 
@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
 
         animeButton = findViewById(R.id.animeButton)
         animeButton.setOnClickListener{
-            Intent(this, MangaListActivity::class.java).also{
+            Intent(this, AnimeListActivity::class.java).also{
                 startActivity(it)
             }
         }
 
         mangaButton = findViewById(R.id.mangaButton)
         mangaButton.setOnClickListener{
-            Intent(this, AnimeListActivity::class.java).also{
+            Intent(this, MangaListActivity::class.java).also{
                 startActivity(it)
             }
         }
