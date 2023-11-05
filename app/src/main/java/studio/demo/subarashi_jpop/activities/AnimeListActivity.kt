@@ -9,9 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.remote.model.AnimeModel
-import studio.demo.subarashi_jpop.remote.RemoteApi
-import studio.demo.subarashi_jpop.viewmodel.AnimeViewModelFactory
 
 class AnimeListActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -33,17 +30,17 @@ class AnimeListActivity : AppCompatActivity() {
         airedFromTextView = findViewById(R.id.airedFromTextView)
         airedToTextView = findViewById(R.id.airedToTextView)
 
-        val viewModel = ViewModelProvider(this, AnimeViewModelFactory(RemoteApi.service))
-            .get(AnimeModel::class.java)
-
-        viewModel.animeLiveData.observe(this, Observer { anime ->
-            titleTextView.text = anime.title
-//            Picasso.get().load(anime.imageUrl).into(imageView)
-            episodesTextView.text = "Episodes: ${anime.episodes ?: 0}"
-            statusTextView.text = "Status: ${anime.status ?: "Unknown"}"
-            airedFromTextView.text = "Aired From: ${anime.airedFrom ?: "Unknown"}"
-            airedToTextView.text = "Aired To: ${anime.airedTo ?: "Unknown"}"
-        })
+//        val viewModel = ViewModelProvider(this, AnimeViewModelFactory(RemoteApi.service))
+//            .get(AnimeModel::class.java)
+//
+//        viewModel.animeLiveData.observe(this, Observer { anime ->
+//            titleTextView.text = anime.title
+////            Picasso.get().load(anime.imageUrl).into(imageView)
+//            episodesTextView.text = "Episodes: ${anime.episodes ?: 0}"
+//            statusTextView.text = "Status: ${anime.status ?: "Unknown"}"
+//            airedFromTextView.text = "Aired From: ${anime.airedFrom ?: "Unknown"}"
+//            airedToTextView.text = "Aired To: ${anime.airedTo ?: "Unknown"}"
+//        })
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -87,32 +84,32 @@ class AnimeListActivity : AppCompatActivity() {
             ViewModelCustomFactory(this, this::class.java)
         )[AnimeListActivity::class.java]*/
 
-    /*favouriteListViewModel = ViewModelProvider(
-        this, ViewModelCustomFactory(this, this::class.java)
-    )[ViewModelFavouriteList::class.java]*/
+/*favouriteListViewModel = ViewModelProvider(
+    this, ViewModelCustomFactory(this, this::class.java)
+)[ViewModelFavouriteList::class.java]*/
 
-    // adapter = AnimeListAdapter(this, this)
+// adapter = AnimeListAdapter(this, this)
 
 
-    /*override fun ViewInfoOnClick(model: Any){
-        val animeModel = model as AnimeModel
-        val bundle = Bundle()
-        bundle.putString("Anime Name", animeModel.name)
-        bundle.putString("Plot", animeModel.plot)
+/*override fun ViewInfoOnClick(model: Any){
+    val animeModel = model as AnimeModel
+    val bundle = Bundle()
+    bundle.putString("Anime Name", animeModel.name)
+    bundle.putString("Plot", animeModel.plot)
 
-        val dialog: DialogFragment = DetailsDialogFragment()
-        dialog.show(supportFragmentManager, "DetailsDialogFragment")
+    val dialog: DialogFragment = DetailsDialogFragment()
+    dialog.show(supportFragmentManager, "DetailsDialogFragment")
 
-    }
+}
 
-    override fun AddToFavouriteOnClick(model: Any){
-        val animeModel = model as AnimeModel
-        val favouriteAnime = AnimeEntity(
-            id = animeModel.id.toString(),
-            name = animeModel.name,
-            spriteurl = animeModel.urlNorlmal
-        )
-        favouriteListViewModel.insertFavouriteAnime(favouriteAnime)
-        Toast.makeText(this, "${favouriteAnime.name} anime added to favourites list", Toast.LENGTH_SHORT).show()
-    }*/
+override fun AddToFavouriteOnClick(model: Any){
+    val animeModel = model as AnimeModel
+    val favouriteAnime = AnimeEntity(
+        id = animeModel.id.toString(),
+        name = animeModel.name,
+        spriteurl = animeModel.urlNorlmal
+    )
+    favouriteListViewModel.insertFavouriteAnime(favouriteAnime)
+    Toast.makeText(this, "${favouriteAnime.name} anime added to favourites list", Toast.LENGTH_SHORT).show()
+}*/
 //}

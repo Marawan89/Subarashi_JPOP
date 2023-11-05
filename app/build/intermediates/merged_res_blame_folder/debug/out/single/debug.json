@@ -68,6 +68,10 @@
         "source": "studio.demo.subarashi_jpop.app-main-39:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-37:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-pngs-32:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
         "merged": "studio.demo.subarashi_jpop.app-merged_res-37:/drawable_ic_launcher_background.xml.flat",
         "source": "studio.demo.subarashi_jpop.app-main-39:/drawable/ic_launcher_background.xml"
     },

@@ -2,22 +2,22 @@
     <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="@string/anime_list"
+        android:title="Anime List"
         android:id="@+id/menu_animeList"
         android:icon="@drawable/list_icon"
-        android:contentDescription="@string/goes_to_the_anime_list"/>
+        android:contentDescription="Goes to the Anime List"/>
 
     <item
-        android:title="@string/favourites"
+        android:title="Favourites"
         android:id="@+id/menu_favouriteList"
         android:icon="@drawable/favourite_icon"
-        android:contentDescription="@string/goes_to_the_favourites_list"/>
+        android:contentDescription="Goes to the favourite List"/>
 
     <item
-        android:title="@string/exit"
+        android:title="Exit"
         android:id="@+id/menu_exit"
         android:icon="@drawable/exit_icon"
-        android:contentDescription="@string/goes_back_to_the_animeworld_mangaworld_menu"/>
+        android:contentDescription="Goes back to the Anime World Manga World menu"/>
 
 
 

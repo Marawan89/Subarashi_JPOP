@@ -1,4 +1,6 @@
 package studio.demo.subarashi_jpop.viewmodel
+
+import android.content.Context
 //
 //import android.content.Context
 //import androidx.lifecycle.LiveData
@@ -12,8 +14,9 @@ package studio.demo.subarashi_jpop.viewmodel
 //import studio.demo.subarashi_jpop.entities.AnimeEntity
 //import studio.demo.subarashi_jpop.entities.MangaEntity
 //
-//class ViewModelFavouriteList (
-//    context: Context): ViewModel(){
+class ViewModelFavouriteList (
+    context: Context
+)//: ViewModel(){
 //
 //    private val favouriteContainer: FavouriteListRepository
 //    private val animeDao: AnimeDao

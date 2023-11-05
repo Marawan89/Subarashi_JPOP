@@ -5,15 +5,15 @@ import androidx.lifecycle.ViewModelProvider
 import studio.demo.subarashi_jpop.remote.AnimeService
 import studio.demo.subarashi_jpop.remote.model.AnimeModel
 
-class AnimeViewModelFactory(private val repository: AnimeService) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(AnimeModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return AnimeModel() as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
-}
+//class AnimeViewModelFactory(private val repository: AnimeService) : ViewModelProvider.Factory {
+//    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+//        if (modelClass.isAssignableFrom(AnimeModel::class.java)) {
+//            @Suppress("UNCHECKED_CAST")
+//            return AnimeModel() as T
+//        }
+//        throw IllegalArgumentException("Unknown ViewModel class")
+//    }
+//}
 
 
 /*class ViewModelCustomFactory (private val context: Context, private val activityType: Class<out AppCompatActivity>):

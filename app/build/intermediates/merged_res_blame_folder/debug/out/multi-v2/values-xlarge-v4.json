@@ -4,7 +4,7 @@
             "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-35:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\c06889fa13650a7e07de91ac778c9e64\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\3e0b6e4cd00ec1094432a441bef118ac\\transformed\\appcompat-1.6.1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

@@ -21,16 +21,16 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchInputEditText"
-            android:hint="@string/ex_naruto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </com.google.android.material.textfield.TextInputEditText>
+            android:layout_height="wrap_content"
+            android:hint="Ex.Naruto"
+            tools:ignore="TouchTargetSizeCheck"></com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Pulsante di ricerca -->
     <Button
         android:id="@+id/buttonSearch"
-        android:text="@string/cerca"
+        android:text="Cerca"
         android:textAllCaps="false"
         app:layout_constraintTop_toTopOf="@id/searchInputLayout"
         app:layout_constraintBottom_toBottomOf="@id/searchInputLayout"
