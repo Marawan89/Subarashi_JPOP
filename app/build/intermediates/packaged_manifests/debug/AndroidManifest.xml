@@ -29,11 +29,11 @@
         android:theme="@style/Theme.SubarashiJPOP" >
         <activity
             android:name="studio.demo.subarashi_jpop.activities.AnimeListActivity"
-            android:exported="true" >
+            android:exported="false" >
         </activity>
         <activity
             android:name="studio.demo.subarashi_jpop.activities.MangaListActivity"
-            android:exported="true" >
+            android:exported="false" >
         </activity>
         <activity
             android:name="studio.demo.subarashi_jpop.activities.AnimeFavouriteList"

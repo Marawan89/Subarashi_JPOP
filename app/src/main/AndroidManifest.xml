@@ -13,11 +13,11 @@
         tools:targetApi="31">
         <activity
             android:name=".activities.AnimeListActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
         <activity
             android:name=".activities.MangaListActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
         <activity
             android:name=".activities.AnimeFavouriteList"

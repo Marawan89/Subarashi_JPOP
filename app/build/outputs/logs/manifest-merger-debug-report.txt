@@ -114,13 +114,13 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\maraw\.gradle\cach
 activity#studio.demo.subarashi_jpop.activities.AnimeListActivity
 ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:14:9-17:20
 	android:exported
-		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:16:13-36
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:16:13-37
 	android:name
 		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:15:13-57
 activity#studio.demo.subarashi_jpop.activities.MangaListActivity
 ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:18:9-21:20
 	android:exported
-		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:20:13-36
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
 		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:19:13-57
 activity#studio.demo.subarashi_jpop.activities.AnimeFavouriteList

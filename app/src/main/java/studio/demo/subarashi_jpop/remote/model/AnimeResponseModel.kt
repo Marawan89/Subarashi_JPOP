@@ -1,6 +1,6 @@
 package studio.demo.subarashi_jpop.remote.model
 
-data class AnimeResponseModel(
+data class AnimeResponseModel (
     val mal_id: Int,
     val url: String,
     val images: Images,
@@ -27,8 +27,8 @@ data class AnimeResponseModel(
     val favorites: Int,
     val synopsis: String,
     val background: String?,
-    val season: String,
-    val year: Int,
+    val season: String?,
+    val year: Int?,
     val broadcast: Broadcast,
     val producers: List<Producer>,
     val licensors: List<Licensor>,
