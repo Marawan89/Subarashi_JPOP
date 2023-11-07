@@ -12,7 +12,7 @@ object RemoteApi {
         .add(KotlinJsonAdapterFactory())
         .build()
 
-    private val retrofit = Retrofit.Builder()
+    val retrofit = Retrofit.Builder()
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .baseUrl(BASE_URL)
         .build()

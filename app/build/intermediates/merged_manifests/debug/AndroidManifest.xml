@@ -8,6 +8,8 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="33" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <permission
         android:name="studio.demo.subarashi_jpop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -35,7 +37,7 @@
         </activity>
         <activity
             android:name="studio.demo.subarashi_jpop.activities.AnimeFavouriteList"
-            android:exported="true" >
+            android:exported="false" >
         </activity>
         <activity
             android:name="studio.demo.subarashi_jpop.activities.MainActivity"
