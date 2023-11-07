@@ -26,6 +26,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.SubarashiJPOP" >
         <activity
+            android:name="studio.demo.subarashi_jpop.activities.AnimeListActivity"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name="studio.demo.subarashi_jpop.activities.MangaListActivity"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name="studio.demo.subarashi_jpop.activities.AnimeFavouriteList"
+            android:exported="true" >
+        </activity>
+        <activity
             android:name="studio.demo.subarashi_jpop.activities.MainActivity"
             android:exported="true" >
             <intent-filter>

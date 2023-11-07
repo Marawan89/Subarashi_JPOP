@@ -29,19 +29,6 @@ class AnimeListActivity : AppCompatActivity() {
         statusTextView = findViewById(R.id.statusTextView)
         airedFromTextView = findViewById(R.id.airedFromTextView)
         airedToTextView = findViewById(R.id.airedToTextView)
-
-//        val viewModel = ViewModelProvider(this, AnimeViewModelFactory(RemoteApi.service))
-//            .get(AnimeModel::class.java)
-//
-//        viewModel.animeLiveData.observe(this, Observer { anime ->
-//            titleTextView.text = anime.title
-////            Picasso.get().load(anime.imageUrl).into(imageView)
-//            episodesTextView.text = "Episodes: ${anime.episodes ?: 0}"
-//            statusTextView.text = "Status: ${anime.status ?: "Unknown"}"
-//            airedFromTextView.text = "Aired From: ${anime.airedFrom ?: "Unknown"}"
-//            airedToTextView.text = "Aired To: ${anime.airedTo ?: "Unknown"}"
-//        })
-
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -68,8 +55,17 @@ class AnimeListActivity : AppCompatActivity() {
 }
 
 
-
-
+//        val viewModel = ViewModelProvider(this, AnimeViewModelFactory(RemoteApi.service))
+//            .get(AnimeModel::class.java)
+//
+//        viewModel.animeLiveData.observe(this, Observer { anime ->
+//            titleTextView.text = anime.title
+////            Picasso.get().load(anime.imageUrl).into(imageView)
+//            episodesTextView.text = "Episodes: ${anime.episodes ?: 0}"
+//            statusTextView.text = "Status: ${anime.status ?: "Unknown"}"
+//            airedFromTextView.text = "Aired From: ${anime.airedFrom ?: "Unknown"}"
+//            airedToTextView.text = "Aired To: ${anime.airedTo ?: "Unknown"}"
+//        })
 
 
 

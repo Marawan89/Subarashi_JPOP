@@ -12,14 +12,26 @@
         android:theme="@style/Theme.SubarashiJPOP"
         tools:targetApi="31">
         <activity
+            android:name=".activities.AnimeListActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".activities.MangaListActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".activities.AnimeFavouriteList"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

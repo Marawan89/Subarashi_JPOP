@@ -1,4 +1,7 @@
 package studio.demo.subarashi_jpop.activities
 
-class AnimeFavouriteList {
+import androidx.appcompat.app.AppCompatActivity
+
+class AnimeFavouriteList : AppCompatActivity() {
+
 }
