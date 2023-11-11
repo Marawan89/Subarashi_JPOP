@@ -51,7 +51,7 @@
         <ImageView
             android:id="@+id/animeImage"
             android:layout_width="128dp"
-            android:layout_height="65dp"
+            android:layout_height="197dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,7 @@
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="128dp"
-            android:layout_height="29dp"
+            android:layout_height="48dp"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
         <!-- Numero di episodi -->
         <TextView
             android:id="@+id/episodesTextView"
-            android:layout_width="127dp"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,8 +79,8 @@
         <!-- Stato -->
         <TextView
             android:id="@+id/statusTextView"
-            android:layout_width="126dp"
-            android:layout_height="wrap_content"
+            android:layout_width="128dp"
+            android:layout_height="29dp"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +99,7 @@
         <!-- Aired To -->
         <TextView
             android:id="@+id/airedToTextView"
-            android:layout_width="130dp"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
@@ -119,17 +119,3 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/animeRecyclerView"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/searchInputLayout"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"-->
-    <!--        android:layout_marginTop="8dp"-->
-    <!--        android:layout_marginBottom="8dp"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        tools:listitem="@layout/anime_item_layout"-->
-    <!--        tools:itemCount="4"/>-->

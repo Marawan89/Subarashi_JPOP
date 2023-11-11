@@ -121,43 +121,52 @@
 70            android:exported="false" />
 70-->[androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:27:13-37
 71
-72        <receiver
-72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-73            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-74            android:directBootAware="false"
-74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-75            android:enabled="true"
-75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-76            android:exported="true"
-76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-77            android:permission="android.permission.DUMP" >
-77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-78            <intent-filter>
-78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-79                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-80            </intent-filter>
-81            <intent-filter>
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-82                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-83            </intent-filter>
-84            <intent-filter>
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-85                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-86            </intent-filter>
-87            <intent-filter>
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-88                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-89            </intent-filter>
-90        </receiver>
-91    </application>
-92
-93</manifest>
+72        <provider
+72-->[com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:8:9-11:40
+73            android:name="com.squareup.picasso.PicassoProvider"
+73-->[com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:9:13-64
+74            android:authorities="studio.demo.subarashi_jpop.com.squareup.picasso"
+74-->[com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:10:13-72
+75            android:exported="false" />
+75-->[com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:11:13-37
+76
+77        <receiver
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+78            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+79            android:directBootAware="false"
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+80            android:enabled="true"
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+81            android:exported="true"
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+82            android:permission="android.permission.DUMP" >
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+83            <intent-filter>
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+84                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+85            </intent-filter>
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+87                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+88            </intent-filter>
+89            <intent-filter>
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+90                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+91            </intent-filter>
+92            <intent-filter>
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+93                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+94            </intent-filter>
+95        </receiver>
+96    </application>
+97
+98</manifest>

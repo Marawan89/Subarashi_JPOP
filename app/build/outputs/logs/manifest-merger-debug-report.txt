@@ -36,11 +36,13 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\maraw\.gradl
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] C:\Users\maraw\.gradle\caches\transforms-3\c2521a669fcf870063e07b52a01ce9d3\transformed\jetified-lifecycle-viewmodel-ktx-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\25ae595a5bbe8d5ff9ea623f80222bee\transformed\jetified-room-ktx-2.5.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:17:1-31:12
+MERGED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.sqlite:sqlite-framework:2.3.1] C:\Users\maraw\.gradle\caches\transforms-3\3395b2b85e1944d0cd531c5d741086f6\transformed\sqlite-framework-2.3.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.3.1] C:\Users\maraw\.gradle\caches\transforms-3\16a677238feccbc5bcb9ada48050173c\transformed\sqlite-2.3.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\f7f3ba6cb7f4fac97febb0867b26aaba\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\70c229d4855d6f4f58f8e76b5800ca68\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\2984df1032e89510bdfd26769af41e54\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\67da7aff37bf3e2285934cdd8bbe3b4d\transformed\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\eea76464974f392a795321ab89438ae2\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\maraw\.gradle\caches\transforms-3\a4aa7fbb1abaa741d90f2d6d053f630c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
@@ -87,6 +89,8 @@ MERGED from [androidx.core:core:1.10.1] C:\Users\maraw\.gradle\caches\transforms
 MERGED from [androidx.core:core:1.10.1] C:\Users\maraw\.gradle\caches\transforms-3\231b70ebcb9281ba5b5eb1d9efc577a7\transformed\core-1.10.1\AndroidManifest.xml:28:5-89
 MERGED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:23:5-29:19
+MERGED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\maraw\.gradle\caches\transforms-3\a4aa7fbb1abaa741d90f2d6d053f630c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\maraw\.gradle\caches\transforms-3\a4aa7fbb1abaa741d90f2d6d053f630c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
@@ -213,6 +217,8 @@ MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\maraw\.gradle\caches\transfo
 MERGED from [androidx.room:room-ktx:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\25ae595a5bbe8d5ff9ea623f80222bee\transformed\jetified-room-ktx-2.5.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:21:5-44
 MERGED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:21:5-44
+MERGED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:5:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.3.1] C:\Users\maraw\.gradle\caches\transforms-3\3395b2b85e1944d0cd531c5d741086f6\transformed\sqlite-framework-2.3.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.3.1] C:\Users\maraw\.gradle\caches\transforms-3\3395b2b85e1944d0cd531c5d741086f6\transformed\sqlite-framework-2.3.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.3.1] C:\Users\maraw\.gradle\caches\transforms-3\16a677238feccbc5bcb9ada48050173c\transformed\sqlite-2.3.1\AndroidManifest.xml:20:5-44
@@ -223,6 +229,8 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\maraw\.gradle\
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\70c229d4855d6f4f58f8e76b5800ca68\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\2984df1032e89510bdfd26769af41e54\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\2984df1032e89510bdfd26769af41e54\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\67da7aff37bf3e2285934cdd8bbe3b4d\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\67da7aff37bf3e2285934cdd8bbe3b4d\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\eea76464974f392a795321ab89438ae2\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\maraw\.gradle\caches\transforms-3\eea76464974f392a795321ab89438ae2\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\maraw\.gradle\caches\transforms-3\a4aa7fbb1abaa741d90f2d6d053f630c\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -309,6 +317,14 @@ ADDED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\tran
 		ADDED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:26:13-43
 	android:name
 		ADDED from [androidx.room:room-runtime:2.5.2] C:\Users\maraw\.gradle\caches\transforms-3\79b9754013a202e9ac9b41ff1e562b00\transformed\room-runtime-2.5.2\AndroidManifest.xml:25:13-74
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.8] C:\Users\maraw\.gradle\caches\transforms-3\d8c09595597977a44231f3e1b03d198a\transformed\jetified-picasso-2.8\AndroidManifest.xml:9:13-64
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\maraw\.gradle\caches\transforms-3\522be9d4682872e219f769ceb1e9c798\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
 	android:value

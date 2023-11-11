@@ -14,6 +14,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable list_icon
 drawable manga_wall
+drawable placeholder_image
 id airedFromTextView
 id airedToTextView
 id animeButton
