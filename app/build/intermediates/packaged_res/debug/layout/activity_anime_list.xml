@@ -119,17 +119,3 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/animeRecyclerView"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/searchInputLayout"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"-->
-    <!--        android:layout_marginTop="8dp"-->
-    <!--        android:layout_marginBottom="8dp"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        tools:listitem="@layout/anime_item_layout"-->
-    <!--        tools:itemCount="4"/>-->

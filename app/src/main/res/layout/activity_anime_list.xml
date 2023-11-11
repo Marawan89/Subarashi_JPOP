@@ -38,74 +38,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- Layout per visualizzare i dati del AnimeViewModel -->
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/searchInputLayout"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/searchInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <!-- Immagine -->
-        <ImageView
-            android:id="@+id/animeImage"
-            android:layout_width="128dp"
-            android:layout_height="197dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!-- Titolo -->
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="128dp"
-            android:layout_height="48dp"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/animeImage" />
-
-        <!-- Numero di episodi -->
-        <TextView
-            android:id="@+id/episodesTextView"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleTextView" />
-
-        <!-- Stato -->
-        <TextView
-            android:id="@+id/statusTextView"
-            android:layout_width="128dp"
-            android:layout_height="29dp"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/episodesTextView" />
-
-        <!-- Aired From -->
-        <TextView
-            android:id="@+id/airedFromTextView"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/statusTextView" />
-
-        <!-- Aired To -->
-        <TextView
-            android:id="@+id/airedToTextView"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/airedFromTextView" />
-    </LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toTopOf="@id/bottomNavigationView"
+        android:background="@android:color/background_light"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_anime"/>
 
     <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

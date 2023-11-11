@@ -74,16 +74,16 @@ class AnimeListActivity : AppCompatActivity() {
             animeList.addAll(anime)
             Log.d("AnimeListActivity", animeList[0].title)
 
-            Picasso.get().load(animeList[0].images.jpg.image_url)
+            Picasso.get().load(animeList[8].images.jpg.image_url)
                 .placeholder(R.drawable.placeholder_image)
                 .into(imageView)
 
             // Imposta il titolo dell'anime
-            titleTextView.text = animeList[0].title
-            episodesTextView.text = animeList[0].episodes.toString()
-            statusTextView.text = animeList[0].status
-            airedFromTextView.text = animeList[0].aired.from
-            airedToTextView.text = animeList[0].aired.to
+            titleTextView.text = animeList[8].title
+            episodesTextView.text = animeList[8].episodes.toString()
+            statusTextView.text = animeList[8].status
+            airedFromTextView.text = animeList[8].aired.from
+            airedToTextView.text = animeList[8].aired.to
         })
 
         animeListViewModel.getTopAnime()
