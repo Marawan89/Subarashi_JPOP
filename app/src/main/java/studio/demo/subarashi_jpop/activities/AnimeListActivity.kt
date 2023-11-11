@@ -1,16 +1,22 @@
 package studio.demo.subarashi_jpop.activities
 
+import AnimeListAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.BaseAdapter
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
+import studio.demo.subarashi_jpop.adapters.AnimeListAdapter
 import studio.demo.subarashi_jpop.remote.RemoteApi
 import studio.demo.subarashi_jpop.remote.model.AnimeModel
 import studio.demo.subarashi_jpop.repositories.AnimeRepository
@@ -19,6 +25,8 @@ import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModelFactory
 
 class AnimeListActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: AnimeListAdapter
     private lateinit var titleTextView: TextView
     private lateinit var imageView: ImageView
     private lateinit var episodesTextView: TextView
@@ -36,13 +44,18 @@ class AnimeListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_anime_list)
         Log.d("AnimeListActivity", "sono AnimeListActivity")
 
-        titleTextView = findViewById(R.id.titleTextView)
-        imageView = findViewById(R.id.animeImage)
-        episodesTextView = findViewById(R.id.episodesTextView)
-        statusTextView = findViewById(R.id.statusTextView)
-        airedFromTextView = findViewById(R.id.airedFromTextView)
-        airedToTextView = findViewById(R.id.airedToTextView)
+//        titleTextView = findViewById(R.id.titleTextView)
+//        imageView = findViewById(R.id.animeImage)
+//        episodesTextView = findViewById(R.id.episodesTextView)
+//        statusTextView = findViewById(R.id.statusTextView)
+//        airedFromTextView = findViewById(R.id.airedFromTextView)
+//        airedToTextView = findViewById(R.id.airedToTextView)
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        recyclerView = findViewById(R.id.recyclerView)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = AnimeListAdapter()
+        recyclerView.adapter = adapter
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_animeList -> {
