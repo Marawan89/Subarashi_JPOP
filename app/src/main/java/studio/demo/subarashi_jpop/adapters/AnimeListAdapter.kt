@@ -16,7 +16,6 @@ class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.A
         val animeImage: ImageView = itemView.findViewById(R.id.itemImageView)
         val titleTextView: TextView = itemView.findViewById(R.id.itemTitleTextView)
         val episodesTextView: TextView = itemView.findViewById(R.id.itemEpisodesTextView)
-        val statusTextView: TextView = itemView.findViewById(R.id.itemStatusTextView)
     }
 
     fun setData(newAnimeList: List<AnimeModel>) {
@@ -33,13 +32,11 @@ class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.A
         val anime = animeList[position]
 
         // Popola gli elementi dell'UI con i dati dell'anime
-        Picasso.get().load(anime.images.jpg.image_url)
-            .placeholder(R.drawable.placeholder_image)
+        Picasso.get().load(anime.images)
             .into(holder.animeImage)
 
         holder.titleTextView.text = anime.title
         holder.episodesTextView.text = anime.episodes.toString()
-        holder.statusTextView.text = anime.status
     }
 
     override fun getItemCount(): Int {

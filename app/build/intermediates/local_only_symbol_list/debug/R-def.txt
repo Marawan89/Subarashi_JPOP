@@ -7,6 +7,7 @@ color purple_700
 color teal_200
 color teal_700
 color white
+drawable add_icon
 drawable anime_wall
 drawable exit_icon
 drawable favourite_icon
@@ -21,7 +22,6 @@ id bottomNavigationView
 id buttonSearch
 id itemEpisodesTextView
 id itemImageView
-id itemStatusTextView
 id itemTitleTextView
 id mangaButton
 id mangaButton_wall

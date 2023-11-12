@@ -18,9 +18,9 @@ class AnimeListViewModel(private val remoteApi: RemoteApi) : ViewModel() {
 
     var animeList: LiveData<List<AnimeModel>> = _animeListLiveData
 
-    val cards: MutableLiveData<List<AnimeModel>> by lazy {
-        MutableLiveData<List<AnimeModel>>()
-    }
+//    val cards: MutableLiveData<List<AnimeModel>> by lazy {
+//        MutableLiveData<List<AnimeModel>>()
+//    }
 
     fun getTopAnime() {
 
@@ -29,20 +29,19 @@ class AnimeListViewModel(private val remoteApi: RemoteApi) : ViewModel() {
 
             val uiAnime = animeList.data.map {
 
-                it.season?.let { it1 ->
-                    it.year?.let { it2 ->
+//                it.season?.let { it1 ->
+//                    it.year?.let { it2 ->
                         AnimeModel(
-
                             mal_id = it.mal_id,
                             url = it.url,
-                            images = it.images,
+                            images = it.images.jpg.image_url,
                             trailer = it.trailer,
                             approved = it.approved,
                             titles = it.titles,
                             title = it.title,
-                            title_english = it.title_english,
                             title_japanese = it.title_japanese,
                             title_synonyms = it.title_synonyms,
+                            title_english = it.title_english,
                             type = it.type,
                             source = it.source,
                             episodes = it.episodes,
@@ -59,8 +58,6 @@ class AnimeListViewModel(private val remoteApi: RemoteApi) : ViewModel() {
                             favorites = it.favorites,
                             synopsis = it.synopsis,
                             background = it.background,
-                            season = it1,
-                            year = it2,
                             broadcast = it.broadcast,
                             producers = it.producers,
                             licensors = it.licensors,
@@ -71,9 +68,6 @@ class AnimeListViewModel(private val remoteApi: RemoteApi) : ViewModel() {
                             demographics = it.demographics
                         )
                     }
-                }
-
-            }
 
             _animeListLiveData.postValue(uiAnime as List<AnimeModel>?)
         }

@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.adapters.AnimeListAdapter
 import studio.demo.subarashi_jpop.remote.RemoteApi
+import studio.demo.subarashi_jpop.remote.model.AnimeModel
 import studio.demo.subarashi_jpop.repositories.AnimeRepository
 import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModel
 import studio.demo.subarashi_jpop.viewmodel.AnimeListViewModelFactory
@@ -22,6 +23,7 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var animeListViewModel: AnimeListViewModel
     private var remoteApi = RemoteApi
     private var animeRepository: AnimeRepository = AnimeRepository(remoteApi)
+    private var animeList: MutableList<AnimeModel> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class AnimeListActivity : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = AnimeListAdapter(mutableListOf()) // Inizializza l'adattatore con una lista vuota
+        adapter = AnimeListAdapter(mutableListOf())
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
@@ -62,6 +64,7 @@ class AnimeListActivity : AppCompatActivity() {
             ViewModelProvider(this, AnimeListViewModelFactory(this.remoteApi))[AnimeListViewModel::class.java]
 
         animeListViewModel.animeList.observe(this, Observer { anime ->
+            animeList.addAll(anime)
             adapter.setData(anime)
         })
 

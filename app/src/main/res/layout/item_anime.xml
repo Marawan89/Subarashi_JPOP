@@ -27,13 +27,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Episodes: 0"
-        android:layout_marginTop="4dp" />
-
-    <TextView
-        android:id="@+id/itemStatusTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status: Unknown"
-        android:layout_marginTop="4dp" />
-
+        android:layout_marginTop="4dp"/>
 </LinearLayout>

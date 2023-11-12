@@ -3,7 +3,7 @@ package studio.demo.subarashi_jpop.remote.model
 data class AnimeModel(
     val mal_id: Int,
     val url: String,
-    val images: Images,
+    val images: String,
     val trailer: Trailer,
     val approved: Boolean,
     val titles: List<Title>,
@@ -27,8 +27,6 @@ data class AnimeModel(
     val favorites: Int,
     val synopsis: String,
     val background: String?,
-    val season: String,
-    val year: Int,
     val broadcast: Broadcast,
     val producers: List<Producer>,
     val licensors: List<Licensor>,
