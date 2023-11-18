@@ -58,7 +58,7 @@ class AnimeListActivity : AppCompatActivity() {
                 }
             }
         }
-        bottomNavigationView.selectedItemId = R.id.menu_favouriteList
+        bottomNavigationView.selectedItemId = R.id.menu_animeList
 
         animeListViewModel =
             ViewModelProvider(this, AnimeListViewModelFactory(this.remoteApi))[AnimeListViewModel::class.java]

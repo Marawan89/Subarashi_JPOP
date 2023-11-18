@@ -4,7 +4,7 @@
             "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-34:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\ae9a4dd8dd47ffbc67aa0db116fd56aa\\transformed\\material-1.9.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\00aede1c3cfdf99db575786f44a58c90\\transformed\\material-1.10.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
