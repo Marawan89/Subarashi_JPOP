@@ -2,30 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="8dp">
-<!--   da vedere se fare width match parent o wrap content -->
+    <!--   da vedere se fare width match parent o wrap content -->
+
 
     <ImageView
         android:id="@+id/itemImageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/placeholder_image" />
+        android:src="@drawable/placeholder_image"/>
 
-    <TextView
-        android:id="@+id/itemTitleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Anime Title"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="8dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp">
 
-    <TextView
-        android:id="@+id/itemEpisodesTextView"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/itemTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anime Title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/add_icon"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/itemTitleTextView"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/add_icon"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Episodes: 0"
-        android:layout_marginTop="4dp"/>
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/episodeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Episodes:" />
+        <TextView
+            android:id="@+id/itemEpisodesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
 </LinearLayout>
