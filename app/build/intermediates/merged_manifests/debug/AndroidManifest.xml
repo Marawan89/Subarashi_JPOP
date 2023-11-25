@@ -29,15 +29,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.SubarashiJPOP" >
         <activity
-            android:name="studio.demo.subarashi_jpop.activities.AnimeListActivity"
+            android:name="studio.demo.subarashi_jpop.activities.anime.AnimeListActivity"
             android:exported="false" >
         </activity>
         <activity
-            android:name="studio.demo.subarashi_jpop.activities.MangaListActivity"
+            android:name="studio.demo.subarashi_jpop.activities.manga.MangaListActivity"
             android:exported="false" >
         </activity>
         <activity
-            android:name="studio.demo.subarashi_jpop.activities.AnimeFavouriteList"
+            android:name="studio.demo.subarashi_jpop.activities.anime.AnimeFavouriteList"
             android:exported="false" >
         </activity>
         <activity

@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import studio.demo.subarashi_jpop.R
+import studio.demo.subarashi_jpop.activities.anime.AnimeListActivity
+import studio.demo.subarashi_jpop.activities.manga.MangaListActivity
 
 class MainActivity : AppCompatActivity() {
 

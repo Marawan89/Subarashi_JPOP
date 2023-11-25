@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-34:/values-v16/values-v16.xml",
+            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\f1595f33e0368d56083e58bf28f4300a\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\e2c46b8169aa59dfaa22936fa115241a\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\cfc9652e55cfea3cd92b776000bb31ad\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\97f8e1f9b264838b45744bb7946d42e3\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

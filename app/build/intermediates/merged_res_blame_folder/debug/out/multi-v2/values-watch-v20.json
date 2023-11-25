@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-34:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\f1595f33e0368d56083e58bf28f4300a\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\e2c46b8169aa59dfaa22936fa115241a\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

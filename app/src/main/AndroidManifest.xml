@@ -12,15 +12,15 @@
         android:theme="@style/Theme.SubarashiJPOP"
         tools:targetApi="31">
         <activity
-            android:name=".activities.AnimeListActivity"
+            android:name=".activities.anime.AnimeListActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".activities.MangaListActivity"
+            android:name=".activities.manga.MangaListActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".activities.AnimeFavouriteList"
+            android:name=".activities.anime.AnimeFavouriteList"
             android:exported="false">
         </activity>
         <activity

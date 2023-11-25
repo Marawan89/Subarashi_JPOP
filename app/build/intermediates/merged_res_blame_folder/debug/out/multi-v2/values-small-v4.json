@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-34:/values-small-v4/values-small-v4.xml",
+            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\00aede1c3cfdf99db575786f44a58c90\\transformed\\material-1.10.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\633fc5a74e9a10a75943b3fcff474c9a\\transformed\\material-1.10.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
