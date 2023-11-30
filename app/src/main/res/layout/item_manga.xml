@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/itemAnimeImageView"
+        android:id="@+id/itemMangaImageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop" />
@@ -20,10 +20,10 @@
         android:layout_marginTop="8dp">
 
         <TextView
-            android:id="@+id/itemAnimeTitleTextView"
+            android:id="@+id/itemMangaTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Anime Title"
+            android:text="Manga Title"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
             android:id="@+id/add_icon"
             android:layout_width="54dp"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/itemAnimeTitleTextView"
+            android:layout_alignTop="@id/itemTitleTextView"
             android:layout_alignParentEnd="true"
             android:src="@drawable/add_icon"/>
     </RelativeLayout>
@@ -42,12 +42,12 @@
         android:layout_marginTop="4dp"
         android:orientation="horizontal">
         <TextView
-            android:id="@+id/episodeLabel"
+            android:id="@+id/chapterLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Episodes:" />
+            android:text="Chapters:" />
         <TextView
-            android:id="@+id/itemEpisodesTextView"
+            android:id="@+id/itemChapterTextView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
     </LinearLayout>

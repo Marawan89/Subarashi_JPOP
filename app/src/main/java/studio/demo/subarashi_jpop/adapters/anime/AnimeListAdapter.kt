@@ -13,8 +13,8 @@ import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.Adapter<AnimeListAdapter.AnimeViewHolder>() {
 
     class AnimeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val animeImage: ImageView = itemView.findViewById(R.id.itemImageView)
-        val titleTextView: TextView = itemView.findViewById(R.id.itemTitleTextView)
+        val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
+        val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
         val episodesTextView: TextView = itemView.findViewById(R.id.itemEpisodesTextView)
     }
 
