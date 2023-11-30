@@ -2,6 +2,7 @@ package studio.demo.subarashi_jpop.remote.manga.model
 
 import studio.demo.subarashi_jpop.remote.anime.model.Demographic
 import studio.demo.subarashi_jpop.remote.anime.model.Genre
+import studio.demo.subarashi_jpop.remote.anime.model.Images
 
 data class MangaModel(
     val mal_id: Int,

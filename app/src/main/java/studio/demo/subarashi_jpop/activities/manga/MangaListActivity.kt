@@ -50,9 +50,9 @@ class MangaListActivity : AppCompatActivity() {
             }
         })
 
-        animeListViewModel.animelist.observe(this,
-            {anime ->
-                adapter.setData(anime)
+        mangaListViewModel.mangaList.observe(this,
+            {manga ->
+                adapter.setData(manga)
             })
 
         bottomNavigationView.setOnItemSelectedListener {
