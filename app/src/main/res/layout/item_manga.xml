@@ -31,7 +31,7 @@
             android:id="@+id/add_icon"
             android:layout_width="54dp"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/itemTitleTextView"
+            android:layout_alignTop="@id/itemMangaTitleTextView"
             android:layout_alignParentEnd="true"
             android:src="@drawable/add_icon"/>
     </RelativeLayout>
