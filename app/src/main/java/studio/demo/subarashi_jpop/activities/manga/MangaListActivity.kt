@@ -3,6 +3,7 @@ package studio.demo.subarashi_jpop.activities.manga
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -50,8 +51,7 @@ class MangaListActivity : AppCompatActivity() {
             }
         })
 
-        mangaListViewModel.mangaList.observe(this,
-            {manga ->
+        mangaListViewModel.mangaList.observe(this, Observer { manga ->
                 adapter.setData(manga)
             })
 

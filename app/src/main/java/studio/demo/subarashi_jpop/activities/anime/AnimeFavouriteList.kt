@@ -11,7 +11,7 @@ class AnimeFavouriteList : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favouriteanime_list)
+        setContentView(R.layout.activity_favourite_anime_list)
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
