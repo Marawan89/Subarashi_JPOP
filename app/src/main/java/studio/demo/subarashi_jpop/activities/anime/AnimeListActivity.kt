@@ -31,7 +31,7 @@ class AnimeListActivity : AppCompatActivity() {
 
         animeListViewModel = ViewModelProvider(this, viewModelFactory).get(AnimeListViewModel::class.java)
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
         adapter = AnimeListAdapter(mutableListOf())
 
