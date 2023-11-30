@@ -25,7 +25,7 @@ class MangaListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manga_list)
 
-        val mangaRepository = MangaRepository(RemoteApi.service)
+        val mangaRepository = MangaRepository(RemoteApi.mangaService)
         val viewModelFactory = MangaListViewModelFactory(mangaRepository)
 
         mangaListViewModel = ViewModelProvider(this,viewModelFactory).get(MangaListViewModel::class.java)

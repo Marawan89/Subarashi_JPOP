@@ -26,7 +26,7 @@ class AnimeListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anime_list)
 
-        val animeRepository = AnimeRepository(RemoteApi.service)
+        val animeRepository = AnimeRepository(RemoteApi.animeService)
         val viewModelFactory = AnimeListViewModelFactory(animeRepository)
 
         animeListViewModel = ViewModelProvider(this, viewModelFactory).get(AnimeListViewModel::class.java)

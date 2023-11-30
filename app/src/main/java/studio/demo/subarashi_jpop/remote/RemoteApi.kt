@@ -5,6 +5,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import studio.demo.subarashi_jpop.remote.anime.AnimeService
+import studio.demo.subarashi_jpop.remote.manga.MangaService
 
 object RemoteApi {
     private const val BASE_URL = "https://api.jikan.moe/v4/"
@@ -18,5 +19,6 @@ object RemoteApi {
         .baseUrl(BASE_URL)
         .build()
 
-    val service: AnimeService = retrofit.create(AnimeService::class.java)
+    val animeService: AnimeService = retrofit.create(AnimeService::class.java)
+    val mangaService: MangaService = retrofit.create(MangaService::class.java)
 }
