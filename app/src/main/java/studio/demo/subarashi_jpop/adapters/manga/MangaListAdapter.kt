@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
 
@@ -25,5 +26,18 @@ class MangaListAdapter (private var mangaList: List<MangaModel>) : RecyclerView.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MangaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_manga, parent, false)
         return MangaViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: MangaViewHolder, position: Int) {
+        val manga = mangaList[position]
+
+        Picasso.get().load(manga.images).into(holder.mangaImage)
+
+        holder.titleTextView.text = manga.title
+        holder.chapterTextView.text = manga.chapters.toString()
+    }
+
+    override fun getItemCount(): Int {
+        return mangaList.size
     }
 }

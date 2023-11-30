@@ -31,9 +31,7 @@ class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.A
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
         val anime = animeList[position]
 
-        // Popola gli elementi dell'UI con i dati dell'anime
-        Picasso.get().load(anime.images)
-            .into(holder.animeImage)
+        Picasso.get().load(anime.images).into(holder.animeImage)
 
         holder.titleTextView.text = anime.title
         holder.episodesTextView.text = anime.episodes.toString()
