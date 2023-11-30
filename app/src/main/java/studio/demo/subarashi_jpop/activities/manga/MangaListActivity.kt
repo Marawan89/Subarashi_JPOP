@@ -30,7 +30,7 @@ class MangaListActivity : AppCompatActivity() {
 
         mangaListViewModel = ViewModelProvider(this,viewModelFactory).get(MangaListViewModel::class.java)
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
         adapter = MangaListAdapter(mutableListOf())
 
