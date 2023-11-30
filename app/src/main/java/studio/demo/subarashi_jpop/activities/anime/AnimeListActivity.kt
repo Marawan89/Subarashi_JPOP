@@ -58,7 +58,7 @@ class AnimeListActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_animeList -> true
-                R.id.menu_favouriteList -> {
+                R.id.menu_animeFavouriteList -> {
                     Intent(this, AnimeFavouriteList::class.java).also {
                         startActivity(it)
                     }

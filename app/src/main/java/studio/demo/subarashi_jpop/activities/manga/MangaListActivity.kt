@@ -59,7 +59,7 @@ class MangaListActivity : AppCompatActivity() {
             menuItem ->
                 when(menuItem.itemId){
                     R.id.menu_mangaList -> true
-                    R.id.menu_favouriteList -> {
+                    R.id.menu_mangaFavouriteList -> {
                         Intent(this, MangaFavouriteList::class.java).also {
                             startActivity(it)
                         }

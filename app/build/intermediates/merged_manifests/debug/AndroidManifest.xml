@@ -41,6 +41,10 @@
             android:exported="false" >
         </activity>
         <activity
+            android:name="studio.demo.subarashi_jpop.activities.manga.MangaFavouriteList"
+            android:exported="false" >
+        </activity>
+        <activity
             android:name="studio.demo.subarashi_jpop.activities.MainActivity"
             android:exported="true" >
             <intent-filter>

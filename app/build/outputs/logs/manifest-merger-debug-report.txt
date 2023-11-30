@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\maraw\.gradle\caches\transforms-3\633fc5a74e9a10a75943b3fcff474c9a\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\maraw\.gradle\caches\transforms-3\f242d3f6431ed5618a94b02136d50f5d\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\maraw\.gradle\caches\transforms-3\55e7b2d8aaea018029cd94f48b463db5\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -72,8 +72,8 @@ ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobil
 	android:name
 		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:5:5-35:19
-INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:5:5-35:19
+ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:5:5-39:19
+INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:5:5-39:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\maraw\.gradle\caches\transforms-3\633fc5a74e9a10a75943b3fcff474c9a\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\maraw\.gradle\caches\transforms-3\633fc5a74e9a10a75943b3fcff474c9a\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\maraw\.gradle\caches\transforms-3\f242d3f6431ed5618a94b02136d50f5d\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -132,22 +132,28 @@ ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobil
 		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:24:13-37
 	android:name
 		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:23:13-64
-activity#studio.demo.subarashi_jpop.activities.MainActivity
-ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:26:9-33:20
+activity#studio.demo.subarashi_jpop.activities.manga.MangaFavouriteList
+ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:26:9-29:20
 	android:exported
-		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:28:13-36
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:27:13-52
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:27:13-64
+activity#studio.demo.subarashi_jpop.activities.MainActivity
+ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:30:9-37:20
+	android:exported
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:32:13-36
+	android:name
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:31:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:29:13-32:29
+ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:33:13-36:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml:35:27-74
 uses-sdk
 INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\maraw\Desktop\UNI\SecondoAnno\Secondo semestre\Sistemi mobili\Progetto\Subarashi-JPOP\app\src\main\AndroidManifest.xml

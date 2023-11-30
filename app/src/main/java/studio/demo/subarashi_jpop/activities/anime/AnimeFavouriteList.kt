@@ -23,7 +23,7 @@ class AnimeFavouriteList : AppCompatActivity() {
                     true
                 }
 
-                R.id.menu_favouriteList -> {
+                R.id.menu_animeFavouriteList -> {
                     true
                 }
 
@@ -35,6 +35,7 @@ class AnimeFavouriteList : AppCompatActivity() {
                 }
             }
         }
-        bottomNavigationView.selectedItemId = R.id.menu_favouriteList
+        bottomNavigationView.selectedItemId = R.id.menu_animeFavouriteList
+
     }
 }

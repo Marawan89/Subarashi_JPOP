@@ -63,5 +63,3 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/anime_bottom_nav" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
