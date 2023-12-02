@@ -34,7 +34,7 @@ class MangaListAdapter (private var mangaList: List<MangaModel>) : RecyclerView.
         Picasso.get().load(manga.images).into(holder.mangaImage)
 
         holder.titleTextView.text = manga.title
-        holder.chapterTextView.text = manga.chapters.toString()
+        holder.chapterTextView.text = manga.chapters?.toString() ?: "Ongoing"
     }
 
     override fun getItemCount(): Int {

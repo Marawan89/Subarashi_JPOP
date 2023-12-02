@@ -28,6 +28,7 @@ class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.A
         return AnimeViewHolder(view)
     }
 
+
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
         val anime = animeList[position]
 
