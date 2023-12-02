@@ -1,6 +1,6 @@
 package studio.demo.subarashi_jpop.remote.anime.model
 
-data class Genre(
+data class AnimeGenre(
     val mal_id: Int,
     val type: String?,
     val name: String?,

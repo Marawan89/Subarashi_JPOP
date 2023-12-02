@@ -31,8 +31,8 @@ data class AnimeModel(
     val producers: List<Producer>,
     val licensors: List<Licensor>,
     val studios: List<Studio>,
-    val genres: List<Genre>,
+    val genres: List<AnimeGenre>,
     val explicit_genres: List<ExplicitGenre>,
     val themes: List<Theme>,
-    val demographics: List<Demographic>
+    val demographics: List<AnimeDemographic>
 )

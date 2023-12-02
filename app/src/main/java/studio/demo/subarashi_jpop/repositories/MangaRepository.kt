@@ -1,5 +1,6 @@
 package studio.demo.subarashi_jpop.repositories
 
+import android.util.Log
 import studio.demo.subarashi_jpop.remote.manga.MangaService
 import studio.demo.subarashi_jpop.remote.manga.model.MangaListResponse
 
@@ -9,6 +10,8 @@ class MangaRepository (private val mangaService: MangaService) {
 
     suspend fun getTopManga(): MangaListResponse{
         val result = mangaService.getTopManga(currentPage, perPage)
+
+        Log.d("MangaRepository", result.data.toString())
         currentPage++
         return result
     }

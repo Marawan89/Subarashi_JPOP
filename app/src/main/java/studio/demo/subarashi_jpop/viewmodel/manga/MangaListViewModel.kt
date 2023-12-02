@@ -28,7 +28,7 @@ class MangaListViewModel (private val mangaRepository: MangaRepository) : ViewMo
                     MangaModel(
                         mal_id = it.mal_id,
                         url = it.url,
-                        images = it.images,
+                        images = it.images.jpg.image_url,
                         approved = it.approved,
                         titles = it.titles,
                         title = it.title,

@@ -1,9 +1,9 @@
 package studio.demo.subarashi_jpop.remote.manga.model
 
-data class MangaModel(
+data class MangaResponseModel(
     val mal_id: Int,
     val url: String,
-    val images: String,
+    val images: MangaImages,
     val approved: Boolean,
     val titles: List<Title>,
     val title: String,

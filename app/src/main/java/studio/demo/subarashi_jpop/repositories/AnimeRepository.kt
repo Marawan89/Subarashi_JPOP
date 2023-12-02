@@ -23,6 +23,8 @@ class AnimeRepository(private val animeService: AnimeService) {
 
     suspend fun getTopAnime(): AnimeListResponse {
         val result = animeService.getTopAnime(currentPage, perPage)
+
+        Log.d("AnimeRepository", result.data.toString())
         currentPage++
         return result
     }
