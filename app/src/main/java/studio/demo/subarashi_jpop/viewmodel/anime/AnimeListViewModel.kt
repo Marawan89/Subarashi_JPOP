@@ -79,6 +79,7 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
             try {
                 if (!isLoading) {
                     isLoading = true
+                    currentPage++ // Incrementa la pagina corrente
                     val animeList = animeRepository.getTopAnime()
                     val uiAnime = animeList.data.map {
                         AnimeModel(
@@ -116,8 +117,7 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
                             explicit_genres = it.explicit_genres,
                             themes = it.themes,
                             demographics = it.demographics
-                        )
-                    }
+                        )                    }
                     _animeListLiveData.postValue(_animeListLiveData.value.orEmpty() + uiAnime)
                 }
             } catch (e: Exception) {
@@ -127,6 +127,7 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
             }
         }
     }
+
 
     fun resetPage() {
         animeRepository.resetPage()

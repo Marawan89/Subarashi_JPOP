@@ -11,3 +11,4 @@ interface AnimeService {
     suspend fun getTopAnime(@Query("page") page: Int, @Query("per_page") perPage: Int): AnimeListResponse
 }
 
+
