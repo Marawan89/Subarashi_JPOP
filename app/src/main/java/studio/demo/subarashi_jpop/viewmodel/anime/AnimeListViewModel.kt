@@ -10,7 +10,8 @@ import studio.demo.subarashi_jpop.repositories.AnimeRepository
 
 class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewModel() {
     private var _animeListLiveData = MutableLiveData<List<AnimeModel>>()
-    private var currentPage = 1
+    private var initialPage = 1
+    private var currentPage = initialPage
     private val perPage = 10
     private var isLoading = false
 
@@ -20,12 +21,12 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
         getTopAnime()
     }
 
-    fun getTopAnime() {
+    fun getTopAnime(page: Int = 1, perPage: Int = 10) {
         viewModelScope.launch {
             try {
                 if (!isLoading) {
                     isLoading = true
-                    val animeList = animeRepository.getTopAnime()
+                    val animeList = animeRepository.getTopAnime(page, perPage)
                     val uiAnime = animeList.data.map {
                         AnimeModel(
                             mal_id = it.mal_id,
@@ -63,6 +64,7 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
                             themes = it.themes,
                             demographics = it.demographics
                         )
+
                     }
                     _animeListLiveData.postValue(uiAnime)
                 }
@@ -79,8 +81,8 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
             try {
                 if (!isLoading) {
                     isLoading = true
-                    currentPage++ // Incrementa la pagina corrente
-                    val animeList = animeRepository.getTopAnime()
+                    currentPage++
+                    val animeList = animeRepository.getTopAnime(currentPage, perPage)
                     val uiAnime = animeList.data.map {
                         AnimeModel(
                             mal_id = it.mal_id,
@@ -117,7 +119,9 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
                             explicit_genres = it.explicit_genres,
                             themes = it.themes,
                             demographics = it.demographics
-                        )                    }
+                        )
+
+                    }
                     _animeListLiveData.postValue(_animeListLiveData.value.orEmpty() + uiAnime)
                 }
             } catch (e: Exception) {
@@ -129,12 +133,12 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
     }
 
 
+
     fun resetPage() {
+        currentPage = initialPage
         animeRepository.resetPage()
         _animeListLiveData.value = emptyList()
         getTopAnime()
     }
 }
-
-
 

@@ -9,18 +9,15 @@ class AnimeRepository(private val animeService: AnimeService) {
     private var currentPage = 1
     private val perPage = 10
 
-    suspend fun getTopAnime(): AnimeListResponse {
+    suspend fun getTopAnime(page: Int = currentPage, perPage: Int = this.perPage): AnimeListResponse {
         try {
-            val result = animeService.getTopAnime(currentPage, perPage)
+            val result = animeService.getTopAnime(page, perPage)
             Log.d("AnimeRepository", result.data.toString())
-            currentPage++
             return result
         } catch (e: HttpException) {
-            // Gestione degli errori HTTP (ad esempio, 404 Not Found)
             Log.e("AnimeRepository", "HTTP Exception: ${e.code()}")
             throw e
         } catch (e: Exception) {
-            // Gestione di altri tipi di errori
             Log.e("AnimeRepository", "Error: ${e.message}")
             throw e
         }
@@ -30,3 +27,5 @@ class AnimeRepository(private val animeService: AnimeService) {
         currentPage = 1
     }
 }
+
+
