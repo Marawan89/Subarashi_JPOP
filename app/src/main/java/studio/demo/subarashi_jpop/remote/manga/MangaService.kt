@@ -6,5 +6,5 @@ import studio.demo.subarashi_jpop.remote.manga.model.MangaListResponse
 
 interface MangaService {
     @GET("top/manga")
-    suspend fun getTopManga(@Query("page") page:Int, @Query("per_page") perPage: Int): MangaListResponse
+    suspend fun getTopManga(@Query("page") page:Int = 1, @Query("per_page") perPage: Int = 10): MangaListResponse
 }
