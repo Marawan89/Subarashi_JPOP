@@ -11,8 +11,3 @@ interface AnimeService {
     suspend fun getTopAnime(@Query("page") page: Int, @Query("per_page") perPage: Int): AnimeListResponse
 }
 
-// versione che visualizza fino all'ultimo anime della page 1
-//interface AnimeService {
-//    @GET("top/anime") // URL aggiornato
-//    suspend fun getTopAnime(): AnimeListResponse
-//}

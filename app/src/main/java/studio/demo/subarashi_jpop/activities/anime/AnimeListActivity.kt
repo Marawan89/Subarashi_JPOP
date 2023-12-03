@@ -45,8 +45,9 @@ class AnimeListActivity : AppCompatActivity() {
                 val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                 val totalItemCount = layoutManager.itemCount
                 val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
+
                 if (totalItemCount <= lastVisibleItem + 2) {
-                    animeListViewModel.getTopAnime()
+                    animeListViewModel.loadMoreAnime()
                 }
             }
         })
