@@ -35,7 +35,7 @@ class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.A
         Picasso.get().load(anime.images).into(holder.animeImage)
 
         holder.titleTextView.text = anime.title
-        holder.episodesTextView.text = anime.episodes.toString()
+        holder.episodesTextView.text = anime.episodes?.toString() ?: "Ongoing"
     }
 
     override fun getItemCount(): Int {
