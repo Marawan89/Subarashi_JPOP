@@ -1,6 +1,6 @@
 package studio.demo.subarashi_jpop.repositories
 
-import android.net.http.HttpException
+import retrofit2.HttpException
 import android.util.Log
 import studio.demo.subarashi_jpop.remote.manga.MangaService
 import studio.demo.subarashi_jpop.remote.manga.model.MangaListResponse
@@ -14,13 +14,16 @@ class MangaRepository (private val mangaService: MangaService) {
             val result = mangaService.getTopManga(page, perPage)
             Log.d("MangaRepository", result.data.toString())
             return result
-        } catch (e: retrofit2.HttpException) {
+        } catch (e: HttpException) {
             Log.e("MangaRepository", "HTTP Exception: ${e.code()}")
             throw e
         } catch (e: Exception) {
             Log.e("MangaRepository", "Error: ${e.message}")
             throw e
         }
+    }
 
+    fun resetPage() {
+        currentPage = 1
     }
 }

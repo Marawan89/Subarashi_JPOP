@@ -9,7 +9,7 @@ class AnimeRepository(private val animeService: AnimeService) {
     private var currentPage = 1
     private val perPage = 10
 
-    suspend fun getTopAnime(page: Int = currentPage, perPage: Int = this.perPage): AnimeListResponse {
+    suspend fun getTopAnime(page: Int = currentPage, perPage: Int = this.perPage) : AnimeListResponse{
         try {
             val result = animeService.getTopAnime(page, perPage)
             Log.d("AnimeRepository", result.data.toString())
@@ -27,5 +27,3 @@ class AnimeRepository(private val animeService: AnimeService) {
         currentPage = 1
     }
 }
-
-
