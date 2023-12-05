@@ -124,5 +124,4 @@ class MangaListViewModel (private val mangaRepository: MangaRepository) : ViewMo
         _mangaListLiveData.value = emptyList()
         getTopManga()
     }
-
 }

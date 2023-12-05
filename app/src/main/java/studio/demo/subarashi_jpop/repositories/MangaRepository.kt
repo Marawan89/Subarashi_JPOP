@@ -9,7 +9,7 @@ class MangaRepository (private val mangaService: MangaService) {
     private var currentPage = 1
     private var perPage = 10
 
-    suspend fun getTopManga(page: Int = currentPage, perPage: Int = this.perPage): MangaListResponse{
+    suspend fun getTopManga(page: Int = currentPage, perPage: Int = this.perPage): MangaListResponse {
         try {
             val result = mangaService.getTopManga(page, perPage)
             Log.d("MangaRepository", result.data.toString())

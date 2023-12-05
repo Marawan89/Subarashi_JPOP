@@ -132,8 +132,6 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
         }
     }
 
-
-
     fun resetPage() {
         currentPage = initialPage
         animeRepository.resetPage()

@@ -46,7 +46,7 @@ class MangaListActivity : AppCompatActivity() {
                 val totalItemCount = layoutManager.itemCount
                 val lastVisibileItem = layoutManager.findLastVisibleItemPosition()
                 if (totalItemCount <= lastVisibileItem + 2){
-                    mangaListViewModel.getTopManga()
+                    mangaListViewModel.loadMoreManga()
                 }
             }
         })
