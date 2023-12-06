@@ -31,7 +31,8 @@
             android:id="@+id/add_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/add_icon"/>
+            android:src="@drawable/add_icon"
+            android:tag="unselected"/>
     </LinearLayout>
 
     <LinearLayout
