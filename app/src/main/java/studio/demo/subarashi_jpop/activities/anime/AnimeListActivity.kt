@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
@@ -35,14 +35,15 @@ class AnimeListActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         adapter = AnimeListAdapter(mutableListOf())
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        val numberOfColumns = 3
+        recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
         recyclerView.adapter = adapter
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int){
                 super.onScrolled(recyclerView, dx, dy)
 
-                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                val layoutManager = recyclerView.layoutManager as GridLayoutManager
                 val totalItemCount = layoutManager.itemCount
                 val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
 
@@ -77,3 +78,4 @@ class AnimeListActivity : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.menu_animeList
     }
 }
+

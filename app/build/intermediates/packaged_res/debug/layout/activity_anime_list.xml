@@ -50,7 +50,6 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:background="@android:color/background_light"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_anime"/>
 
     <!-- Bottom Navigation View -->
