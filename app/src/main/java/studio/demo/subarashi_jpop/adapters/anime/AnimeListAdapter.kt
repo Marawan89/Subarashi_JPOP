@@ -34,8 +34,8 @@ class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.A
 
         Picasso.get().load(anime.images).into(holder.animeImage)
 
-        val truncatedTitle = if (anime.title.length > 10) {
-            anime.title.substring(0, 10) + "..."
+        val truncatedTitle = if (anime.title.length > 16) {
+            anime.title.substring(0, 16) + "..."
         } else {
             anime.title
         }
