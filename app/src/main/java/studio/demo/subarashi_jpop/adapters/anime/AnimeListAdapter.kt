@@ -34,7 +34,13 @@ class AnimeListAdapter(private var animeList: List<AnimeModel>) : RecyclerView.A
 
         Picasso.get().load(anime.images).into(holder.animeImage)
 
-        holder.titleTextView.text = anime.title
+        val truncatedTitle = if (anime.title.length > 10) {
+            anime.title.substring(0, 10) + "..."
+        } else {
+            anime.title
+        }
+        holder.titleTextView.text = truncatedTitle
+
         holder.episodesTextView.text = anime.episodes?.toString() ?: "Ongoing"
     }
 

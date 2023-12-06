@@ -33,7 +33,12 @@ class MangaListAdapter (private var mangaList: List<MangaModel>) : RecyclerView.
 
         Picasso.get().load(manga.images).into(holder.mangaImage)
 
-        holder.titleTextView.text = manga.title
+        val truncatedTitle = if (manga.title.length > 10) {
+            manga.title.substring(0, 10) + "..."
+        } else {
+            manga.title
+        }
+        holder.titleTextView.text = truncatedTitle
         holder.chapterTextView.text = manga.chapters?.toString() ?: "Ongoing"
     }
 
