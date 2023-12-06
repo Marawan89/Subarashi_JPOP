@@ -25,7 +25,7 @@ id chapterLabel
 id episodeLabel
 id itemAnimeImageView
 id itemAnimeTitleTextView
-id itemChapterTextView
+id itemChaptersTextView
 id itemEpisodesTextView
 id itemMangaImageView
 id itemMangaTitleTextView

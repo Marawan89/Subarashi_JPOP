@@ -15,7 +15,7 @@ class MangaListAdapter (private var mangaList: List<MangaModel>) : RecyclerView.
     class MangaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mangaImage: ImageView = itemView.findViewById(R.id.itemMangaImageView)
         val titleTextView: TextView = itemView.findViewById(R.id.itemMangaTitleTextView)
-        val chapterTextView: TextView = itemView.findViewById(R.id.itemChapterTextView)
+        val chapterTextView: TextView = itemView.findViewById(R.id.itemChaptersTextView)
     }
 
     fun setData(newMangaList:List<MangaModel>){

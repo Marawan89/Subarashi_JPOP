@@ -8,7 +8,6 @@
     android:padding="8dp"
     tools:context=".activities.anime.AnimeListActivity">
 
-    <!-- Input per la ricerca -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/searchInputLayout"
         style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
@@ -27,7 +26,6 @@
             tools:ignore="TouchTargetSizeCheck"></com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Pulsante di ricerca -->
     <Button
         android:id="@+id/buttonSearch"
         android:text="Cerca"
@@ -52,7 +50,6 @@
         android:background="@android:color/background_light"
         tools:listitem="@layout/item_anime"/>
 
-    <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/animeBottomNavigationView"
         android:layout_width="match_parent"
