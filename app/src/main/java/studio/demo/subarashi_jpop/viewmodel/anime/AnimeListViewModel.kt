@@ -139,4 +139,3 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
         getTopAnime()
     }
 }
-

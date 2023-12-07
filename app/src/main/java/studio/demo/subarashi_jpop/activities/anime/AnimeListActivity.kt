@@ -77,4 +77,3 @@ class AnimeListActivity : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.menu_animeList
     }
 }
-
