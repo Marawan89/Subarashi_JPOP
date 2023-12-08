@@ -48,12 +48,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
-    implementation "androidx.room:room-runtime:2.6.0"
-    implementation 'androidx.room:room-ktx:2.6.0'
+    implementation "androidx.room:room-runtime:2.6.1"
+    implementation 'androidx.room:room-ktx:2.6.1'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2"
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation 'androidx.paging:paging-common-ktx:3.2.1'
     implementation 'androidx.paging:paging-runtime-ktx:3.2.1'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2"
+    annotationProcessor "androidx.room:room-compiler:2.6.1"
 }
