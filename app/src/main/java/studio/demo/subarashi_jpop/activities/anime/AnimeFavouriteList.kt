@@ -9,23 +9,22 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
 
 class AnimeFavouriteList : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var favouriteAnimeRecylerView: RecyclerView
     private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
+    private lateinit var animeDao: AnimeDao
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favourite_anime_list)
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         favouriteAnimeRecylerView = findViewById(R.id.favouriteRecyclerView)
 
-        val database = Room.databaseBuilder(
-            applicationContext,
-            AppDataBase::class.java, "anime-database"
-        ).build()
-
-        animeDao = AppDatabase.getInstance(application).animeDao()
+        val favouriteDatabase = FavouriteDatabase.getInstance(application)
+        animeDao = favouriteDatabase.animeDao()
         roomFavouriteLocalService = RoomFavouriteLocalService(animeDao)
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->

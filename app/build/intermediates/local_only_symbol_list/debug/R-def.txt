@@ -25,6 +25,7 @@ id animeButton_wall
 id buttonSearch
 id chapterLabel
 id episodeLabel
+id favouriteRecyclerView
 id itemAnimeImageView
 id itemAnimeTitleTextView
 id itemChaptersTextView
@@ -48,6 +49,7 @@ layout activity_favourite_manga_list
 layout activity_main
 layout activity_manga_list
 layout item_anime
+layout item_favourite_anime
 layout item_manga
 menu anime_bottom_nav
 menu manga_bottom_nav

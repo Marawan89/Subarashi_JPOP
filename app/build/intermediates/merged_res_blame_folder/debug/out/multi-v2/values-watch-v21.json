@@ -4,7 +4,7 @@
             "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\e2c46b8169aa59dfaa22936fa115241a\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\e01c73b391bbb931611f78183a35e5db\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

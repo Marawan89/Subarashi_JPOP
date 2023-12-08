@@ -4,7 +4,7 @@
             "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\e2c46b8169aa59dfaa22936fa115241a\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\e01c73b391bbb931611f78183a35e5db\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\633fc5a74e9a10a75943b3fcff474c9a\\transformed\\material-1.10.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\5618acae2b600380cc4de98182ab054c\\transformed\\material-1.10.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

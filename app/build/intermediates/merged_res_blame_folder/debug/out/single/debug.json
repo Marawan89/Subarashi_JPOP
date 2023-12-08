@@ -120,6 +120,10 @@
         "source": "studio.demo.subarashi_jpop.app-main-43:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-41:/layout_item_favourite_anime.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-43:/layout/item_favourite_anime.xml"
+    },
+    {
         "merged": "studio.demo.subarashi_jpop.app-merged_res-41:/drawable_anime_wall.jpg.flat",
         "source": "studio.demo.subarashi_jpop.app-main-43:/drawable/anime_wall.jpg"
     },
