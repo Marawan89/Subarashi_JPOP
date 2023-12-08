@@ -8,5 +8,5 @@ import androidx.room.PrimaryKey
 data class AnimeEntity (
     @PrimaryKey val id: Int,
     val title: String,
-    val imageUrl: ImageView
+    val imageUrl: String
 )

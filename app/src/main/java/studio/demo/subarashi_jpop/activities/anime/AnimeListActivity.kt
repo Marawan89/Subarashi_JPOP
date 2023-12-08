@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapter
+import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.remote.RemoteApi
 import studio.demo.subarashi_jpop.repositories.AnimeRepository
 import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModel
@@ -21,6 +22,7 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: AnimeListAdapter
     private lateinit var animeListViewModel: AnimeListViewModel
+    private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,7 @@ class AnimeListActivity : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = AnimeListAdapter(mutableListOf())
+        adapter = AnimeListAdapter(animeListViewModel.animeList.value ?: emptyList(), roomFavouriteLocalService)
 
         val numberOfColumns = 3
         recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
