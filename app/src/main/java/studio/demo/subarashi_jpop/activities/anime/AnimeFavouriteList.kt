@@ -3,19 +3,30 @@ package studio.demo.subarashi_jpop.activities.anime
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
+import studio.demo.subarashi_jpop.adapters.anime.AnimeFavouriteAdapter
+import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
+import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModel
 
 class AnimeFavouriteList : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var favouriteAnimeRecylerView: RecyclerView
     private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
+    private lateinit var adapter: AnimeFavouriteAdapter
+    private lateinit var animeListViewModel: AnimeListViewModel
     private lateinit var animeDao: AnimeDao
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +37,24 @@ class AnimeFavouriteList : AppCompatActivity() {
         val favouriteDatabase = FavouriteDatabase.getInstance(application)
         animeDao = favouriteDatabase.animeDao()
         roomFavouriteLocalService = RoomFavouriteLocalService(animeDao)
+
+
+        adapter = AnimeFavouriteAdapter(emptyList(), roomFavouriteLocalService)
+        favouriteAnimeRecylerView.layoutManager = LinearLayoutManager(this)
+        favouriteAnimeRecylerView.adapter = adapter
+        favouriteAnimeRecylerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                val layoutManager = favouriteAnimeRecylerView.layoutManager as LinearLayoutManager
+                val totalItemCount = layoutManager.itemCount
+                val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
+
+                if (totalItemCount <= lastVisibleItem + 2) {
+                    loadFavouriteAnime()
+                }
+            }
+        })
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -51,4 +80,14 @@ class AnimeFavouriteList : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.menu_animeFavouriteList
 
     }
+    private fun loadFavouriteAnime() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val favouriteAnimeList = roomFavouriteLocalService.getFavouriteAnime()
+            withContext(Dispatchers.Main) {
+                adapter.setData(favouriteAnimeList)
+            }
+        }
+    }
 }
+
+
