@@ -2,11 +2,10 @@ package studio.demo.subarashi_jpop.activities.anime
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +14,6 @@ import kotlinx.coroutines.withContext
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.anime.AnimeFavouriteAdapter
-import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
@@ -31,6 +29,9 @@ class AnimeFavouriteList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favourite_anime_list)
+
+        Log.d("AnimeFavouriteList", "onCreate() executed")
+
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         favouriteAnimeRecylerView = findViewById(R.id.favouriteRecyclerView)
 
@@ -50,9 +51,9 @@ class AnimeFavouriteList : AppCompatActivity() {
                 val totalItemCount = layoutManager.itemCount
                 val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
 
-                if (totalItemCount <= lastVisibleItem + 2) {
+                /*if (totalItemCount <= lastVisibleItem + 2) {
                     loadFavouriteAnime()
-                }
+                }*/
             }
         })
 
@@ -81,13 +82,13 @@ class AnimeFavouriteList : AppCompatActivity() {
 
     }
     private fun loadFavouriteAnime() {
+        Log.d("AnimeFavouriteList", "Loading favourite anime...")
         CoroutineScope(Dispatchers.IO).launch {
             val favouriteAnimeList = roomFavouriteLocalService.getFavouriteAnime()
+            Log.d("AnimeFavouriteList", "Favourite anime loaded: $favouriteAnimeList")
             withContext(Dispatchers.Main) {
                 adapter.setData(favouriteAnimeList)
             }
         }
     }
 }
-
-

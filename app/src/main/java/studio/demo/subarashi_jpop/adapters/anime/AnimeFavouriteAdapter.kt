@@ -7,6 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
@@ -19,6 +22,7 @@ class AnimeFavouriteAdapter(
     class AnimeFavouriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
         val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
+        val addIcon: ImageView = itemView.findViewById(R.id.add_icon)
     }
 
 
@@ -26,6 +30,7 @@ class AnimeFavouriteAdapter(
         favouriteAnimeList = newFavouriteAnimeList
         notifyDataSetChanged()
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeFavouriteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_anime, parent, false)
@@ -43,6 +48,17 @@ class AnimeFavouriteAdapter(
             anime.title
         }
         holder.titleTextView.text = truncatedTitle
+
+        val animeEntity = AnimeEntity(
+            id = anime.id,
+            title = anime.title,
+            imageUrl = anime.imageUrl
+        )
+
+        CoroutineScope(Dispatchers.IO).launch {
+            roomFavouriteLocalService.insertAnime(animeEntity)
+            println("Anime added to favorites: ${animeEntity.title}")
+        }
     }
 
     override fun getItemCount(): Int {

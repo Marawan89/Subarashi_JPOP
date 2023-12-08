@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
@@ -56,6 +57,7 @@ class AnimeListAdapter(
         holder.episodesTextView.text = anime.episodes?.toString() ?: "Ongoing"
 
         holder.addIcon.setOnClickListener{
+            println("Add icon clicked for anime: ${anime.title}")
             holder.addIcon.setImageResource(R.drawable.check_icon)
 
             Toast.makeText(holder.itemView.context, "Anime added to favourites successfully", Toast.LENGTH_SHORT).show()
