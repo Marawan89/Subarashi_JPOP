@@ -21,11 +21,11 @@ id addToFavoriteLayout
 id animeBottomNavigationView
 id animeButton
 id animeButton_wall
+id animeFavouriteRecyclerView
 id anime_add_icon
 id buttonSearch
 id chapterLabel
 id episodeLabel
-id favouriteRecyclerView
 id itemAnimeImageView
 id itemAnimeTitleTextView
 id itemChaptersTextView
@@ -35,6 +35,7 @@ id itemMangaTitleTextView
 id mangaBottomNavigationView
 id mangaButton
 id mangaButton_wall
+id mangaFavouriteRecyclerView
 id manga_add_icon
 id menu_animeFavouriteList
 id menu_animeList
@@ -51,6 +52,7 @@ layout activity_main
 layout activity_manga_list
 layout item_anime
 layout item_favourite_anime
+layout item_favourite_manga
 layout item_manga
 menu anime_bottom_nav
 menu manga_bottom_nav

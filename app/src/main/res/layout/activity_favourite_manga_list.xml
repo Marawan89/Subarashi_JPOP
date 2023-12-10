@@ -8,6 +8,19 @@
     android:padding="8dp"
     tools:context=".activities.manga.MangaFavouriteList">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mangaFavouriteRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/mangaBottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@android:color/background_light"
+        tools:listitem="@layout/item_favourite_anime"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/mangaBottomNavigationView"
         android:layout_width="match_parent"

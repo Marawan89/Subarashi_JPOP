@@ -9,7 +9,7 @@
     tools:context=".activities.anime.AnimeFavouriteList">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/favouriteRecyclerView"
+        android:id="@+id/animeFavouriteRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/animeBottomNavigationView"

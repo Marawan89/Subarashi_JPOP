@@ -34,7 +34,7 @@ class AnimeFavouriteList : AppCompatActivity() {
         Log.d("AnimeFavouriteList", "onCreate() executed")
 
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
-        favouriteAnimeRecylerView = findViewById(R.id.favouriteRecyclerView)
+        favouriteAnimeRecylerView = findViewById(R.id.animeFavouriteRecyclerView)
 
         val favouriteDatabase = FavouriteDatabase.getDatabase(application)
         animeDao = favouriteDatabase.animeDao()
@@ -53,9 +53,6 @@ class AnimeFavouriteList : AppCompatActivity() {
                 val totalItemCount = layoutManager.itemCount
                 val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
 
-                /*if (totalItemCount <= lastVisibleItem + 2) {
-                    loadFavouriteAnime()
-                }*/
             }
         })
 
