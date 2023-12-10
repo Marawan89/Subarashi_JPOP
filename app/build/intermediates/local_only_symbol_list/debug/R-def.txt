@@ -18,10 +18,10 @@ drawable list_icon
 drawable manga_wall
 drawable placeholder_image
 id addToFavoriteLayout
-id add_icon
 id animeBottomNavigationView
 id animeButton
 id animeButton_wall
+id anime_add_icon
 id buttonSearch
 id chapterLabel
 id episodeLabel
@@ -35,6 +35,7 @@ id itemMangaTitleTextView
 id mangaBottomNavigationView
 id mangaButton
 id mangaButton_wall
+id manga_add_icon
 id menu_animeFavouriteList
 id menu_animeList
 id menu_exit

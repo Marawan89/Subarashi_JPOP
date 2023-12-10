@@ -38,10 +38,11 @@ class AnimeListActivity : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
 
-        val favouriteDatabase = FavouriteDatabase.getInstance(application)
+        val favouriteDatabase = FavouriteDatabase.getDatabase(application)
         val animeDao = favouriteDatabase.animeDao()
+        val mangaDao = favouriteDatabase.mangaDao()
 
-        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao)
+        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
         adapter = AnimeListAdapter(animeListViewModel.animeList.value ?: emptyList(), roomFavouriteLocalService)
 
         val numberOfColumns = 3

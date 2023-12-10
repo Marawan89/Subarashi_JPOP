@@ -36,7 +36,7 @@ class AnimeFavouriteList : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         favouriteAnimeRecylerView = findViewById(R.id.favouriteRecyclerView)
 
-        val favouriteDatabase = FavouriteDatabase.getInstance(application)
+        val favouriteDatabase = FavouriteDatabase.getDatabase(application)
         animeDao = favouriteDatabase.animeDao()
         mangaDao = favouriteDatabase.mangaDao()
         roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)

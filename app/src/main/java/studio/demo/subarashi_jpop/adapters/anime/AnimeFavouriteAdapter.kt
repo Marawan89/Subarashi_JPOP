@@ -41,8 +41,8 @@ class AnimeFavouriteAdapter(
 
         Picasso.get().load(anime.imageUrl).into(holder.animeImage)
 
-        val truncatedTitle = if (anime.title.length > 16) {
-            anime.title.substring(0, 16) + "..."
+        val truncatedTitle = if (anime.title.length > 14) {
+            anime.title.substring(0, 14) + "..."
         } else {
             anime.title
         }

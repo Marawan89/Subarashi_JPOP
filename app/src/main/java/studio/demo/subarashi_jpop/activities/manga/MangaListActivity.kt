@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.manga.MangaListAdapter
+import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.remote.RemoteApi
 import studio.demo.subarashi_jpop.repositories.MangaRepository
 import studio.demo.subarashi_jpop.viewmodel.manga.MangaListViewModel
@@ -22,6 +23,7 @@ class MangaListActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MangaListAdapter
     private lateinit var mangaListViewModel: MangaListViewModel
+    private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +32,13 @@ class MangaListActivity : AppCompatActivity() {
         val mangaRepository = MangaRepository(RemoteApi.mangaService)
         val viewModelFactory = MangaListViewModelFactory(mangaRepository)
 
+        roomFavouriteLocalService = RoomFavouriteLocalService.getInstance(applicationContext)
+
         mangaListViewModel = ViewModelProvider(this,viewModelFactory).get(MangaListViewModel::class.java)
 
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = MangaListAdapter(mutableListOf())
+        adapter = MangaListAdapter(mutableListOf(), roomFavouriteLocalService)
 
         val numberOfColumns = 3
         recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
