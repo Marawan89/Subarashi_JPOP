@@ -16,13 +16,8 @@ interface AnimeDao {
     }
 
     @Query("SELECT * FROM favourite_anime")
-    suspend fun getFavouriteAnime(): List<AnimeEntity>{
-        Log.d("AnimeDao", "Getting all favourite anime")
-        return TODO("Provide the return value")
-    }
+    suspend fun getFavouriteAnime(): List<AnimeEntity>
 
     @Delete
-    suspend fun deleteAnime(anime: AnimeEntity){
-        Log.d("AnimeDao", "Deleting anime: ${anime.title}")
-    }
+    suspend fun deleteAnime(anime: AnimeEntity)
 }
