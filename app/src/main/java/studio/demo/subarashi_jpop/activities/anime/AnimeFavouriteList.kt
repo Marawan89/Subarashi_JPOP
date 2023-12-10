@@ -17,6 +17,7 @@ import studio.demo.subarashi_jpop.adapters.anime.AnimeFavouriteAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModel
 
 class AnimeFavouriteList : AppCompatActivity() {
@@ -24,8 +25,8 @@ class AnimeFavouriteList : AppCompatActivity() {
     private lateinit var favouriteAnimeRecylerView: RecyclerView
     private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
     private lateinit var adapter: AnimeFavouriteAdapter
-    private lateinit var animeListViewModel: AnimeListViewModel
     private lateinit var animeDao: AnimeDao
+    private lateinit var mangaDao: MangaDao
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favourite_anime_list)
@@ -37,7 +38,8 @@ class AnimeFavouriteList : AppCompatActivity() {
 
         val favouriteDatabase = FavouriteDatabase.getInstance(application)
         animeDao = favouriteDatabase.animeDao()
-        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao)
+        mangaDao = favouriteDatabase.mangaDao()
+        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
 
 
         adapter = AnimeFavouriteAdapter(emptyList(), roomFavouriteLocalService)

@@ -20,6 +20,4 @@ interface MangaDao {
 
     @Delete
     suspend fun deleteManga(manga: MangaEntity)
-
-
 }

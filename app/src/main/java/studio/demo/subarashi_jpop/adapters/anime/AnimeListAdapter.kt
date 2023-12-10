@@ -28,7 +28,7 @@ class AnimeListAdapter(
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
         val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
         val episodesTextView: TextView = itemView.findViewById(R.id.itemEpisodesTextView)
-        val addIcon: ImageView = itemView.findViewById(R.id.add_icon)
+        val addIcon: ImageView = itemView.findViewById(R.id.anime_add_icon)
     }
 
     fun setData(newAnimeList: List<AnimeModel>) {
@@ -47,8 +47,8 @@ class AnimeListAdapter(
 
         Picasso.get().load(anime.images).into(holder.animeImage)
 
-        val truncatedTitle = if (anime.title.length > 16) {
-            anime.title.substring(0, 16) + "..."
+        val truncatedTitle = if (anime.title.length > 14) {
+            anime.title.substring(0, 14) + "..."
         } else {
             anime.title
         }

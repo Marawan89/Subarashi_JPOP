@@ -22,7 +22,6 @@ class AnimeFavouriteAdapter(
     class AnimeFavouriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
         val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
-        val addIcon: ImageView = itemView.findViewById(R.id.add_icon)
     }
 
 

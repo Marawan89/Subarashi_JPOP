@@ -5,11 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 
 @Database(entities = [AnimeEntity::class], version = 1)
 abstract class FavouriteDatabase : RoomDatabase() {
     abstract fun animeDao() : AnimeDao
+    abstract fun mangaDao() : MangaDao
 
     companion object{
         @Volatile
