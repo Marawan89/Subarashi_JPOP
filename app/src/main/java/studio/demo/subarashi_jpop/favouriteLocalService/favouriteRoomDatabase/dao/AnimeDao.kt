@@ -10,7 +10,6 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.en
 
 @Dao
 interface AnimeDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAnime(anime: AnimeEntity){
         Log.d("AnimeDao", "Inserting anime: ${anime.title}")
