@@ -23,7 +23,6 @@ class AnimeListAdapter(
     private val roomFavouriteLocalService: RoomFavouriteLocalService
 ) : RecyclerView.Adapter<AnimeListAdapter.AnimeViewHolder>() {
 
-
     class AnimeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
         val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)

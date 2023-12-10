@@ -21,15 +21,15 @@ class RoomFavouriteLocalService (
         animeDao.deleteAnime(anime)
     }
 
-    override suspend fun insertManga(manga: MangaEntity){
+    suspend fun insertManga(manga: MangaEntity){
         mangaDao.insertManga(manga)
     }
 
-    override suspend fun getFavouriteManga(): List<MangaEntity>{
+    suspend fun getFavouriteManga(): List<MangaEntity>{
         return mangaDao.getFavouriteManga()
     }
 
-    override suspend fun deleteManga(manga: MangaEntity){
+    suspend fun deleteManga(manga: MangaEntity){
         mangaDao.deleteManga(manga)
     }
 }

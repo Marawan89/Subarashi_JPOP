@@ -15,7 +15,7 @@ import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalServic
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 
 class MangaFavouriteAdapter(
-    private var favouriteMangaList: List<MangaEntity>
+    private var favouriteMangaList: List<MangaEntity>,
     private val roomFavouriteLocalService: RoomFavouriteLocalService
 ) : RecyclerView.Adapter<MangaFavouriteAdapter.MangaFavouriteViewHolder>() {
 
