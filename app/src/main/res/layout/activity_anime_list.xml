@@ -23,12 +23,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ex. Naruto"
-            tools:ignore="TouchTargetSizeCheck"></com.google.android.material.textfield.TextInputEditText>
+            tools:ignore="TouchTargetSizeCheck">
+        </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonSearch"
-        android:text="Cerca"
+        android:text="Search"
         android:textAllCaps="false"
         app:layout_constraintTop_toTopOf="@id/searchInputLayout"
         app:layout_constraintBottom_toBottomOf="@id/searchInputLayout"

@@ -25,8 +25,8 @@ class MangaListAdapter (
 
     class MangaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mangaImage: ImageView = itemView.findViewById(R.id.itemMangaImageView)
-        val titleTextView: TextView = itemView.findViewById(R.id.itemMangaTitleTextView)
-        val chapterTextView: TextView = itemView.findViewById(R.id.itemChaptersTextView)
+        // val titleTextView: TextView = itemView.findViewById(R.id.itemMangaTitleTextView)
+        //val chapterTextView: TextView = itemView.findViewById(R.id.itemChaptersTextView)
         val addIcon: ImageView = itemView.findViewById(R.id.manga_add_icon)
     }
 
@@ -45,14 +45,14 @@ class MangaListAdapter (
 
         Picasso.get().load(manga.images).into(holder.mangaImage)
 
-        val truncatedTitle = if (manga.title.length > 14) {
+        /*val truncatedTitle = if (manga.title.length > 14) {
             manga.title.substring(0, 14) + "..."
         } else {
             manga.title
         }
-        holder.titleTextView.text = truncatedTitle
+        holder.titleTextView.text = truncatedTitle*/
 
-        holder.chapterTextView.text = manga.chapters?.toString() ?: "Ongoing"
+        //holder.chapterTextView.text = manga.chapters?.toString() ?: "Ongoing"
 
         holder.addIcon.setOnClickListener{
             println("Add icon clicked for manga: ${manga.title}")

@@ -25,10 +25,8 @@ id animeCard
 id animeFavouriteRecyclerView
 id anime_add_icon
 id buttonSearch
-id chapterLabel
 id itemAnimeImageView
 id itemAnimeTitleTextView
-id itemChaptersTextView
 id itemMangaImageView
 id itemMangaTitleTextView
 id mangaBottomNavigationView
