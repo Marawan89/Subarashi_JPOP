@@ -138,4 +138,5 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
         _animeListLiveData.value = emptyList()
         getTopAnime()
     }
+
 }

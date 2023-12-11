@@ -2,13 +2,15 @@ package studio.demo.subarashi_jpop.activities.anime
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapter
@@ -25,6 +27,9 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var adapter: AnimeListAdapter
     private lateinit var animeListViewModel: AnimeListViewModel
     private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
+    private lateinit var searchInputLayout: TextInputLayout
+    private lateinit var searchInputEditText: TextInputEditText
+    private lateinit var buttonSearch: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +42,9 @@ class AnimeListActivity : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
+        searchInputLayout = findViewById(R.id.anime_searchInputLayout)
+        searchInputEditText = findViewById(R.id.anime_searchInputEditText)
+        buttonSearch = findViewById(R.id.anime_buttonSearch)
 
         val favouriteDatabase = FavouriteDatabase.getDatabase(application)
         val animeDao = favouriteDatabase.animeDao()
@@ -83,6 +91,13 @@ class AnimeListActivity : AppCompatActivity() {
             }
         }
 
+        buttonSearch.setOnClickListener {
+            val searchTerm = searchInputEditText.text.toString()
+            animeListViewModel.searchAnime(searchTerm)
+        }
+
         bottomNavigationView.selectedItemId = R.id.menu_animeList
+
+
     }
 }
