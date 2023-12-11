@@ -10,7 +10,8 @@ interface AnimeService {
     @GET("top/anime")
     suspend fun getTopAnime(@Query("page") page: Int = 1, @Query("per_page") perPage: Int = 10): AnimeListResponse
 
-    @GET("search/anime")
-    suspend fun searchAnime(@Query("q") query: String): AnimeListResponse
+    @GET("anime")
+    suspend fun searchAnime(@Query("q") query: String, @Query("sfw") sfw: Boolean = true): AnimeListResponse
+
 
 }

@@ -24,6 +24,9 @@ id animeButton_wall
 id animeCard
 id animeFavouriteRecyclerView
 id anime_add_icon
+id anime_buttonSearch
+id anime_searchInputEditText
+id anime_searchInputLayout
 id buttonSearch
 id itemAnimeImageView
 id itemAnimeTitleTextView
