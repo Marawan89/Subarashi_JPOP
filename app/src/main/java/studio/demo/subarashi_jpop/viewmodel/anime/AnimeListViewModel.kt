@@ -139,4 +139,53 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
         getTopAnime()
     }
 
+    fun searchAnime(query: String) {
+        viewModelScope.launch {
+            try {
+                val animeList = animeRepository.searchAnime(query)
+                val uiAnime = animeList.data.map {
+                    AnimeModel(
+                        mal_id = it.mal_id,
+                        url = it.url,
+                        images = it.images.jpg.image_url,
+                        trailer = it.trailer,
+                        approved = it.approved,
+                        titles = it.titles,
+                        title = it.title,
+                        title_japanese = it.title_japanese,
+                        title_synonyms = it.title_synonyms,
+                        title_english = it.title_english,
+                        type = it.type,
+                        source = it.source,
+                        episodes = it.episodes,
+                        status = it.status,
+                        airing = it.airing,
+                        aired = it.aired,
+                        duration = it.duration,
+                        rating = it.rating,
+                        score = it.score,
+                        scored_by = it.scored_by,
+                        rank = it.rank,
+                        popularity = it.popularity,
+                        members = it.members,
+                        favorites = it.favorites,
+                        synopsis = it.synopsis,
+                        background = it.background,
+                        broadcast = it.broadcast,
+                        producers = it.producers,
+                        licensors = it.licensors,
+                        studios = it.studios,
+                        genres = it.genres,
+                        explicit_genres = it.explicit_genres,
+                        themes = it.themes,
+                        demographics = it.demographics
+                    )
+                }
+                _animeListLiveData.postValue(uiAnime)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
 }
