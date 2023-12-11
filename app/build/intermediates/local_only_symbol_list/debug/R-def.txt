@@ -21,15 +21,14 @@ id addToFavoriteLayout
 id animeBottomNavigationView
 id animeButton
 id animeButton_wall
+id animeCard
 id animeFavouriteRecyclerView
 id anime_add_icon
 id buttonSearch
 id chapterLabel
-id episodeLabel
 id itemAnimeImageView
 id itemAnimeTitleTextView
 id itemChaptersTextView
-id itemEpisodesTextView
 id itemMangaImageView
 id itemMangaTitleTextView
 id mangaBottomNavigationView

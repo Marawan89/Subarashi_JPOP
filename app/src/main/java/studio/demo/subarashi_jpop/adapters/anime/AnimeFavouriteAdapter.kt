@@ -21,7 +21,7 @@ class AnimeFavouriteAdapter(
 
     class AnimeFavouriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
-        val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
+        // val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
     }
 
 
@@ -41,12 +41,12 @@ class AnimeFavouriteAdapter(
 
         Picasso.get().load(anime.imageUrl).into(holder.animeImage)
 
-        val truncatedTitle = if (anime.title.length > 14) {
+        /* val truncatedTitle = if (anime.title.length > 14) {
             anime.title.substring(0, 14) + "..."
         } else {
             anime.title
         }
-        holder.titleTextView.text = truncatedTitle
+        holder.titleTextView.text = truncatedTitle */
 
         val animeEntity = AnimeEntity(
             id = anime.id,

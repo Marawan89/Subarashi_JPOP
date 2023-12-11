@@ -45,8 +45,7 @@ class AnimeListActivity : AppCompatActivity() {
         roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
         adapter = AnimeListAdapter(animeListViewModel.animeList.value ?: emptyList(), roomFavouriteLocalService)
 
-        val numberOfColumns = 3
-        recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){

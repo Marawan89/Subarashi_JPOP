@@ -38,17 +38,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        tools:listitem="@layout/item_anime"
         app:layout_constraintTop_toBottomOf="@id/searchInputLayout"
         app:layout_constraintBottom_toTopOf="@id/animeBottomNavigationView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:clipToPadding="false"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:background="@android:color/background_light"
-        tools:listitem="@layout/item_anime"/>
+        tools:itemCount="4"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/animeBottomNavigationView"
@@ -57,5 +54,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/anime_bottom_nav" />
+        app:menu="@menu/anime_bottom_nav"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

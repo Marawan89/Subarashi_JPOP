@@ -25,8 +25,8 @@ class AnimeListAdapter(
 
     class AnimeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
-        val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
-        val episodesTextView: TextView = itemView.findViewById(R.id.itemEpisodesTextView)
+        // val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
+        // val episodesTextView: TextView = itemView.findViewById(R.id.itemEpisodesTextView)
         val addIcon: ImageView = itemView.findViewById(R.id.anime_add_icon)
     }
 
@@ -46,14 +46,14 @@ class AnimeListAdapter(
 
         Picasso.get().load(anime.images).into(holder.animeImage)
 
-        val truncatedTitle = if (anime.title.length > 14) {
+        /* val truncatedTitle = if (anime.title.length > 14) {
             anime.title.substring(0, 14) + "..."
         } else {
             anime.title
         }
-        holder.titleTextView.text = truncatedTitle
+        holder.titleTextView.text = truncatedTitle */
 
-        holder.episodesTextView.text = anime.episodes?.toString() ?: "Ongoing"
+        // holder.episodesTextView.text = anime.episodes?.toString() ?: "Ongoing"
 
         holder.addIcon.setOnClickListener{
             println("Add icon clicked for anime: ${anime.title}")
