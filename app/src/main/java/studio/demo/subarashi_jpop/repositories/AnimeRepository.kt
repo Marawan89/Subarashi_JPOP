@@ -23,6 +23,21 @@ class AnimeRepository(private val animeService: AnimeService) {
         }
     }
 
+    suspend fun searchAnime(query: String): AnimeListResponse {
+        try {
+            val result = animeService.searchAnime(query)
+            Log.d("AnimeRepository", result.data.toString())
+            return result
+        } catch (e: HttpException) {
+            Log.e("AnimeRepository", "HTTP Exception: ${e.code()}")
+            throw e
+        } catch (e: Exception) {
+            Log.e("AnimeRepository", "Error: ${e.message}")
+            throw e
+        }
+    }
+
+
     fun resetPage() {
         currentPage = 1
     }
