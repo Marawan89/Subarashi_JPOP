@@ -43,8 +43,8 @@ id mangaButton_wall
 id mangaFavouriteRecyclerView
 id manga_add_icon
 id manga_buttonSearch
+id manga_chapters
 id manga_end_Date
-id manga_episodes
 id manga_image_detail
 id manga_searchInputEditText
 id manga_searchInputLayout

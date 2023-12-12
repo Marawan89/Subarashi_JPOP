@@ -7,15 +7,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
-import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
+import studio.demo.subarashi_jpop.fragment.MangaDetailDialogFragment
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
 
 class MangaListAdapter (
@@ -66,10 +67,17 @@ class MangaListAdapter (
                 imageUrl = manga.images
             )
 
-            CoroutineScope(Dispatchers.IO).launch {
+            GlobalScope.launch(Dispatchers.IO) {
                 roomFavouriteLocalService.insertManga(mangaEntity)
             }
         }
+
+        holder.mangaImage.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val dialogFragment = MangaDetailDialogFragment(manga)
+                dialogFragment.show((v?.context as FragmentActivity).supportFragmentManager, "studio.demo.subarashi_jpop.fragment.MangaDetailDialogFragment")
+            }
+        })
     }
 
     override fun getItemCount(): Int {

@@ -40,10 +40,8 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
 
         Picasso.get().load(anime.images).into(animeImage)
         animeTitle.text = anime.title
-
         animeStartDate.text = "Aired from: " + formatDate(anime.aired.from)
         animeEndDate.text = "Aired to: " + formatDate(anime.aired.to)
-
         animeEpisodes.text = "Episodes: " + anime.episodes.toString()
 
         val truncatedSynopsis = truncateSynopsis(anime.synopsis, 200)

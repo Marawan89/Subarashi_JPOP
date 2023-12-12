@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@id/manga_start_Date"/>
 
     <TextView
-        android:id="@+id/manga_episodes"
+        android:id="@+id/manga_chapters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
