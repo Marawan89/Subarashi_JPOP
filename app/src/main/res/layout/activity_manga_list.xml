@@ -9,17 +9,17 @@
     tools:context=".activities.manga.MangaListActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/searchInputLayout"
+        android:id="@+id/manga_searchInputLayout"
         style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@id/buttonSearch"
+        app:layout_constraintEnd_toStartOf="@id/manga_buttonSearch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/searchInputEditText"
+            android:id="@+id/manga_searchInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ex. Berserk"
@@ -28,11 +28,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonSearch"
+        android:id="@+id/manga_buttonSearch"
         android:text="Search"
         android:textAllCaps="false"
-        app:layout_constraintTop_toTopOf="@id/searchInputLayout"
-        app:layout_constraintBottom_toBottomOf="@id/searchInputLayout"
+        app:layout_constraintTop_toTopOf="@id/manga_searchInputLayout"
+        app:layout_constraintBottom_toBottomOf="@id/manga_searchInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         tools:listitem="@layout/item_manga"
-        app:layout_constraintTop_toBottomOf="@id/searchInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/manga_searchInputLayout"
         app:layout_constraintBottom_toTopOf="@id/mangaBottomNavigationView"
         tools:itemCount="4"
         />

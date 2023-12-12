@@ -2,6 +2,7 @@ package studio.demo.subarashi_jpop.activities.manga
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -9,6 +10,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.manga.MangaListAdapter
@@ -24,7 +27,9 @@ class MangaListActivity : AppCompatActivity() {
     private lateinit var adapter: MangaListAdapter
     private lateinit var mangaListViewModel: MangaListViewModel
     private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
-
+    private lateinit var searchInputLayout: TextInputLayout
+    private lateinit var searchInputEditText: TextInputEditText
+    private lateinit var buttonSearch: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manga_list)
@@ -32,16 +37,20 @@ class MangaListActivity : AppCompatActivity() {
         val mangaRepository = MangaRepository(RemoteApi.mangaService)
         val viewModelFactory = MangaListViewModelFactory(mangaRepository)
 
-        roomFavouriteLocalService = RoomFavouriteLocalService.getInstance(applicationContext)
-
         mangaListViewModel = ViewModelProvider(this,viewModelFactory).get(MangaListViewModel::class.java)
+
+
+        roomFavouriteLocalService = RoomFavouriteLocalService.getInstance(applicationContext)
+        adapter = MangaListAdapter(mutableListOf(), roomFavouriteLocalService)
 
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = MangaListAdapter(mutableListOf(), roomFavouriteLocalService)
+        searchInputLayout =  findViewById(R.id.manga_searchInputLayout)
+        searchInputEditText = findViewById(R.id.manga_searchInputEditText)
+        buttonSearch = findViewById(R.id.manga_buttonSearch)
 
-        val numberOfColumns = 3
-        recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
+
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int){
@@ -78,6 +87,11 @@ class MangaListActivity : AppCompatActivity() {
                     }
                 }
             }
+
+        buttonSearch.setOnClickListener(
+            val searchTerm = searchInputEditText.text.toString()
+            animeListViewModel.searchAnime(searchTerm)
+        )
         bottomNavigationView.selectedItemId = R.id.menu_mangaList
     }
 }
