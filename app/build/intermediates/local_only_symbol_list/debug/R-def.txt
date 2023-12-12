@@ -25,8 +25,14 @@ id animeCard
 id animeFavouriteRecyclerView
 id anime_add_icon
 id anime_buttonSearch
+id anime_end_Date
+id anime_episodes
+id anime_image_detail
 id anime_searchInputEditText
 id anime_searchInputLayout
+id anime_start_Date
+id anime_synopsis
+id anime_title
 id itemAnimeImageView
 id itemAnimeTitleTextView
 id itemMangaImageView
@@ -50,10 +56,12 @@ layout activity_favourite_anime_list
 layout activity_favourite_manga_list
 layout activity_main
 layout activity_manga_list
+layout anime_details
 layout item_anime
 layout item_favourite_anime
 layout item_favourite_manga
 layout item_manga
+layout manga_details
 menu anime_bottom_nav
 menu manga_bottom_nav
 mipmap ic_launcher

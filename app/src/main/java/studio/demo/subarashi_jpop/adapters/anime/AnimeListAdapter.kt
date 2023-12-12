@@ -1,18 +1,17 @@
 package studio.demo.subarashi_jpop.adapters.anime
 
-import android.media.Image
+import studio.demo.subarashi_jpop.fragment.AnimeDetailDialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
@@ -55,7 +54,7 @@ class AnimeListAdapter(
 
         // holder.episodesTextView.text = anime.episodes?.toString() ?: "Ongoing"
 
-        holder.addIcon.setOnClickListener{
+        holder.addIcon.setOnClickListener {
             println("Add icon clicked for anime: ${anime.title}")
             holder.addIcon.setImageResource(R.drawable.check_icon)
 
@@ -67,10 +66,17 @@ class AnimeListAdapter(
                 imageUrl = anime.images
             )
 
-            CoroutineScope(Dispatchers.IO).launch {
+            GlobalScope.launch(Dispatchers.IO) {
                 roomFavouriteLocalService.insertAnime(animeEntity)
             }
         }
+
+        holder.animeImage.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val dialogFragment = AnimeDetailDialogFragment(anime)
+                dialogFragment.show((v?.context as FragmentActivity).supportFragmentManager, "studio.demo.subarashi_jpop.fragment.AnimeDetailDialogFragment")
+            }
+        })
     }
 
     override fun getItemCount(): Int {

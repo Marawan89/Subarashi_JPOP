@@ -24,16 +24,6 @@
         app:layout_constraintStart_toEndOf="@id/anime_image_detail"
         app:layout_constraintTop_toTopOf="parent"
         android:text="Title: "/>
-
-    <TextView
-        android:id="@+id/anime_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/anime_title"
-        app:layout_constraintTop_toBottomOf="@id/anime_title"
-        android:text="Rank:"/>
     
     <TextView
         android:id="@+id/anime_start_Date"
@@ -41,8 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/anime_rating"
-        app:layout_constraintTop_toBottomOf="@id/anime_rating"
+        app:layout_constraintStart_toStartOf="@id/anime_title"
+        app:layout_constraintTop_toBottomOf="@id/anime_title"
         android:text="Aired from:"/>
 
     <TextView
@@ -74,6 +64,4 @@
         app:layout_constraintTop_toBottomOf="@id/anime_image_detail"
         android:textColor="@color/black"
         android:text="Synopsis:"/>
-
-    
 </androidx.constraintlayout.widget.ConstraintLayout>
