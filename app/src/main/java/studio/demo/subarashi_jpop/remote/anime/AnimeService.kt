@@ -12,6 +12,4 @@ interface AnimeService {
 
     @GET("anime")
     suspend fun searchAnime(@Query("q") query: String, @Query("sfw") sfw: Boolean = true): AnimeListResponse
-
-
 }

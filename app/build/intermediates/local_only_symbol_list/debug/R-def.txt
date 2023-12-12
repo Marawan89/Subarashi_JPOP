@@ -27,7 +27,6 @@ id anime_add_icon
 id anime_buttonSearch
 id anime_searchInputEditText
 id anime_searchInputLayout
-id buttonSearch
 id itemAnimeImageView
 id itemAnimeTitleTextView
 id itemMangaImageView
@@ -37,14 +36,15 @@ id mangaButton
 id mangaButton_wall
 id mangaFavouriteRecyclerView
 id manga_add_icon
+id manga_buttonSearch
+id manga_searchInputEditText
+id manga_searchInputLayout
 id menu_animeFavouriteList
 id menu_animeList
 id menu_exit
 id menu_mangaFavouriteList
 id menu_mangaList
 id recyclerView
-id searchInputEditText
-id searchInputLayout
 layout activity_anime_list
 layout activity_favourite_anime_list
 layout activity_favourite_manga_list

@@ -37,7 +37,8 @@ class MangaListActivity : AppCompatActivity() {
         val mangaRepository = MangaRepository(RemoteApi.mangaService)
         val viewModelFactory = MangaListViewModelFactory(mangaRepository)
 
-        mangaListViewModel = ViewModelProvider(this,viewModelFactory).get(MangaListViewModel::class.java)
+        mangaListViewModel =
+            ViewModelProvider(this, viewModelFactory).get(MangaListViewModel::class.java)
 
 
         roomFavouriteLocalService = RoomFavouriteLocalService.getInstance(applicationContext)
@@ -45,53 +46,54 @@ class MangaListActivity : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
-        searchInputLayout =  findViewById(R.id.manga_searchInputLayout)
+        searchInputLayout = findViewById(R.id.manga_searchInputLayout)
         searchInputEditText = findViewById(R.id.manga_searchInputEditText)
         buttonSearch = findViewById(R.id.manga_buttonSearch)
 
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int){
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
                 val layoutManager = recyclerView.layoutManager as GridLayoutManager
                 val totalItemCount = layoutManager.itemCount
                 val lastVisibileItem = layoutManager.findLastVisibleItemPosition()
-                if (totalItemCount <= lastVisibileItem + 2){
+                if (totalItemCount <= lastVisibileItem + 2) {
                     mangaListViewModel.loadMoreManga()
                 }
             }
         })
 
         mangaListViewModel.mangaList.observe(this, Observer { manga ->
-                adapter.setData(manga)
-            })
+            adapter.setData(manga)
+        })
 
-        bottomNavigationView.setOnItemSelectedListener {
-            menuItem ->
-                when(menuItem.itemId){
-                    R.id.menu_mangaList -> true
-                    R.id.menu_mangaFavouriteList -> {
-                        Intent(this, MangaFavouriteList::class.java).also {
-                            startActivity(it)
-                        }
-                        true
+        bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_mangaList -> true
+                R.id.menu_mangaFavouriteList -> {
+                    Intent(this, MangaFavouriteList::class.java).also {
+                        startActivity(it)
                     }
-                    else -> {
-                        Intent(this,MainActivity::class.java).also {
-                            startActivity(it)
-                        }
-                        true
+                    true
+                }
+
+                else -> {
+                    Intent(this, MainActivity::class.java).also {
+                        startActivity(it)
                     }
+                    true
                 }
             }
+        }
 
-        buttonSearch.setOnClickListener(
+        buttonSearch.setOnClickListener {
             val searchTerm = searchInputEditText.text.toString()
             mangaListViewModel.searchManga(searchTerm)
-        )
+        }
+
         bottomNavigationView.selectedItemId = R.id.menu_mangaList
     }
 }
