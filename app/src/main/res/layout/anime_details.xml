@@ -22,8 +22,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/anime_image_detail"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Title: "/>
+        app:layout_constraintTop_toTopOf="parent"/>
     
     <TextView
         android:id="@+id/anime_start_Date"
@@ -32,8 +31,7 @@
         android:layout_marginTop="2dp"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/anime_title"
-        app:layout_constraintTop_toBottomOf="@id/anime_title"
-        android:text="Aired from:"/>
+        app:layout_constraintTop_toBottomOf="@id/anime_title"/>
 
     <TextView
         android:id="@+id/anime_end_Date"
@@ -42,8 +40,7 @@
         android:layout_marginTop="2dp"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/anime_start_Date"
-        app:layout_constraintTop_toBottomOf="@id/anime_start_Date"
-        android:text="Aired to:"/>
+        app:layout_constraintTop_toBottomOf="@id/anime_start_Date"/>
 
     <TextView
         android:id="@+id/anime_episodes"
@@ -52,8 +49,7 @@
         android:layout_marginTop="2dp"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/anime_end_Date"
-        app:layout_constraintTop_toBottomOf="@id/anime_end_Date"
-        android:text="Episodes:"/>
+        app:layout_constraintTop_toBottomOf="@id/anime_end_Date"/>
 
     <TextView
         android:id="@+id/anime_synopsis"
@@ -62,6 +58,5 @@
         android:padding="8dp"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/anime_image_detail"
-        android:textColor="@color/black"
-        android:text="Synopsis:"/>
+        android:textColor="@color/black"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
