@@ -41,10 +41,10 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
         Picasso.get().load(anime.images).into(animeImage)
         animeTitle.text = anime.title
         animeStartDate.text = "Aired from: " + formatDate(anime.aired.from)
-        animeEndDate.text = "Aired to: " + formatDate(anime.aired.to)
-        animeEpisodes.text = "Episodes: " + anime.episodes.toString()
+        animeEndDate.text = "Aired to: " + if (formatDate(anime.aired?.to).isNullOrEmpty()) "Ongoing" else formatDate(anime.aired.to)
+        animeEpisodes.text = "Episodes: " + (anime.episodes?.toString() ?: "Ongoing")
 
-        val truncatedSynopsis = truncateSynopsis(anime.synopsis, 200)
+        val truncatedSynopsis = anime.synopsis?.let { truncateSynopsis(it, 200) }
         val fullSynopsis = truncatedSynopsis + " " + "Know more"
         val spannableString = SpannableString(fullSynopsis)
         val clickableSpan = object : ClickableSpan() {
@@ -52,7 +52,9 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
                 openUrl(anime.url)
             }
         }
-        spannableString.setSpan(clickableSpan, truncatedSynopsis.length + 1, fullSynopsis.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        if (truncatedSynopsis != null) {
+            spannableString.setSpan(clickableSpan, truncatedSynopsis.length + 1, fullSynopsis.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
 
         animeSynopsis.text = spannableString
         animeSynopsis.movementMethod = LinkMovementMethod.getInstance()

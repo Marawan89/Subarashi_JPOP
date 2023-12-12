@@ -45,7 +45,7 @@ class MangaDetailDialogFragment(private val manga: MangaModel) : DialogFragment(
         mangaEndDate.text = "Aired to: " + if (formatDate(manga.published?.to).isNullOrEmpty()) "Ongoing" else formatDate(manga.published?.to)
         mangaChapters.text = "Chapters: " + (manga.chapters?.toString() ?: "Ongoing")
 
-        val truncatedSynopsis = truncateSynopsis(manga.synopsis, 200)
+        val truncatedSynopsis = manga.synopsis?.let { truncateSynopsis(it, 200) }
         val fullSynopsis = truncatedSynopsis + " " + "Know more"
         val spannableString = SpannableString(fullSynopsis)
         val clickableSpan = object : ClickableSpan() {
@@ -53,7 +53,9 @@ class MangaDetailDialogFragment(private val manga: MangaModel) : DialogFragment(
                 openUrl(manga.url)
             }
         }
-        spannableString.setSpan(clickableSpan, truncatedSynopsis.length + 1, fullSynopsis.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        if (truncatedSynopsis != null) {
+            spannableString.setSpan(clickableSpan, truncatedSynopsis.length + 1, fullSynopsis.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
 
         mangaSynopsis.text = spannableString
         mangaSynopsis.movementMethod = LinkMovementMethod.getInstance()

@@ -21,7 +21,7 @@ data class MangaResponseModel(
     val popularity: Int,
     val members: Int,
     val favorites: Int,
-    val synopsis: String,
+    val synopsis: String?,
     val background: String?,
     val authors: List<Author>,
     val serializations: List<Serialization>,
