@@ -4,9 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.Query
 import kotlinx.coroutines.launch
-import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
 import studio.demo.subarashi_jpop.repositories.MangaRepository
 
