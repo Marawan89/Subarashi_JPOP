@@ -90,7 +90,7 @@ class MangaListActivity : AppCompatActivity() {
 
         buttonSearch.setOnClickListener(
             val searchTerm = searchInputEditText.text.toString()
-            animeListViewModel.searchAnime(searchTerm)
+            mangaListViewModel.searchManga(searchTerm)
         )
         bottomNavigationView.selectedItemId = R.id.menu_mangaList
     }

@@ -120,7 +120,6 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
                             themes = it.themes,
                             demographics = it.demographics
                         )
-
                     }
                     _animeListLiveData.postValue(_animeListLiveData.value.orEmpty() + uiAnime)
                 }
@@ -187,5 +186,4 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
             }
         }
     }
-
 }
