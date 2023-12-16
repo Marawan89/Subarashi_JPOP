@@ -5,10 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 import studio.demo.subarashi_jpop.repositories.AnimeRepository
 
-class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewModel() {
+class AnimeListViewModel(
+    private val animeRepository: AnimeRepository,
+    private val localService: FavouriteLocalService
+) : ViewModel() {
     private var _animeListLiveData = MutableLiveData<List<AnimeModel>>()
     private var initialPage = 1
     private var currentPage = initialPage
@@ -74,6 +79,10 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
                 isLoading = false
             }
         }
+    }
+
+    fun getFavouriteAnimeFromLocal(): LiveData<List<AnimeEntity>> {
+        return localService.getFavouriteAnime()
     }
 
     fun loadMoreAnime() {
@@ -184,6 +193,13 @@ class AnimeListViewModel(private val animeRepository: AnimeRepository) : ViewMod
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+        }
+    }
+
+    fun addToFavourites(anime: AnimeModel) {
+        viewModelScope.launch {
+            val animeEntity = AnimeEntity(anime.mal_id, anime.title, anime.images)
+            localService.addToFavourites(animeEntity)
         }
     }
 }

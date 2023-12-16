@@ -21,7 +21,6 @@ import studio.demo.subarashi_jpop.adapters.manga.MangaFavouriteAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
-import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 
 class MangaFavouriteList : AppCompatActivity(){
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -29,7 +28,7 @@ class MangaFavouriteList : AppCompatActivity(){
     private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
     private lateinit var adapter: MangaFavouriteAdapter
     private lateinit var animeDao: AnimeDao
-    private lateinit var mangaDao: MangaDao
+    //private lateinit var mangaDao: MangaDao
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favourite_manga_list)
@@ -41,8 +40,8 @@ class MangaFavouriteList : AppCompatActivity(){
 
         val favouriteDatabase = FavouriteDatabase.getDatabase(application)
         animeDao = favouriteDatabase.animeDao()
-        mangaDao = favouriteDatabase.mangaDao()
-        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
+        //mangaDao = favouriteDatabase.mangaDao()
+        //roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
 
         adapter = MangaFavouriteAdapter(emptyList(), roomFavouriteLocalService)
         favouriteMangaRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -81,7 +80,7 @@ class MangaFavouriteList : AppCompatActivity(){
         bottomNavigationView.selectedItemId = R.id.menu_mangaFavouriteList
     }
 
-    private fun loadFavouriteManga() {
+    /*private fun loadFavouriteManga() {
         Log.d("MangaFavouriteList", "Loading favourite manga...")
         CoroutineScope(Dispatchers.IO).launch {
             val favouriteMangaList = roomFavouriteLocalService.getFavouriteManga()
@@ -90,5 +89,5 @@ class MangaFavouriteList : AppCompatActivity(){
                 adapter.setData(favouriteMangaList)
             }
         }
-    }
+    }*/
 }

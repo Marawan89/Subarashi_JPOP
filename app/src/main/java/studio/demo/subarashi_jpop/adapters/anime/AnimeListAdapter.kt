@@ -9,17 +9,16 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
 class AnimeListAdapter(
     private var animeList: List<AnimeModel>,
-    private val roomFavouriteLocalService: RoomFavouriteLocalService
+    private val favouriteLocalService: FavouriteLocalService
 ) : RecyclerView.Adapter<AnimeListAdapter.AnimeViewHolder>() {
 
     class AnimeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -45,30 +44,22 @@ class AnimeListAdapter(
 
         Picasso.get().load(anime.images).into(holder.animeImage)
 
-        /* val truncatedTitle = if (anime.title.length > 14) {
-            anime.title.substring(0, 14) + "..."
-        } else {
-            anime.title
-        }
-        holder.titleTextView.text = truncatedTitle */
-
-        // holder.episodesTextView.text = anime.episodes?.toString() ?: "Ongoing"
 
         holder.addIcon.setOnClickListener {
             println("Add icon clicked for anime: ${anime.title}")
+
+            GlobalScope.launch {
+                val animeEntity = AnimeEntity(
+                    id = anime.mal_id,
+                    imageUrl = anime.images,
+                    title = anime.title
+                )
+                favouriteLocalService.addToFavourites(animeEntity)
+            }
             holder.addIcon.setImageResource(R.drawable.check_icon)
 
             Toast.makeText(holder.itemView.context, "Anime added to favourites successfully", Toast.LENGTH_SHORT).show()
 
-            val animeEntity = AnimeEntity(
-                id = anime.mal_id,
-                title = anime.title,
-                imageUrl = anime.images
-            )
-
-            GlobalScope.launch(Dispatchers.IO) {
-                roomFavouriteLocalService.insertAnime(animeEntity)
-            }
         }
 
         holder.animeImage.setOnClickListener(object : View.OnClickListener {

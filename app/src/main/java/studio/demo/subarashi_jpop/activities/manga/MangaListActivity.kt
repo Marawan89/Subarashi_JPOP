@@ -41,7 +41,7 @@ class MangaListActivity : AppCompatActivity() {
             ViewModelProvider(this, viewModelFactory).get(MangaListViewModel::class.java)
 
 
-        roomFavouriteLocalService = RoomFavouriteLocalService.getInstance(applicationContext)
+        //roomFavouriteLocalService = RoomFavouriteLocalService.getInstance(applicationContext)
         adapter = MangaListAdapter(mutableListOf(), roomFavouriteLocalService)
 
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)

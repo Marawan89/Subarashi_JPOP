@@ -11,22 +11,22 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
+import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
 class AnimeFavouriteAdapter(
-    private var favouriteAnimeList: List<AnimeEntity>,
-    private val roomFavouriteLocalService: RoomFavouriteLocalService
+    private var animeList: List<AnimeEntity>,
 ) : RecyclerView.Adapter<AnimeFavouriteAdapter.AnimeFavouriteViewHolder>(){
 
     class AnimeFavouriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
-        // val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
+        val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
     }
 
 
-    fun setData(newFavouriteAnimeList: List<AnimeEntity>) {
-        favouriteAnimeList = newFavouriteAnimeList
+    fun setData(newAnimeList: List<AnimeEntity>) {
+        animeList = newAnimeList
         notifyDataSetChanged()
     }
 
@@ -37,30 +37,20 @@ class AnimeFavouriteAdapter(
     }
 
     override fun onBindViewHolder(holder: AnimeFavouriteViewHolder, position: Int) {
-        val anime = favouriteAnimeList[position]
+        val anime = animeList[position]
 
         Picasso.get().load(anime.imageUrl).into(holder.animeImage)
 
-        /* val truncatedTitle = if (anime.title.length > 14) {
+        val truncatedTitle = if (anime.title.length > 14) {
             anime.title.substring(0, 14) + "..."
         } else {
             anime.title
         }
-        holder.titleTextView.text = truncatedTitle */
+        holder.titleTextView.text = truncatedTitle
 
-        val animeEntity = AnimeEntity(
-            id = anime.id,
-            title = anime.title,
-            imageUrl = anime.imageUrl
-        )
-
-        CoroutineScope(Dispatchers.IO).launch {
-            roomFavouriteLocalService.insertAnime(animeEntity)
-            println("Anime added to favorites: ${animeEntity.title}")
-        }
     }
 
     override fun getItemCount(): Int {
-        return favouriteAnimeList.size
+        return animeList.size
     }
 }

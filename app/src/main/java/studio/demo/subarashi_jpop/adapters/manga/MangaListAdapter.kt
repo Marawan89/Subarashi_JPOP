@@ -67,9 +67,9 @@ class MangaListAdapter (
                 imageUrl = manga.images
             )
 
-            GlobalScope.launch(Dispatchers.IO) {
+            /*GlobalScope.launch(Dispatchers.IO) {
                 roomFavouriteLocalService.insertManga(mangaEntity)
-            }
+            }*/
         }
 
         holder.mangaImage.setOnClickListener(object : View.OnClickListener {

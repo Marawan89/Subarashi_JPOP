@@ -1,54 +1,36 @@
 package studio.demo.subarashi_jpop.favouriteLocalService
 
-import android.content.Context
-import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
-import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
-import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
+import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
-class RoomFavouriteLocalService (
-    private val animeDao: AnimeDao,
-    private val mangaDao: MangaDao
-) : FavouriteLocalService {
-    override suspend fun insertAnime(anime: AnimeEntity){
-        animeDao.insertAnime(anime)
+class RoomFavouriteLocalService(private val animeDao: AnimeDao) : FavouriteLocalService {
+
+    private val _favouriteAnime = MutableLiveData<List<AnimeEntity>>()
+
+    override suspend fun addToFavourites(anime: AnimeEntity) {
+        animeDao.insert(anime)
+        refreshFavouriteAnime()
     }
 
-    override suspend fun getFavouriteAnime(): List<AnimeEntity> {
-        return animeDao.getFavouriteAnime()
+    override fun getFavouriteAnime(): LiveData<List<AnimeEntity>> {
+        return _favouriteAnime
     }
 
-    override suspend fun deleteAnime(anime: AnimeEntity){
-        animeDao.deleteAnime(anime)
+    override suspend fun removeFromFavourites(anime: AnimeEntity) {
+        animeDao.delete(anime)
+        refreshFavouriteAnime()
     }
 
-    suspend fun insertManga(manga: MangaEntity){
-        mangaDao.insertManga(manga)
-    }
-
-    suspend fun getFavouriteManga(): List<MangaEntity>{
-        return mangaDao.getFavouriteManga()
-    }
-
-    suspend fun deleteManga(manga: MangaEntity){
-        mangaDao.deleteManga(manga)
-    }
-
-    companion object {
-        @Volatile
-        private var INSTANCE: RoomFavouriteLocalService? = null
-
-        fun getInstance(context: Context): RoomFavouriteLocalService {
-            return INSTANCE ?: synchronized(this) {
-                val database = FavouriteDatabase.getDatabase(context)
-                val instance = RoomFavouriteLocalService(
-                    animeDao = database.animeDao(),
-                    mangaDao = database.mangaDao()
-                )
-                INSTANCE = instance
-                instance
-            }
-        }
+    // Aggiorna il LiveData dopo le operazioni di aggiunta/rimozione
+    private fun refreshFavouriteAnime() {
+        _favouriteAnime.postValue(animeDao.getAllAnime().value)
     }
 }
+
+
+
+

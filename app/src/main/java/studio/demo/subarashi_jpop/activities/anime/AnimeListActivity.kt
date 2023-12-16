@@ -16,6 +16,7 @@ import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
 import studio.demo.subarashi_jpop.remote.RemoteApi
 import studio.demo.subarashi_jpop.repositories.AnimeRepository
 import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModel
@@ -30,13 +31,16 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var searchInputLayout: TextInputLayout
     private lateinit var searchInputEditText: TextInputEditText
     private lateinit var buttonSearch: Button
+    private lateinit var animeDao: AnimeDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anime_list)
 
         val animeRepository = AnimeRepository(RemoteApi.animeService)
-        val viewModelFactory = AnimeListViewModelFactory(animeRepository)
+        val animeDao = FavouriteDatabase.getDatabase(applicationContext).animeDao()
+        val localService = RoomFavouriteLocalService(animeDao)
+        val viewModelFactory = AnimeListViewModelFactory(animeRepository, localService)
 
         animeListViewModel = ViewModelProvider(this, viewModelFactory).get(AnimeListViewModel::class.java)
 
@@ -47,10 +51,9 @@ class AnimeListActivity : AppCompatActivity() {
         buttonSearch = findViewById(R.id.anime_buttonSearch)
 
         val favouriteDatabase = FavouriteDatabase.getDatabase(application)
-        val animeDao = favouriteDatabase.animeDao()
-        val mangaDao = favouriteDatabase.mangaDao()
+        // val animeDao = favouriteDatabase.animeDao()
 
-        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
+        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao)
         adapter = AnimeListAdapter(animeListViewModel.animeList.value ?: emptyList(), roomFavouriteLocalService)
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)

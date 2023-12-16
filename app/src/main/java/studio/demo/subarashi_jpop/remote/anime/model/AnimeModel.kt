@@ -18,7 +18,7 @@ data class AnimeModel(
     val airing: Boolean,
     val aired: Aired,
     val duration: String,
-    val rating: String,
+    val rating: String?,
     val score: Double?,
     val scored_by: Int?,
     val rank: Int?,

@@ -52,10 +52,10 @@ class MangaFavouriteAdapter(
             imageUrl = manga.imageUrl
         )
 
-        CoroutineScope(Dispatchers.IO).launch {
+        /*CoroutineScope(Dispatchers.IO).launch {
             roomFavouriteLocalService.insertManga(mangaEntity)
             print("Manga added to favourites: ${mangaEntity.title}")
-        }
+        }*/
     }
 
     override fun getItemCount(): Int {
