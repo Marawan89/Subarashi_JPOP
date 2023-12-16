@@ -16,6 +16,9 @@ import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.manga.MangaListAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.remote.RemoteApi
 import studio.demo.subarashi_jpop.repositories.MangaRepository
 import studio.demo.subarashi_jpop.viewmodel.manga.MangaListViewModel
@@ -30,19 +33,21 @@ class MangaListActivity : AppCompatActivity() {
     private lateinit var searchInputLayout: TextInputLayout
     private lateinit var searchInputEditText: TextInputEditText
     private lateinit var buttonSearch: Button
+    private lateinit var animeDao: AnimeDao
+    private lateinit var mangaDao: MangaDao
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manga_list)
 
         val mangaRepository = MangaRepository(RemoteApi.mangaService)
-        val viewModelFactory = MangaListViewModelFactory(mangaRepository)
+        val animeDao = FavouriteDatabase.getDatabase(applicationContext).animeDao()
+        val mangaDao = FavouriteDatabase.getDatabase(applicationContext).mangaDao()
+        val localService = RoomFavouriteLocalService(animeDao, mangaDao)
+        val viewModelFactory = MangaListViewModelFactory(mangaRepository, localService)
 
-        mangaListViewModel =
-            ViewModelProvider(this, viewModelFactory).get(MangaListViewModel::class.java)
+        mangaListViewModel = ViewModelProvider(this, viewModelFactory).get(MangaListViewModel::class.java)
 
-
-        //roomFavouriteLocalService = RoomFavouriteLocalService.getInstance(applicationContext)
-        adapter = MangaListAdapter(mutableListOf(), roomFavouriteLocalService)
 
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
@@ -50,6 +55,8 @@ class MangaListActivity : AppCompatActivity() {
         searchInputEditText = findViewById(R.id.manga_searchInputEditText)
         buttonSearch = findViewById(R.id.manga_buttonSearch)
 
+        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
+        adapter = MangaListAdapter(mangaListViewModel.mangaList.value ?: emptyList(), roomFavouriteLocalService)
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter
@@ -66,8 +73,8 @@ class MangaListActivity : AppCompatActivity() {
             }
         })
 
-        mangaListViewModel.mangaList.observe(this, Observer { manga ->
-            adapter.setData(manga)
+        mangaListViewModel.mangaList.observe(this, Observer {
+            manga -> adapter.setData(manga)
         })
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -93,7 +100,6 @@ class MangaListActivity : AppCompatActivity() {
             val searchTerm = searchInputEditText.text.toString()
             mangaListViewModel.searchManga(searchTerm)
         }
-
         bottomNavigationView.selectedItemId = R.id.menu_mangaList
     }
 }

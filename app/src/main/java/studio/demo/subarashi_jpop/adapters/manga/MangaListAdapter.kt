@@ -14,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.R
+import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 import studio.demo.subarashi_jpop.fragment.MangaDetailDialogFragment
@@ -21,13 +22,11 @@ import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
 
 class MangaListAdapter (
     private var mangaList: List<MangaModel>,
-    private val roomFavouriteLocalService: RoomFavouriteLocalService
+    private val favouriteLocalService: FavouriteLocalService
 ) : RecyclerView.Adapter<MangaListAdapter.MangaViewHolder>(){
 
     class MangaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mangaImage: ImageView = itemView.findViewById(R.id.itemMangaImageView)
-        // val titleTextView: TextView = itemView.findViewById(R.id.itemMangaTitleTextView)
-        //val chapterTextView: TextView = itemView.findViewById(R.id.itemChaptersTextView)
         val addIcon: ImageView = itemView.findViewById(R.id.manga_add_icon)
     }
 
@@ -46,30 +45,19 @@ class MangaListAdapter (
 
         Picasso.get().load(manga.images).into(holder.mangaImage)
 
-        /*val truncatedTitle = if (manga.title.length > 14) {
-            manga.title.substring(0, 14) + "..."
-        } else {
-            manga.title
-        }
-        holder.titleTextView.text = truncatedTitle*/
-
-        //holder.chapterTextView.text = manga.chapters?.toString() ?: "Ongoing"
-
         holder.addIcon.setOnClickListener{
             println("Add icon clicked for manga: ${manga.title}")
+
+           GlobalScope.launch {
+                val mangaEntity = MangaEntity(
+                    id = manga.mal_id,
+                    imageUrl = manga.images,
+                    title = manga.title
+                )
+               favouriteLocalService.addMangaToFavourites(mangaEntity)
+          }
             holder.addIcon.setImageResource(R.drawable.check_icon)
-
             Toast.makeText(holder.itemView.context, "Manga added to favourites successfully", Toast.LENGTH_SHORT).show()
-
-            val mangaEntity = MangaEntity(
-                id = manga.mal_id,
-                title = manga.title,
-                imageUrl = manga.images
-            )
-
-            /*GlobalScope.launch(Dispatchers.IO) {
-                roomFavouriteLocalService.insertManga(mangaEntity)
-            }*/
         }
 
         holder.mangaImage.setOnClickListener(object : View.OnClickListener {

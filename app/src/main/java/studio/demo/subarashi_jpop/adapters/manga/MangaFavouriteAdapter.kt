@@ -15,8 +15,7 @@ import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalServic
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 
 class MangaFavouriteAdapter(
-    private var favouriteMangaList: List<MangaEntity>,
-    private val roomFavouriteLocalService: RoomFavouriteLocalService
+    private var mangaList: List<MangaEntity>
 ) : RecyclerView.Adapter<MangaFavouriteAdapter.MangaFavouriteViewHolder>() {
 
     class MangaFavouriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -24,8 +23,8 @@ class MangaFavouriteAdapter(
         val titleTextView: TextView = itemView.findViewById(R.id.itemMangaTitleTextView)
     }
 
-    fun setData(newFavouriteMangaList: List<MangaEntity>){
-        favouriteMangaList = newFavouriteMangaList
+    fun setData(newMangaList: List<MangaEntity>){
+        mangaList = newMangaList
         notifyDataSetChanged()
     }
 
@@ -35,7 +34,7 @@ class MangaFavouriteAdapter(
     }
 
     override fun onBindViewHolder(holder: MangaFavouriteViewHolder, position: Int) {
-        val manga = favouriteMangaList[position]
+        val manga = mangaList[position]
 
         Picasso.get().load(manga.imageUrl).into(holder.mangaImage)
 
@@ -45,20 +44,9 @@ class MangaFavouriteAdapter(
             manga.title
         }
         holder.titleTextView.text = truncatedTitle
-
-        val mangaEntity = MangaEntity(
-            id = manga.id,
-            title = manga.title,
-            imageUrl = manga.imageUrl
-        )
-
-        /*CoroutineScope(Dispatchers.IO).launch {
-            roomFavouriteLocalService.insertManga(mangaEntity)
-            print("Manga added to favourites: ${mangaEntity.title}")
-        }*/
     }
 
     override fun getItemCount(): Int {
-        return favouriteMangaList.size
+        return mangaList.size
     }
 }

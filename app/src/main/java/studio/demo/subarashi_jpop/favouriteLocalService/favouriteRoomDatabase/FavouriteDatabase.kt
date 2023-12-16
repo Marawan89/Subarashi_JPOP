@@ -7,12 +7,15 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 
-@Database(entities = [AnimeEntity::class], version = 2, exportSchema = false)
+@Database(entities = [AnimeEntity::class, MangaEntity::class], version = 3, exportSchema = false)
 abstract class FavouriteDatabase : RoomDatabase() {
 
     abstract fun animeDao(): AnimeDao
+    abstract fun mangaDao(): MangaDao
 
     companion object {
         @Volatile
@@ -27,15 +30,9 @@ abstract class FavouriteDatabase : RoomDatabase() {
                     FavouriteDatabase::class.java,
                     DATABASE_NAME
                 )
-                    .addMigrations(MIGRATION_1_2)
                     .build()
                 INSTANCE = instance
                 instance
-            }
-        }
-
-        private val MIGRATION_1_2 = object : Migration(1, 2) {
-            override fun migrate(database: SupportSQLiteDatabase) {
             }
         }
     }

@@ -5,10 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
 import studio.demo.subarashi_jpop.repositories.MangaRepository
 
-class MangaListViewModel (private val mangaRepository: MangaRepository) : ViewModel() {
+class MangaListViewModel (
+    private val mangaRepository: MangaRepository,
+    private val localService: FavouriteLocalService
+    ) : ViewModel() {
     private var _mangaListLiveData = MutableLiveData<List<MangaModel>>()
     private var initialPage = 1
     private var currentPage = initialPage
@@ -67,6 +72,10 @@ class MangaListViewModel (private val mangaRepository: MangaRepository) : ViewMo
                 isLoading = false
             }
         }
+    }
+
+    fun getFavouriteMangaFromLocal(): LiveData<List<MangaEntity>>{
+        return localService.getFavouriteManga()
     }
 
     fun loadMoreManga() {
@@ -165,6 +174,13 @@ class MangaListViewModel (private val mangaRepository: MangaRepository) : ViewMo
             } catch (e: Exception){
                 e.printStackTrace()
             }
+        }
+    }
+
+    fun addFavourites(manga: MangaModel){
+        viewModelScope.launch {
+            val mangaEntity = MangaEntity(manga.mal_id, manga.title, manga.images)
+            localService.addMangaToFavourites(mangaEntity)
         }
     }
 }

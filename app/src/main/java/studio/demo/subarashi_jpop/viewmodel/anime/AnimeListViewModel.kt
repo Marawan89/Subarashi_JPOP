@@ -69,7 +69,6 @@ class AnimeListViewModel(
                             themes = it.themes,
                             demographics = it.demographics
                         )
-
                     }
                     _animeListLiveData.postValue(uiAnime)
                 }
@@ -199,7 +198,7 @@ class AnimeListViewModel(
     fun addToFavourites(anime: AnimeModel) {
         viewModelScope.launch {
             val animeEntity = AnimeEntity(anime.mal_id, anime.title, anime.images)
-            localService.addToFavourites(animeEntity)
+            localService.addAnimeToFavourites(animeEntity)
         }
     }
 }

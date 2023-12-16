@@ -15,6 +15,7 @@ import studio.demo.subarashi_jpop.adapters.anime.AnimeFavouriteAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.remote.RemoteApi.animeService
 import studio.demo.subarashi_jpop.repositories.AnimeRepository
 import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModel
@@ -26,6 +27,7 @@ class AnimeFavouriteList : AppCompatActivity() {
     private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
     private lateinit var adapter: AnimeFavouriteAdapter
     private lateinit var animeDao: AnimeDao
+    private lateinit var mangaDao: MangaDao
     private lateinit var viewModel: AnimeListViewModel
     private lateinit var animeRepository: AnimeRepository
 
@@ -34,24 +36,23 @@ class AnimeFavouriteList : AppCompatActivity() {
         setContentView(R.layout.activity_favourite_anime_list)
 
         val favouriteDatabase = FavouriteDatabase.getDatabase(application)
+
         animeDao = favouriteDatabase.animeDao()
-        animeRepository = AnimeRepository(animeService) 
-
-        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao)
+        mangaDao = favouriteDatabase.mangaDao()
+        animeRepository = AnimeRepository(animeService)
+        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
         viewModel = ViewModelProvider(this, AnimeListViewModelFactory(animeRepository, roomFavouriteLocalService)).get(AnimeListViewModel::class.java)
-
         adapter = AnimeFavouriteAdapter(emptyList())
 
         Log.d("AnimeFavouriteList", "onCreate() executed")
 
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
-
         favouriteAnimeRecylerView = findViewById(R.id.animeFavouriteRecyclerView)
         favouriteAnimeRecylerView.layoutManager = LinearLayoutManager(this)
         favouriteAnimeRecylerView.adapter = adapter
 
-        viewModel.getFavouriteAnimeFromLocal().observe(this, Observer { anime ->
-            adapter.setData(anime)
+        viewModel.getFavouriteAnimeFromLocal().observe(this, Observer {
+            anime -> adapter.setData(anime)
         })
 
         favouriteAnimeRecylerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -89,17 +90,3 @@ class AnimeFavouriteList : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.menu_animeFavouriteList
     }
 }
-
-
-
-
-    /*private fun loadFavouriteAnime() {
-        Log.d("AnimeFavouriteList", "Loading favourite anime...")
-        CoroutineScope(Dispatchers.IO).launch {
-            val favouriteAnimeList = roomFavouriteLocalService.getFavouriteAnime()
-            Log.d("AnimeFavouriteList", "Favourite anime loaded: $favouriteAnimeList")
-            withContext(Dispatchers.Main) {
-                adapter.setData(favouriteAnimeList)
-            }
-        }
-    }*/

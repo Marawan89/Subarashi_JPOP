@@ -23,8 +23,6 @@ class AnimeListAdapter(
 
     class AnimeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val animeImage: ImageView = itemView.findViewById(R.id.itemAnimeImageView)
-        // val titleTextView: TextView = itemView.findViewById(R.id.itemAnimeTitleTextView)
-        // val episodesTextView: TextView = itemView.findViewById(R.id.itemEpisodesTextView)
         val addIcon: ImageView = itemView.findViewById(R.id.anime_add_icon)
     }
 
@@ -54,12 +52,10 @@ class AnimeListAdapter(
                     imageUrl = anime.images,
                     title = anime.title
                 )
-                favouriteLocalService.addToFavourites(animeEntity)
+                favouriteLocalService.addAnimeToFavourites(animeEntity)
             }
             holder.addIcon.setImageResource(R.drawable.check_icon)
-
             Toast.makeText(holder.itemView.context, "Anime added to favourites successfully", Toast.LENGTH_SHORT).show()
-
         }
 
         holder.animeImage.setOnClickListener(object : View.OnClickListener {

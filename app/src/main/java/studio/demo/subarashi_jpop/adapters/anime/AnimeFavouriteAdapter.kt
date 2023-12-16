@@ -16,7 +16,7 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.en
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
 class AnimeFavouriteAdapter(
-    private var animeList: List<AnimeEntity>,
+    private var animeList: List<AnimeEntity>
 ) : RecyclerView.Adapter<AnimeFavouriteAdapter.AnimeFavouriteViewHolder>(){
 
     class AnimeFavouriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -47,7 +47,6 @@ class AnimeFavouriteAdapter(
             anime.title
         }
         holder.titleTextView.text = truncatedTitle
-
     }
 
     override fun getItemCount(): Int {
