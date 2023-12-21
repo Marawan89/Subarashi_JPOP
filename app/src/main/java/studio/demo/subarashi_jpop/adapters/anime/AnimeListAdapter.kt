@@ -58,12 +58,13 @@ class AnimeListAdapter(
             Toast.makeText(holder.itemView.context, "Anime added to favourites successfully", Toast.LENGTH_SHORT).show()
         }
 
-        holder.animeImage.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                val dialogFragment = AnimeDetailDialogFragment(anime)
-                dialogFragment.show((v?.context as FragmentActivity).supportFragmentManager, "studio.demo.subarashi_jpop.fragment.AnimeDetailDialogFragment")
-            }
-        })
+        holder.animeImage.setOnClickListener { v ->
+            val dialogFragment = AnimeDetailDialogFragment(anime)
+            dialogFragment.show(
+                (v?.context as FragmentActivity).supportFragmentManager,
+                "studio.demo.subarashi_jpop.fragment.AnimeDetailDialogFragment"
+            )
+        }
     }
 
     override fun getItemCount(): Int {

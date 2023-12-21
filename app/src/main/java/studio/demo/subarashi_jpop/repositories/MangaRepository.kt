@@ -37,8 +37,4 @@ class MangaRepository (private val mangaService: MangaService) {
             throw e
         }
     }
-
-    fun resetPage() {
-        currentPage = 1
-    }
 }

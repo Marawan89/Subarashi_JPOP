@@ -60,8 +60,6 @@ class MangaFavouriteList : AppCompatActivity(){
                 super.onScrolled(recyclerView, dx, dy)
 
                 val layoutManager = favouriteMangaRecyclerView.layoutManager as LinearLayoutManager
-                val totalItemCount = layoutManager.itemCount
-                val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
             }
         })
 

@@ -1,13 +1,11 @@
 package studio.demo.subarashi_jpop.favouriteLocalService
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
-import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
 class RoomFavouriteLocalService(
     private val animeDao: AnimeDao,

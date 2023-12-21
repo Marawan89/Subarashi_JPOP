@@ -60,12 +60,13 @@ class MangaListAdapter (
             Toast.makeText(holder.itemView.context, "Manga added to favourites successfully", Toast.LENGTH_SHORT).show()
         }
 
-        holder.mangaImage.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                val dialogFragment = MangaDetailDialogFragment(manga)
-                dialogFragment.show((v?.context as FragmentActivity).supportFragmentManager, "studio.demo.subarashi_jpop.fragment.MangaDetailDialogFragment")
-            }
-        })
+        holder.mangaImage.setOnClickListener { v ->
+            val dialogFragment = MangaDetailDialogFragment(manga)
+            dialogFragment.show(
+                (v?.context as FragmentActivity).supportFragmentManager,
+                "studio.demo.subarashi_jpop.fragment.MangaDetailDialogFragment"
+            )
+        }
     }
 
     override fun getItemCount(): Int {

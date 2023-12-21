@@ -139,13 +139,6 @@ class AnimeListViewModel(
         }
     }
 
-    fun resetPage() {
-        currentPage = initialPage
-        animeRepository.resetPage()
-        _animeListLiveData.value = emptyList()
-        getTopAnime()
-    }
-
     fun searchAnime(query: String) {
         viewModelScope.launch {
             try {
@@ -195,10 +188,11 @@ class AnimeListViewModel(
         }
     }
 
-    fun addToFavourites(anime: AnimeModel) {
-        viewModelScope.launch {
-            val animeEntity = AnimeEntity(anime.mal_id, anime.title, anime.images)
-            localService.addAnimeToFavourites(animeEntity)
-        }
-    }
+    // funzione che dovrebbe gestire l'aggiunta dell'anime ai preferiti
+//    fun addToFavourites(anime: AnimeModel) {
+//        viewModelScope.launch {
+//            val animeEntity = AnimeEntity(anime.mal_id, anime.title, anime.images)
+//            localService.addAnimeToFavourites(animeEntity)
+//        }
+//    }
 }

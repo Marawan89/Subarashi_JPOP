@@ -36,9 +36,4 @@ class AnimeRepository(private val animeService: AnimeService) {
             throw e
         }
     }
-
-
-    fun resetPage() {
-        currentPage = 1
-    }
 }

@@ -14,10 +14,8 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.en
 interface MangaDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(manga: MangaEntity)
-
     @Query("SELECT * FROM manga_table")
     fun getAllManga(): LiveData<List<MangaEntity>>
-
     @Delete
     suspend fun delete(manga: MangaEntity)
 }

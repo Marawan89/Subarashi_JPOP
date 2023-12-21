@@ -21,6 +21,3 @@ interface AnimeDao {
     @Delete
     suspend fun delete(anime: AnimeEntity)
 }
-
-
-

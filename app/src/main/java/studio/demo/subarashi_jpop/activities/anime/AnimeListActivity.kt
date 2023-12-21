@@ -32,8 +32,6 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var searchInputLayout: TextInputLayout
     private lateinit var searchInputEditText: TextInputEditText
     private lateinit var buttonSearch: Button
-    private lateinit var animeDao: AnimeDao
-    private lateinit var mangaDao: MangaDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

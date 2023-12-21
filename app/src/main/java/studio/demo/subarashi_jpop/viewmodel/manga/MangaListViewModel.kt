@@ -127,13 +127,6 @@ class MangaListViewModel (
         }
     }
 
-    fun resetPage() {
-        currentPage = initialPage
-        mangaRepository.resetPage()
-        _mangaListLiveData.value = emptyList()
-        getTopManga()
-    }
-
     fun searchManga(query: String){
         viewModelScope.launch {
             try {
@@ -176,11 +169,11 @@ class MangaListViewModel (
             }
         }
     }
-
-    fun addFavourites(manga: MangaModel){
-        viewModelScope.launch {
-            val mangaEntity = MangaEntity(manga.mal_id, manga.title, manga.images)
-            localService.addMangaToFavourites(mangaEntity)
-        }
-    }
+    // funzione che dovrebbe gestire l'aggiunta dell'anime ai preferiti
+//    fun addFavourites(manga: MangaModel){
+//        viewModelScope.launch {
+//            val mangaEntity = MangaEntity(manga.mal_id, manga.title, manga.images)
+//            localService.addMangaToFavourites(mangaEntity)
+//        }
+//    }
 }

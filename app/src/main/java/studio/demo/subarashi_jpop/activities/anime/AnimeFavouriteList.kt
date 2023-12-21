@@ -60,9 +60,6 @@ class AnimeFavouriteList : AppCompatActivity() {
                 super.onScrolled(recyclerView, dx, dy)
 
                 val layoutManager = favouriteAnimeRecylerView.layoutManager as LinearLayoutManager
-                val totalItemCount = layoutManager.itemCount
-                val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
-
             }
         })
 
