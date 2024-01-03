@@ -4,13 +4,13 @@
             "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\5618acae2b600380cc4de98182ab054c\\transformed\\material-1.10.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\f477991c890bbea4aa301e4c803c6c66\\transformed\\material-1.11.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "76",
-                        "endOffsets": "127"
+                        "endColumns": "64",
+                        "endOffsets": "115"
                     }
                 }
             ]

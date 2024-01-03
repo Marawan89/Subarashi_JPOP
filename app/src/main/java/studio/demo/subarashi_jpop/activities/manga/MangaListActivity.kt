@@ -38,10 +38,10 @@ class MangaListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manga_list)
 
-        val mangaRepository = MangaRepository(RemoteApi.mangaService)
         val animeDao = FavouriteDatabase.getDatabase(applicationContext).animeDao()
         val mangaDao = FavouriteDatabase.getDatabase(applicationContext).mangaDao()
         val localService = RoomFavouriteLocalService(animeDao, mangaDao)
+        val mangaRepository = MangaRepository(RemoteApi.mangaService, localService)
         val viewModelFactory = MangaListViewModelFactory(mangaRepository, localService)
 
         mangaListViewModel = ViewModelProvider(this, viewModelFactory).get(MangaListViewModel::class.java)

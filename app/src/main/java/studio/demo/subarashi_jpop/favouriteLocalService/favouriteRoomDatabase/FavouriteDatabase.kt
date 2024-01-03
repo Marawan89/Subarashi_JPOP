@@ -11,7 +11,11 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.da
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 
-@Database(entities = [AnimeEntity::class, MangaEntity::class], version = 3, exportSchema = false)
+@Database(
+    entities = [AnimeEntity::class, MangaEntity::class],
+    version = 3,
+    exportSchema = false
+)
 abstract class FavouriteDatabase : RoomDatabase() {
 
     abstract fun animeDao(): AnimeDao
@@ -21,14 +25,12 @@ abstract class FavouriteDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: FavouriteDatabase? = null
 
-        private const val DATABASE_NAME = "favourite_database"
-
         fun getDatabase(context: Context): FavouriteDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     FavouriteDatabase::class.java,
-                    DATABASE_NAME
+                    "favourite_database"
                 )
                     .build()
                 INSTANCE = instance

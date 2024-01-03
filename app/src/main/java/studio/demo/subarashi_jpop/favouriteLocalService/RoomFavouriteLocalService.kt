@@ -6,6 +6,7 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.da
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
+import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
 class RoomFavouriteLocalService(
     private val animeDao: AnimeDao,
@@ -52,9 +53,8 @@ class RoomFavouriteLocalService(
     private fun refreshFavouriteManga() {
         _favouriteManga.postValue(mangaDao.getAllManga().value)
     }
+
+    override fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
+        return animeDao.getAllAnime()
+    }
 }
-
-
-
-
-

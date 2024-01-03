@@ -36,10 +36,12 @@ class MangaFavouriteList : AppCompatActivity(){
         setContentView(R.layout.activity_favourite_manga_list)
 
         val favouriteDatabase = FavouriteDatabase.getDatabase(application)
+        val localService = RoomFavouriteLocalService(animeDao, mangaDao)
+
 
         animeDao = favouriteDatabase.animeDao()
         mangaDao = favouriteDatabase.mangaDao()
-        mangaRepository = MangaRepository(mangaService)
+        mangaRepository = MangaRepository(mangaService, localService)
         roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
         viewModel = ViewModelProvider(this, MangaListViewModelFactory(mangaRepository, roomFavouriteLocalService)).get(MangaListViewModel::class.java)
         adapter = MangaFavouriteAdapter(emptyList())

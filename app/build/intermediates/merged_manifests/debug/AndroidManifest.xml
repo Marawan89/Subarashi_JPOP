@@ -17,6 +17,7 @@
     <uses-permission android:name="studio.demo.subarashi_jpop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
+        android:name="studio.demo.subarashi_jpop.MainApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"

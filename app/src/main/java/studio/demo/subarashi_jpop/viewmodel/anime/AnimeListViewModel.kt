@@ -6,12 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 import studio.demo.subarashi_jpop.repositories.AnimeRepository
+import studio.demo.subarashi_jpop.repositories.AnimeRepositoryInterface
 
 class AnimeListViewModel(
-    private val animeRepository: AnimeRepository,
+    private val animeRepository: AnimeRepositoryInterface,
     private val localService: FavouriteLocalService
 ) : ViewModel() {
     private var _animeListLiveData = MutableLiveData<List<AnimeModel>>()
@@ -80,8 +82,14 @@ class AnimeListViewModel(
         }
     }
 
-    fun getFavouriteAnimeFromLocal(): LiveData<List<AnimeEntity>> {
-        return localService.getFavouriteAnime()
+    fun addAnimeToDatabase(anime: AnimeEntity){
+        viewModelScope.launch {
+            animeRepository.addAnimeToDB(anime)
+        }
+    }
+
+    fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
+        return animeRepository.getFavouriteAnimeList()
     }
 
     fun loadMoreAnime() {

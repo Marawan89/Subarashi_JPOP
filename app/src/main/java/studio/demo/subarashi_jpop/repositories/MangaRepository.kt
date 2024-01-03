@@ -2,11 +2,16 @@ package studio.demo.subarashi_jpop.repositories
 
 import android.util.Log
 import retrofit2.HttpException
+import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.remote.RemoteApi.animeService
 import studio.demo.subarashi_jpop.remote.manga.MangaService
 import studio.demo.subarashi_jpop.remote.manga.model.MangaListResponse
 
-class MangaRepository (private val mangaService: MangaService) {
+class MangaRepository (
+    private val mangaService: MangaService,
+    localService: RoomFavouriteLocalService
+) {
     private var currentPage = 1
     private var perPage = 10
 

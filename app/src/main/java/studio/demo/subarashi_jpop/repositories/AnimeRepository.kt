@@ -1,15 +1,30 @@
 package studio.demo.subarashi_jpop.repositories
 
 import android.util.Log
+import androidx.annotation.WorkerThread
+import androidx.lifecycle.LiveData
 import retrofit2.HttpException
+import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.AnimeService
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeListResponse
+import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
+class AnimeRepository(
+    private val animeService: AnimeService,
+    private val localService: RoomFavouriteLocalService
+) : AnimeRepositoryInterface {
 
-class AnimeRepository(private val animeService: AnimeService) {
-    private var currentPage = 1
-    private val perPage = 10
 
-    suspend fun getTopAnime(page: Int = currentPage, perPage: Int = this.perPage) : AnimeListResponse{
+    override fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
+        return localService.getFavouriteAnimeList()
+    }
+    @WorkerThread
+    override suspend fun addAnimeToDB(anime: AnimeEntity){
+        localService.addAnimeToFavourites(anime)
+    }
+
+    override suspend fun getTopAnime(page: Int, perPage: Int) : AnimeListResponse{
         try {
             val result = animeService.getTopAnime(page, perPage)
             Log.d("AnimeRepository", result.data.toString())
@@ -23,7 +38,7 @@ class AnimeRepository(private val animeService: AnimeService) {
         }
     }
 
-    suspend fun searchAnime(query: String): AnimeListResponse {
+    override suspend fun searchAnime(query: String): AnimeListResponse {
         try {
             val result = animeService.searchAnime(query)
             Log.d("AnimeRepository", result.data.toString())

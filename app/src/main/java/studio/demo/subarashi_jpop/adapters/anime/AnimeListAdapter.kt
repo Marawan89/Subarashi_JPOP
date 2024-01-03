@@ -16,9 +16,13 @@ import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
+interface AnimeListAdapterListener{
+    fun addItemToFavourite(item :AnimeEntity)
+}
+
 class AnimeListAdapter(
     private var animeList: List<AnimeModel>,
-    private val favouriteLocalService: FavouriteLocalService
+    private val listener: AnimeListAdapterListener
 ) : RecyclerView.Adapter<AnimeListAdapter.AnimeViewHolder>() {
 
     class AnimeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -37,6 +41,7 @@ class AnimeListAdapter(
     }
 
 
+    // modificare le liste in modo tale che se un anime o un manga è gia nel db si deve vedere la spuntina, ci deve essere il controllo appena viene partita l'app quindi se un'anime o un manga è gia nel db si deve vedere fin da subito con la spuntina non con il +, e far partire il db subito non solo al click del +
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
         val anime = animeList[position]
 
@@ -46,14 +51,13 @@ class AnimeListAdapter(
         holder.addIcon.setOnClickListener {
             println("Add icon clicked for anime: ${anime.title}")
 
-            GlobalScope.launch {
-                val animeEntity = AnimeEntity(
-                    id = anime.mal_id,
-                    imageUrl = anime.images,
-                    title = anime.title
-                )
-                favouriteLocalService.addAnimeToFavourites(animeEntity)
-            }
+            val animeEntity = AnimeEntity(
+                id = anime.mal_id,
+                imageUrl = anime.images,
+                title = anime.title
+            )
+            listener.addItemToFavourite(animeEntity)
+
             holder.addIcon.setImageResource(R.drawable.check_icon)
             Toast.makeText(holder.itemView.context, "Anime added to favourites successfully", Toast.LENGTH_SHORT).show()
         }

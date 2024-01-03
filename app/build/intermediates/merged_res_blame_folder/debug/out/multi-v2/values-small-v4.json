@@ -4,7 +4,7 @@
             "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\5618acae2b600380cc4de98182ab054c\\transformed\\material-1.10.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\f477991c890bbea4aa301e4c803c6c66\\transformed\\material-1.11.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
