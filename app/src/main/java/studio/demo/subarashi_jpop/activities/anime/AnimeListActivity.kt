@@ -6,7 +6,6 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -18,11 +17,9 @@ import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapter
 import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapterListener
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
-import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
-import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.RemoteApi
-import studio.demo.subarashi_jpop.repositories.AnimeRepository
+import studio.demo.subarashi_jpop.repositories.anime.AnimeRepository
 import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModel
 import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModelFactory
 
@@ -58,8 +55,8 @@ class AnimeListActivity : AppCompatActivity() {
         buttonSearch = findViewById(R.id.anime_buttonSearch)
 
         adapter = AnimeListAdapter(animeListViewModel.animeList.value ?: emptyList(), object : AnimeListAdapterListener{
-            override fun addItemToFavourite(item: AnimeEntity) {
-                animeListViewModel.addAnimeToDatabase(item)
+            override fun addAnimeToFavourite(anime: AnimeEntity) {
+                animeListViewModel.addAnimeToDatabase(anime)
             }
         })
 
@@ -105,7 +102,6 @@ class AnimeListActivity : AppCompatActivity() {
             val searchTerm = searchInputEditText.text.toString()
             animeListViewModel.searchAnime(searchTerm)
         }
-
         bottomNavigationView.selectedItemId = R.id.menu_animeList
     }
 }

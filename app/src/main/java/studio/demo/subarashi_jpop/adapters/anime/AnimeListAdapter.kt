@@ -17,7 +17,7 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.en
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 
 interface AnimeListAdapterListener{
-    fun addItemToFavourite(item :AnimeEntity)
+    fun addAnimeToFavourite(anime :AnimeEntity)
 }
 
 class AnimeListAdapter(
@@ -47,7 +47,6 @@ class AnimeListAdapter(
 
         Picasso.get().load(anime.images).into(holder.animeImage)
 
-
         holder.addIcon.setOnClickListener {
             println("Add icon clicked for anime: ${anime.title}")
 
@@ -56,7 +55,7 @@ class AnimeListAdapter(
                 imageUrl = anime.images,
                 title = anime.title
             )
-            listener.addItemToFavourite(animeEntity)
+            listener.addAnimeToFavourite(animeEntity)
 
             holder.addIcon.setImageResource(R.drawable.check_icon)
             Toast.makeText(holder.itemView.context, "Anime added to favourites successfully", Toast.LENGTH_SHORT).show()

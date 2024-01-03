@@ -1,20 +1,18 @@
-package studio.demo.subarashi_jpop.repositories
+package studio.demo.subarashi_jpop.repositories.anime
 
 import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import retrofit2.HttpException
-import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.AnimeService
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeListResponse
-import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
+
 class AnimeRepository(
     private val animeService: AnimeService,
     private val localService: RoomFavouriteLocalService
 ) : AnimeRepositoryInterface {
-
 
     override fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
         return localService.getFavouriteAnimeList()

@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
-import studio.demo.subarashi_jpop.repositories.MangaRepository
+import studio.demo.subarashi_jpop.repositories.manga.MangaRepository
 
 class MangaListViewModel (
     private val mangaRepository: MangaRepository,
@@ -74,8 +74,14 @@ class MangaListViewModel (
         }
     }
 
-    fun getFavouriteMangaFromLocal(): LiveData<List<MangaEntity>>{
-        return localService.getFavouriteManga()
+    fun addMangaToDatabase(manga: MangaEntity){
+        viewModelScope.launch {
+            mangaRepository.addMangaToDB(manga)
+        }
+    }
+
+    fun getFavouriteMangaList(): LiveData<List<MangaEntity>>{
+        return mangaRepository.getFavouriteMangaList()
     }
 
     fun loadMoreManga() {
@@ -169,11 +175,4 @@ class MangaListViewModel (
             }
         }
     }
-    // funzione che dovrebbe gestire l'aggiunta dell'anime ai preferiti
-//    fun addFavourites(manga: MangaModel){
-//        viewModelScope.launch {
-//            val mangaEntity = MangaEntity(manga.mal_id, manga.title, manga.images)
-//            localService.addMangaToFavourites(mangaEntity)
-//        }
-//    }
 }

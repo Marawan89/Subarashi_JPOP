@@ -6,11 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
-import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
-import studio.demo.subarashi_jpop.repositories.AnimeRepository
-import studio.demo.subarashi_jpop.repositories.AnimeRepositoryInterface
+import studio.demo.subarashi_jpop.repositories.anime.AnimeRepositoryInterface
 
 class AnimeListViewModel(
     private val animeRepository: AnimeRepositoryInterface,
@@ -195,12 +193,4 @@ class AnimeListViewModel(
             }
         }
     }
-
-    // funzione che dovrebbe gestire l'aggiunta dell'anime ai preferiti
-//    fun addToFavourites(anime: AnimeModel) {
-//        viewModelScope.launch {
-//            val animeEntity = AnimeEntity(anime.mal_id, anime.title, anime.images)
-//            localService.addAnimeToFavourites(animeEntity)
-//        }
-//    }
 }

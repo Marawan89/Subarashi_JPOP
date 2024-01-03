@@ -1,4 +1,4 @@
-package studio.demo.subarashi_jpop.repositories
+package studio.demo.subarashi_jpop.repositories.anime
 
 import androidx.lifecycle.LiveData
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity

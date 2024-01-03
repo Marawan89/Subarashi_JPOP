@@ -14,22 +14,22 @@ import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 
-class MangaFavouriteAdapter(
-    private var mangaList: List<MangaEntity>
-) : RecyclerView.Adapter<MangaFavouriteAdapter.MangaFavouriteViewHolder>() {
+class MangaFavouriteAdapter() : RecyclerView.Adapter<MangaFavouriteAdapter.MangaFavouriteViewHolder>() {
+
+    private var mangaList: List<MangaEntity> = emptyList()
 
     class MangaFavouriteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mangaImage: ImageView = itemView.findViewById(R.id.itemMangaImageView)
         val titleTextView: TextView = itemView.findViewById(R.id.itemMangaTitleTextView)
     }
 
-    fun setData(newMangaList: List<MangaEntity>){
+    fun submitList(newMangaList: List<MangaEntity>){
         mangaList = newMangaList
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MangaFavouriteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_manga, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_favourite_manga, parent, false)
         return MangaFavouriteViewHolder(view)
     }
 

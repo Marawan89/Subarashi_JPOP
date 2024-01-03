@@ -35,6 +35,10 @@ class RoomFavouriteLocalService(
         _favouriteAnime.postValue(animeDao.getAllAnime().value)
     }
 
+    override fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
+        return animeDao.getAllAnime()
+    }
+
     override suspend fun addMangaToFavourites(manga: MangaEntity) {
         mangaDao.insert(manga)
         refreshFavouriteManga()
@@ -54,7 +58,7 @@ class RoomFavouriteLocalService(
         _favouriteManga.postValue(mangaDao.getAllManga().value)
     }
 
-    override fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
-        return animeDao.getAllAnime()
+    override fun getFavouriteMangaList(): LiveData<List<MangaEntity>> {
+        return mangaDao.getAllManga()
     }
 }

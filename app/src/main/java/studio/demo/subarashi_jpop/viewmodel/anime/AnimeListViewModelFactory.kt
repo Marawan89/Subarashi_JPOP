@@ -4,9 +4,7 @@ package studio.demo.subarashi_jpop.viewmodel.anime
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
-import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
-import studio.demo.subarashi_jpop.repositories.AnimeRepository
-import studio.demo.subarashi_jpop.repositories.AnimeRepositoryInterface
+import studio.demo.subarashi_jpop.repositories.anime.AnimeRepositoryInterface
 
 class AnimeListViewModelFactory(
     private val animeRepository: AnimeRepositoryInterface,

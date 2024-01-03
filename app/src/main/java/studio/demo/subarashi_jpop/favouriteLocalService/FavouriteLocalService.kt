@@ -13,4 +13,6 @@ interface FavouriteLocalService {
     suspend fun addMangaToFavourites(manga: MangaEntity)
     fun getFavouriteManga(): LiveData<List<MangaEntity>>
     suspend fun removeMangaFromFavourites(manga: MangaEntity)
+    fun getFavouriteMangaList(): LiveData<List<MangaEntity>>
+
 }

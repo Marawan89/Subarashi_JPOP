@@ -20,9 +20,13 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.en
 import studio.demo.subarashi_jpop.fragment.MangaDetailDialogFragment
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
 
+interface MangaListAdapterListener{
+    fun addMangaToFavourite(manga: MangaEntity)
+}
+
 class MangaListAdapter (
     private var mangaList: List<MangaModel>,
-    private val favouriteLocalService: FavouriteLocalService
+    private val listener: MangaListAdapterListener
 ) : RecyclerView.Adapter<MangaListAdapter.MangaViewHolder>(){
 
     class MangaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -48,14 +52,13 @@ class MangaListAdapter (
         holder.addIcon.setOnClickListener{
             println("Add icon clicked for manga: ${manga.title}")
 
-           GlobalScope.launch {
-                val mangaEntity = MangaEntity(
-                    id = manga.mal_id,
-                    imageUrl = manga.images,
-                    title = manga.title
-                )
-               favouriteLocalService.addMangaToFavourites(mangaEntity)
-          }
+            val mangaEntity = MangaEntity(
+                id = manga.mal_id,
+                imageUrl = manga.images,
+                title = manga.title
+            )
+            listener.addMangaToFavourite(mangaEntity)
+
             holder.addIcon.setImageResource(R.drawable.check_icon)
             Toast.makeText(holder.itemView.context, "Manga added to favourites successfully", Toast.LENGTH_SHORT).show()
         }

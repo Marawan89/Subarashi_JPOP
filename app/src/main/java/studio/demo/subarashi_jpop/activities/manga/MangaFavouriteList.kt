@@ -17,44 +17,35 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.Fa
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
 import studio.demo.subarashi_jpop.remote.RemoteApi.mangaService
-import studio.demo.subarashi_jpop.repositories.MangaRepository
+import studio.demo.subarashi_jpop.repositories.manga.MangaRepository
 import studio.demo.subarashi_jpop.viewmodel.manga.MangaListViewModel
 import studio.demo.subarashi_jpop.viewmodel.manga.MangaListViewModelFactory
 
 class MangaFavouriteList : AppCompatActivity(){
     private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var favouriteMangaRecyclerView: RecyclerView
-    private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
-    private lateinit var adapter: MangaFavouriteAdapter
-    private lateinit var animeDao: AnimeDao
-    private lateinit var mangaDao: MangaDao
-    private lateinit var viewModel: MangaListViewModel
-    private lateinit var mangaRepository: MangaRepository
+    private lateinit var mangaListViewModel: MangaListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favourite_manga_list)
 
-        val favouriteDatabase = FavouriteDatabase.getDatabase(application)
+        val animeDao = FavouriteDatabase.getDatabase(applicationContext).animeDao()
+        val mangaDao = FavouriteDatabase.getDatabase(applicationContext).mangaDao()
         val localService = RoomFavouriteLocalService(animeDao, mangaDao)
+        val mangaRepository = MangaRepository(mangaService, localService)
 
-
-        animeDao = favouriteDatabase.animeDao()
-        mangaDao = favouriteDatabase.mangaDao()
-        mangaRepository = MangaRepository(mangaService, localService)
-        roomFavouriteLocalService = RoomFavouriteLocalService(animeDao, mangaDao)
-        viewModel = ViewModelProvider(this, MangaListViewModelFactory(mangaRepository, roomFavouriteLocalService)).get(MangaListViewModel::class.java)
-        adapter = MangaFavouriteAdapter(emptyList())
+        mangaListViewModel = ViewModelProvider(this, MangaListViewModelFactory(mangaRepository, localService))[MangaListViewModel::class.java]
 
         Log.d("MangaFavouriteList", "onCreate() executed")
 
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
-        favouriteMangaRecyclerView = findViewById(R.id.mangaFavouriteRecyclerView)
-        favouriteMangaRecyclerView.layoutManager = LinearLayoutManager(this)
+        val favouriteMangaRecyclerView = findViewById<RecyclerView>(R.id.mangaFavouriteRecyclerView)
+        val adapter = MangaFavouriteAdapter()
         favouriteMangaRecyclerView.adapter = adapter
+        favouriteMangaRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        viewModel.getFavouriteMangaFromLocal().observe(this, Observer {
-            manga -> adapter.setData(manga)
+        mangaListViewModel.getFavouriteMangaList().observe(this, Observer {
+            mangaList -> adapter.submitList(mangaList)
         })
 
         favouriteMangaRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){

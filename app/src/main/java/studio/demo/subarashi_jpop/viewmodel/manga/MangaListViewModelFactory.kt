@@ -3,8 +3,7 @@ package studio.demo.subarashi_jpop.viewmodel.manga
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
-import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
-import studio.demo.subarashi_jpop.repositories.MangaRepository
+import studio.demo.subarashi_jpop.repositories.manga.MangaRepository
 
 class MangaListViewModelFactory(
     private val mangaRepository: MangaRepository,
