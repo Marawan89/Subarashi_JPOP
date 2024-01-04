@@ -23,6 +23,11 @@ class MangaRepository (
         localService.addMangaToFavourites(manga)
     }
 
+    @WorkerThread
+    override suspend fun removeMangaFromDB(manga: MangaEntity){
+        localService.removeMangaFromFavourites(manga)
+    }
+
     override suspend fun getTopManga(page: Int, perPage: Int): MangaListResponse {
         try {
             val result = mangaService.getTopManga(page, perPage)

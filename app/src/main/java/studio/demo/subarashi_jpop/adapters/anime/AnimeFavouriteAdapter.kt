@@ -27,7 +27,6 @@ class AnimeFavouriteAdapter() : RecyclerView.Adapter<AnimeFavouriteAdapter.Anime
     private var animeList: List<AnimeEntity> = emptyList()
     private var listener: AnimeFavouriteAdapterListener? = null
 
-    // Aggiungi un metodo per impostare il listener
     fun setListener(listener: AnimeFavouriteAdapterListener) {
         this.listener = listener
     }
@@ -58,10 +57,8 @@ class AnimeFavouriteAdapter() : RecyclerView.Adapter<AnimeFavouriteAdapter.Anime
         holder.deleteIconImageView.setOnClickListener {
             println("Delete icon clicked for anime: ${anime.title}")
 
-            // Rimuovi l'anime dai preferiti
             listener?.removeAnimeFromFavourite(anime)
 
-            // Opzionalmente, puoi anche rimuovere l'anime dalla lista locale immediatamente
             animeList = animeList.filterNot { it.id == anime.id }
 
             notifyDataSetChanged()

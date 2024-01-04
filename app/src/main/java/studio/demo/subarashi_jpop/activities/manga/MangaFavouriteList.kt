@@ -12,10 +12,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.manga.MangaFavouriteAdapter
+import studio.demo.subarashi_jpop.adapters.manga.MangaFavouriteAdapterListener
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.AnimeDao
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.dao.MangaDao
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 import studio.demo.subarashi_jpop.remote.RemoteApi.mangaService
 import studio.demo.subarashi_jpop.repositories.manga.MangaRepository
 import studio.demo.subarashi_jpop.viewmodel.manga.MangaListViewModel
@@ -24,6 +26,7 @@ import studio.demo.subarashi_jpop.viewmodel.manga.MangaListViewModelFactory
 class MangaFavouriteList : AppCompatActivity(){
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var mangaListViewModel: MangaListViewModel
+    private lateinit var adapter: MangaFavouriteAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,13 +37,17 @@ class MangaFavouriteList : AppCompatActivity(){
         val localService = RoomFavouriteLocalService(animeDao, mangaDao)
         val mangaRepository = MangaRepository(mangaService, localService)
 
-        mangaListViewModel = ViewModelProvider(this, MangaListViewModelFactory(mangaRepository, localService))[MangaListViewModel::class.java]
-
-        Log.d("MangaFavouriteList", "onCreate() executed")
+        mangaListViewModel = ViewModelProvider(this, MangaListViewModelFactory(mangaRepository))[MangaListViewModel::class.java]
 
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
         val favouriteMangaRecyclerView = findViewById<RecyclerView>(R.id.mangaFavouriteRecyclerView)
-        val adapter = MangaFavouriteAdapter()
+
+        adapter = MangaFavouriteAdapter()
+        adapter.setListener(object : MangaFavouriteAdapterListener {
+            override fun removeMangaFromFavourite(manga: MangaEntity) {
+                mangaListViewModel.removeMangaFromDatabase(manga)
+            }
+        })
         favouriteMangaRecyclerView.adapter = adapter
         favouriteMangaRecyclerView.layoutManager = LinearLayoutManager(this)
 

@@ -39,7 +39,7 @@ class AnimeFavouriteList : AppCompatActivity() {
         animeListViewModel = ViewModelProvider(this, AnimeListViewModelFactory(animeRepository))[AnimeListViewModel::class.java]
 
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
-        val favouriteAnimeRecylerView = findViewById<RecyclerView>(R.id.animeFavouriteRecyclerView)
+        val favouriteAnimeRecyclerView = findViewById<RecyclerView>(R.id.animeFavouriteRecyclerView)
 
         adapter = AnimeFavouriteAdapter()
         adapter.setListener(object : AnimeFavouriteAdapterListener {
@@ -49,18 +49,18 @@ class AnimeFavouriteList : AppCompatActivity() {
         })
         adapter.submitList(animeListViewModel.getFavouriteAnimeList().value ?: emptyList())
 
-        favouriteAnimeRecylerView.adapter = adapter
-        favouriteAnimeRecylerView.layoutManager = LinearLayoutManager(this)
+        favouriteAnimeRecyclerView.adapter = adapter
+        favouriteAnimeRecyclerView.layoutManager = LinearLayoutManager(this)
 
         animeListViewModel.getFavouriteAnimeList().observe(this, Observer { animeList ->
             adapter.submitList(animeList)
         })
 
-        favouriteAnimeRecylerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        favouriteAnimeRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val layoutManager = favouriteAnimeRecylerView.layoutManager as LinearLayoutManager
+                val layoutManager = favouriteAnimeRecyclerView.layoutManager as LinearLayoutManager
             }
         })
 

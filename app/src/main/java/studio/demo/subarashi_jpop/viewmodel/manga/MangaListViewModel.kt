@@ -5,16 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
 import studio.demo.subarashi_jpop.repositories.manga.MangaRepository
 
 class MangaListViewModel (
     private val mangaRepository: MangaRepository,
-    private val localService: FavouriteLocalService
     ) : ViewModel() {
     private var _mangaListLiveData = MutableLiveData<List<MangaModel>>()
+    private var _mangaFavouriteLiveData = MutableLiveData<List<MangaEntity>>()
     private var initialPage = 1
     private var currentPage = initialPage
     private val perPage = 10
@@ -77,6 +76,14 @@ class MangaListViewModel (
     fun addMangaToDatabase(manga: MangaEntity){
         viewModelScope.launch {
             mangaRepository.addMangaToDB(manga)
+        }
+    }
+
+    fun removeMangaFromDatabase(manga: MangaEntity){
+        viewModelScope.launch {
+            mangaRepository.removeMangaFromDB(manga)
+            // aggiorna il LiveData dopo la rimozione
+            _mangaFavouriteLiveData.value = mangaRepository.getFavouriteMangaList().value
         }
     }
 

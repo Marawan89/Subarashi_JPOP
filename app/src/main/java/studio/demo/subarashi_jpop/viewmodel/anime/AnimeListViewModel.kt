@@ -21,7 +21,6 @@ class AnimeListViewModel(
     private var isLoading = false
 
     var animeList: LiveData<List<AnimeModel>> = _animeListLiveData
-    var animeFavouriteList: LiveData<List<AnimeEntity>> = _animeFavouriteLiveData
 
     init {
         getTopAnime()
@@ -90,7 +89,7 @@ class AnimeListViewModel(
     fun removeAnimeFromDatabase(anime: AnimeEntity) {
         viewModelScope.launch {
             animeRepository.removeAnimeFromDB(anime)
-            // Aggiorna il LiveData dopo la rimozione
+            // aggiorna il LiveData dopo la rimozione
             _animeFavouriteLiveData.value = animeRepository.getFavouriteAnimeList().value
         }
     }

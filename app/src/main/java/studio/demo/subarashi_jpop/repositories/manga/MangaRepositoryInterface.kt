@@ -6,6 +6,7 @@ import studio.demo.subarashi_jpop.remote.manga.model.MangaListResponse
 
 interface MangaRepositoryInterface {
     suspend fun addMangaToDB(manga: MangaEntity)
+    suspend fun removeMangaFromDB(manga: MangaEntity)
     suspend fun getTopManga(page: Int, perPage: Int): MangaListResponse
     suspend fun searchManga(query: String): MangaListResponse
     fun getFavouriteMangaList(): LiveData<List<MangaEntity>>
