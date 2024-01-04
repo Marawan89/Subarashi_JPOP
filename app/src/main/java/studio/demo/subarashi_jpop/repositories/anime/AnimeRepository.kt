@@ -22,6 +22,11 @@ class AnimeRepository(
         localService.addAnimeToFavourites(anime)
     }
 
+    @WorkerThread
+    override suspend fun removeAnimeFromDB(anime: AnimeEntity) {
+        localService.removeAnimeFromFavourites(anime)
+    }
+
     override suspend fun getTopAnime(page: Int, perPage: Int) : AnimeListResponse{
         try {
             val result = animeService.getTopAnime(page, perPage)

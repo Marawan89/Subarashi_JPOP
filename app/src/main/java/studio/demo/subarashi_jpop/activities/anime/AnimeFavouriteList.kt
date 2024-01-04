@@ -12,8 +12,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import studio.demo.subarashi_jpop.R
 import studio.demo.subarashi_jpop.activities.MainActivity
 import studio.demo.subarashi_jpop.adapters.anime.AnimeFavouriteAdapter
+import studio.demo.subarashi_jpop.adapters.anime.AnimeFavouriteAdapterListener
+import studio.demo.subarashi_jpop.adapters.anime.AnimeListAdapter
 import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.FavouriteDatabase
+import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.RemoteApi.animeService
 import studio.demo.subarashi_jpop.repositories.anime.AnimeRepository
 import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModel
@@ -22,6 +25,7 @@ import studio.demo.subarashi_jpop.viewmodel.anime.AnimeListViewModelFactory
 class AnimeFavouriteList : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var animeListViewModel: AnimeListViewModel
+    private lateinit var adapter: AnimeFavouriteAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,17 +36,24 @@ class AnimeFavouriteList : AppCompatActivity() {
         val localService = RoomFavouriteLocalService(animeDao, mangaDao)
         val animeRepository = AnimeRepository(animeService, localService)
 
-        animeListViewModel = ViewModelProvider(this, AnimeListViewModelFactory(animeRepository, localService))[AnimeListViewModel::class.java]
-
-        Log.d("AnimeFavouriteList", "onCreate() executed")
+        animeListViewModel = ViewModelProvider(this, AnimeListViewModelFactory(animeRepository))[AnimeListViewModel::class.java]
 
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         val favouriteAnimeRecylerView = findViewById<RecyclerView>(R.id.animeFavouriteRecyclerView)
-        val adapter = AnimeFavouriteAdapter()
+
+        adapter = AnimeFavouriteAdapter()
+        adapter.setListener(object : AnimeFavouriteAdapterListener {
+            override fun removeAnimeFromFavourite(anime: AnimeEntity) {
+                animeListViewModel.removeAnimeFromDatabase(anime)
+            }
+        })
+        adapter.submitList(animeListViewModel.getFavouriteAnimeList().value ?: emptyList())
+
         favouriteAnimeRecylerView.adapter = adapter
         favouriteAnimeRecylerView.layoutManager = LinearLayoutManager(this)
 
-        animeListViewModel.getFavouriteAnimeList().observe(this, Observer { animeList -> adapter.submitList(animeList)
+        animeListViewModel.getFavouriteAnimeList().observe(this, Observer { animeList ->
+            adapter.submitList(animeList)
         })
 
         favouriteAnimeRecylerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {

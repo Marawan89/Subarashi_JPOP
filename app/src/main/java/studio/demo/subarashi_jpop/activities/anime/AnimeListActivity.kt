@@ -28,7 +28,6 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: AnimeListAdapter
     private lateinit var animeListViewModel: AnimeListViewModel
-    private lateinit var roomFavouriteLocalService: RoomFavouriteLocalService
     private lateinit var searchInputLayout: TextInputLayout
     private lateinit var searchInputEditText: TextInputEditText
     private lateinit var buttonSearch: Button
@@ -43,10 +42,10 @@ class AnimeListActivity : AppCompatActivity() {
         val mangaDao = FavouriteDatabase.getDatabase(applicationContext).mangaDao()
         val localService = RoomFavouriteLocalService(animeDao, mangaDao)
         val animeRepository = AnimeRepository(RemoteApi.animeService, localService)
-        val viewModelFactory = AnimeListViewModelFactory(animeRepository, localService)
+
 
         // viewmodel dispone i dati all'activty
-        animeListViewModel = ViewModelProvider(this, viewModelFactory)[AnimeListViewModel::class.java]
+        animeListViewModel = ViewModelProvider(this, AnimeListViewModelFactory(animeRepository))[AnimeListViewModel::class.java]
 
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)

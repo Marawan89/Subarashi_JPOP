@@ -8,12 +8,11 @@ import studio.demo.subarashi_jpop.repositories.anime.AnimeRepositoryInterface
 
 class AnimeListViewModelFactory(
     private val animeRepository: AnimeRepositoryInterface,
-    private val localService: FavouriteLocalService
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(AnimeListViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return AnimeListViewModel(animeRepository, localService) as T
+            return AnimeListViewModel(animeRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

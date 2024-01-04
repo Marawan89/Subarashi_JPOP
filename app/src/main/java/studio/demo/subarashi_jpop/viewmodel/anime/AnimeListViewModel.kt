@@ -12,15 +12,16 @@ import studio.demo.subarashi_jpop.repositories.anime.AnimeRepositoryInterface
 
 class AnimeListViewModel(
     private val animeRepository: AnimeRepositoryInterface,
-    private val localService: FavouriteLocalService
 ) : ViewModel() {
     private var _animeListLiveData = MutableLiveData<List<AnimeModel>>()
+    private var _animeFavouriteLiveData = MutableLiveData<List<AnimeEntity>>()
     private var initialPage = 1
     private var currentPage = initialPage
     private val perPage = 10
     private var isLoading = false
 
     var animeList: LiveData<List<AnimeModel>> = _animeListLiveData
+    var animeFavouriteList: LiveData<List<AnimeEntity>> = _animeFavouriteLiveData
 
     init {
         getTopAnime()
@@ -85,6 +86,15 @@ class AnimeListViewModel(
             animeRepository.addAnimeToDB(anime)
         }
     }
+
+    fun removeAnimeFromDatabase(anime: AnimeEntity) {
+        viewModelScope.launch {
+            animeRepository.removeAnimeFromDB(anime)
+            // Aggiorna il LiveData dopo la rimozione
+            _animeFavouriteLiveData.value = animeRepository.getFavouriteAnimeList().value
+        }
+    }
+
 
     fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
         return animeRepository.getFavouriteAnimeList()
