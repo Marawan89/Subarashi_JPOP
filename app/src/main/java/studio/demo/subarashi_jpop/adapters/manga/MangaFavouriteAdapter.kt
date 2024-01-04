@@ -38,12 +38,7 @@ class MangaFavouriteAdapter() : RecyclerView.Adapter<MangaFavouriteAdapter.Manga
 
         Picasso.get().load(manga.imageUrl).into(holder.mangaImage)
 
-        val truncatedTitle = if (manga.title.length > 14) {
-            manga.title.substring(0, 14) + "..."
-        } else {
-            manga.title
-        }
-        holder.titleTextView.text = truncatedTitle
+        holder.titleTextView.text = manga.title
     }
 
     override fun getItemCount(): Int {

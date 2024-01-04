@@ -1,8 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="130dp">
 
     <ImageView
+        android:contentDescription="Anime Image"
         android:id="@+id/itemAnimeImageView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
@@ -29,13 +32,13 @@
             android:layout_marginEnd="8dp" />
     </LinearLayout>
 
-    <!-- Aggiungi qui l'elemento per il pulsante di eliminazione -->
     <ImageView
         android:id="@+id/deleteIconImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/delete_icon" />
+        android:src="@drawable/delete_icon"
+        android:contentDescription="Deletes anime from favourites"/>
 
 </RelativeLayout>
