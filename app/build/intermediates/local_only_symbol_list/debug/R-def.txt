@@ -10,6 +10,7 @@ color white
 drawable add_icon
 drawable anime_wall
 drawable check_icon
+drawable delete_icon
 drawable exit_icon
 drawable favourite_icon
 drawable ic_launcher_background
@@ -33,6 +34,7 @@ id anime_searchInputLayout
 id anime_start_Date
 id anime_synopsis
 id anime_title
+id deleteIconImageView
 id itemAnimeImageView
 id itemAnimeTitleTextView
 id itemMangaImageView
