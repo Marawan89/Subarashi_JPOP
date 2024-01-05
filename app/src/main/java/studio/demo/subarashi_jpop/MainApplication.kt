@@ -12,5 +12,4 @@ class MainApplication : Application() {
     val localService by lazy { RoomFavouriteLocalService(database.animeDao(), database.mangaDao()) }
     val animeRepository: AnimeRepository by lazy { AnimeRepository(RemoteApi.animeService, localService) }
     val mangaRepository: MangaRepository by lazy { MangaRepository(RemoteApi.mangaService, localService) }
-
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -32,6 +33,8 @@ class MangaListActivity : AppCompatActivity() {
     private lateinit var searchInputLayout: TextInputLayout
     private lateinit var searchInputEditText: TextInputEditText
     private lateinit var buttonSearch: Button
+    private lateinit var lifecycleOwner: LifecycleOwner
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +47,7 @@ class MangaListActivity : AppCompatActivity() {
         val viewModelFactory = MangaListViewModelFactory(mangaRepository)
 
         mangaListViewModel = ViewModelProvider(this, viewModelFactory)[MangaListViewModel::class.java]
-
-
+        lifecycleOwner = this
         bottomNavigationView = findViewById(R.id.mangaBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
         searchInputLayout = findViewById(R.id.manga_searchInputLayout)
@@ -58,7 +60,7 @@ class MangaListActivity : AppCompatActivity() {
             override fun addMangaToFavourite(manga: MangaEntity){
                 mangaListViewModel.addMangaToDatabase(manga)
             }
-        })
+        }, mangaRepository, lifecycleOwner)
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter

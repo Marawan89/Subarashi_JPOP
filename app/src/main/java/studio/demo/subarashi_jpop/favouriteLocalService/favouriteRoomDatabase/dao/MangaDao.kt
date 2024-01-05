@@ -16,4 +16,6 @@ interface MangaDao {
     fun getAllManga(): LiveData<List<MangaEntity>>
     @Delete
     suspend fun delete(manga: MangaEntity)
+    @Query("SELECT COUNT(*) > 0 FROM manga_table WHERE id = :id")
+    fun isFavourite(id: Int): LiveData<Boolean>
 }

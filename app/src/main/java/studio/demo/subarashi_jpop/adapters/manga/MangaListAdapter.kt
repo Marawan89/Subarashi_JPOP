@@ -1,24 +1,20 @@
 package studio.demo.subarashi_jpop.adapters.manga
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
-import studio.demo.subarashi_jpop.favouriteLocalService.RoomFavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 import studio.demo.subarashi_jpop.fragment.MangaDetailDialogFragment
 import studio.demo.subarashi_jpop.remote.manga.model.MangaModel
+import studio.demo.subarashi_jpop.repositories.manga.MangaRepository
 
 interface MangaListAdapterListener{
     fun addMangaToFavourite(manga: MangaEntity)
@@ -26,7 +22,9 @@ interface MangaListAdapterListener{
 
 class MangaListAdapter (
     private var mangaList: List<MangaModel>,
-    private val listener: MangaListAdapterListener
+    private val listener: MangaListAdapterListener,
+    private val mangaRepository: MangaRepository,
+    private val lifecycleOwner: LifecycleOwner
 ) : RecyclerView.Adapter<MangaListAdapter.MangaViewHolder>(){
 
     class MangaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -48,6 +46,15 @@ class MangaListAdapter (
         val manga = mangaList[position]
 
         Picasso.get().load(manga.images).into(holder.mangaImage)
+
+        // funzione di controllo per vedere se il manga è gia all'interno del db visualizzare l'icona check se no add
+        mangaRepository.isMangaFavourite(manga.mal_id).observe(lifecycleOwner, Observer { isFavourite ->
+            if (isFavourite) {
+                holder.addIcon.setImageResource(R.drawable.check_icon)
+            } else {
+                holder.addIcon.setImageResource(R.drawable.add_icon)
+            }
+        })
 
         holder.addIcon.setOnClickListener{
             println("Add icon clicked for manga: ${manga.title}")

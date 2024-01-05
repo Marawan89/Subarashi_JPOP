@@ -15,6 +15,11 @@ class MangaRepository (
     private val localService: RoomFavouriteLocalService
 ) : MangaRepositoryInterface {
 
+    // controllo se il manga è nei preferiti o meno
+    override fun isMangaFavourite(id: Int): LiveData<Boolean> {
+        return localService.isMangaFavourite(id)
+    }
+
     override fun getFavouriteMangaList(): LiveData<List<MangaEntity>> {
         return localService.getFavouriteMangaList()
     }

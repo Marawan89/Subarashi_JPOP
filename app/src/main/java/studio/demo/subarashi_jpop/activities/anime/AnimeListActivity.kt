@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -31,13 +32,14 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var searchInputLayout: TextInputLayout
     private lateinit var searchInputEditText: TextInputEditText
     private lateinit var buttonSearch: Button
+    private lateinit var lifecycleOwner: LifecycleOwner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anime_list)
 
-        // activity deve conoscere solo il viewmodel, il repository deve conoscere il localservice e l'altro, poi il localservice segue anime e mangadao
 
+        // activity deve conoscere solo il viewmodel, il repository deve conoscere il localservice e l'altro, poi il localservice segue anime e mangadao
         val animeDao = FavouriteDatabase.getDatabase(applicationContext).animeDao()
         val mangaDao = FavouriteDatabase.getDatabase(applicationContext).mangaDao()
         val localService = RoomFavouriteLocalService(animeDao, mangaDao)
@@ -46,7 +48,7 @@ class AnimeListActivity : AppCompatActivity() {
 
         // viewmodel dispone i dati all'activty
         animeListViewModel = ViewModelProvider(this, AnimeListViewModelFactory(animeRepository))[AnimeListViewModel::class.java]
-
+        lifecycleOwner = this
         bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         recyclerView = findViewById(R.id.recyclerView)
         searchInputLayout = findViewById(R.id.anime_searchInputLayout)
@@ -57,7 +59,7 @@ class AnimeListActivity : AppCompatActivity() {
             override fun addAnimeToFavourite(anime: AnimeEntity) {
                 animeListViewModel.addAnimeToDatabase(anime)
             }
-        })
+        }, animeRepository, lifecycleOwner)
 
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter

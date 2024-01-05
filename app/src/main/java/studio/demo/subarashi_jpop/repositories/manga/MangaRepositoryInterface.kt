@@ -10,4 +10,5 @@ interface MangaRepositoryInterface {
     suspend fun getTopManga(page: Int, perPage: Int): MangaListResponse
     suspend fun searchManga(query: String): MangaListResponse
     fun getFavouriteMangaList(): LiveData<List<MangaEntity>>
+    fun isMangaFavourite(id: Int): LiveData<Boolean>
 }

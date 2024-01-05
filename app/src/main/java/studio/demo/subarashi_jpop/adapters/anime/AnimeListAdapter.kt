@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import studio.demo.subarashi_jpop.R
-import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
+import studio.demo.subarashi_jpop.repositories.anime.AnimeRepository
 
 interface AnimeListAdapterListener{
     fun addAnimeToFavourite(anime :AnimeEntity)
@@ -22,7 +22,9 @@ interface AnimeListAdapterListener{
 
 class AnimeListAdapter(
     private var animeList: List<AnimeModel>,
-    private val listener: AnimeListAdapterListener
+    private val listener: AnimeListAdapterListener,
+    private val animeRepository: AnimeRepository,
+    private val lifecycleOwner: LifecycleOwner
 ) : RecyclerView.Adapter<AnimeListAdapter.AnimeViewHolder>() {
 
     class AnimeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -40,12 +42,19 @@ class AnimeListAdapter(
         return AnimeViewHolder(view)
     }
 
-
-    // modificare le liste in modo tale che se un anime o un manga è gia nel db si deve vedere la spuntina, ci deve essere il controllo appena viene partita l'app quindi se un'anime o un manga è gia nel db si deve vedere fin da subito con la spuntina non con il +, e far partire il db subito non solo al click del +
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
         val anime = animeList[position]
 
         Picasso.get().load(anime.images).into(holder.animeImage)
+
+        // funzione di controllo per vedere se l'anime è già all'interno del db visualizzare l'icona check se no add
+        animeRepository.isAnimeFavourite(anime.mal_id).observe(lifecycleOwner, Observer { isFavourite ->
+            if (isFavourite) {
+                holder.addIcon.setImageResource(R.drawable.check_icon)
+            } else {
+                holder.addIcon.setImageResource(R.drawable.add_icon)
+            }
+        })
 
         holder.addIcon.setOnClickListener {
             println("Add icon clicked for anime: ${anime.title}")

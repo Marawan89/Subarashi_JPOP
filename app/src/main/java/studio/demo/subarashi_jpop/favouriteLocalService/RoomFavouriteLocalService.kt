@@ -53,6 +53,11 @@ class RoomFavouriteLocalService(
         refreshFavouriteManga()
     }
 
+    // controllo se l'anime è nei preferiti o meno
+    override fun isAnimeFavourite(id: Int): LiveData<Boolean> {
+        return animeDao.isFavourite(id)
+    }
+
     // aggiorna il LiveData dopo le operazioni di aggiunta/rimozione
     private fun refreshFavouriteManga() {
         _favouriteManga.postValue(mangaDao.getAllManga().value)
@@ -60,5 +65,10 @@ class RoomFavouriteLocalService(
 
     override fun getFavouriteMangaList(): LiveData<List<MangaEntity>> {
         return mangaDao.getAllManga()
+    }
+
+    // controllo se il manga è nei preferiti o meno
+    override fun isMangaFavourite(id: Int): LiveData<Boolean> {
+        return mangaDao.isFavourite(id)
     }
 }

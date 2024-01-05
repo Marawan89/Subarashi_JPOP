@@ -20,4 +20,6 @@ interface AnimeDao {
 
     @Delete
     suspend fun delete(anime: AnimeEntity)
+    @Query("SELECT COUNT(*) > 0 FROM anime_table WHERE id = :id")
+    fun isFavourite(id: Int): LiveData<Boolean>
 }

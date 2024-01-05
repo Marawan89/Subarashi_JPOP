@@ -10,4 +10,6 @@ interface AnimeRepositoryInterface {
     suspend fun getTopAnime(page: Int, perPage: Int): AnimeListResponse
     suspend fun searchAnime(query: String): AnimeListResponse
     fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>>
+    fun isAnimeFavourite(id: Int): LiveData<Boolean>
+
 }

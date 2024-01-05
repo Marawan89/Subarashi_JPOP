@@ -14,6 +14,10 @@ class AnimeRepository(
     private val localService: RoomFavouriteLocalService
 ) : AnimeRepositoryInterface {
 
+    // controllo se l'anime è nei preferiti o meno
+    override fun isAnimeFavourite(id: Int): LiveData<Boolean> {
+        return localService.isAnimeFavourite(id)
+    }
     override fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
         return localService.getFavouriteAnimeList()
     }
