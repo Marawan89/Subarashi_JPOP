@@ -2,13 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="130dp">
+    android:layout_height="150dp">
 
     <ImageView
         android:contentDescription="Manga Image"
         android:id="@+id/itemMangaImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_width="100dp"
+        android:layout_height="150dp"/>
 
     <LinearLayout
         android:id="@+id/addToFavoriteLayout"
@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
+            android:textColor="@color/white"
             android:text="Manga Title"
             android:textSize="16sp"
             android:textStyle="bold"

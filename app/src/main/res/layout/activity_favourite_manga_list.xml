@@ -11,12 +11,11 @@
         android:id="@+id/mangaFavouriteRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@id/mangaBottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_favourite_anime" />
+        tools:listitem="@layout/item_favourite_manga" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/mangaBottomNavigationView"
@@ -25,5 +24,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/manga_bottom_nav" />
+        android:background="@color/gray"
+        app:menu="@menu/manga_bottom_nav"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

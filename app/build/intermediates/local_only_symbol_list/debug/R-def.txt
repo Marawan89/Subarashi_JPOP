@@ -1,14 +1,17 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color gray
 color purple_200
 color purple_500
 color purple_700
+color red
 color teal_200
 color teal_700
 color white
 drawable add_icon
 drawable anime_wall
+drawable app_icon
 drawable check_icon
 drawable delete_icon
 drawable exit_icon

@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:title="Anime List"
         android:id="@+id/menu_animeList"
         android:icon="@drawable/list_icon"
         android:contentDescription="Goes to the Anime List"/>
-
     <item
         android:title="Favourites"
         android:id="@+id/menu_animeFavouriteList"
         android:icon="@drawable/favourite_icon"
         android:contentDescription="Goes to the favourite List"/>
-
     <item
         android:title="Exit"
         android:id="@+id/menu_exit"
         android:icon="@drawable/exit_icon"
         android:contentDescription="Goes back to the Anime World Manga World menu"/>
-
-
-
 </menu>

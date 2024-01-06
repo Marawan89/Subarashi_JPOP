@@ -55,5 +55,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/gray"
         app:menu="@menu/anime_bottom_nav"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
