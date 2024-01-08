@@ -77,7 +77,13 @@ menu anime_bottom_nav
 menu manga_bottom_nav
 mipmap ic_launcher
 mipmap ic_launcher_round
+string aired_from
+string aired_to
 string app_name
+string chapters
+string episodes
+string know_more
+string ongoing
 style Theme.SubarashiJPOP
 xml backup_rules
 xml data_extraction_rules

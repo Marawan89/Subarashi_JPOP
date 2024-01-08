@@ -11,13 +11,15 @@ import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.da
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.MangaEntity
 
+// database class for handling Anime and Manga entities
 @Database(
     entities = [AnimeEntity::class, MangaEntity::class],
-    version = 3,
+    version = 3, // i made a couple of changes on the db that's why i am on the third version
     exportSchema = false
 )
 abstract class FavouriteDatabase : RoomDatabase() {
 
+    // abstract functions for accessing DAOs
     abstract fun animeDao(): AnimeDao
     abstract fun mangaDao(): MangaDao
 
@@ -25,6 +27,7 @@ abstract class FavouriteDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: FavouriteDatabase? = null
 
+        // function to get the singleton instance of the database
         fun getDatabase(context: Context): FavouriteDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(

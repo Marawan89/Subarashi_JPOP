@@ -11,7 +11,7 @@ data class AnimeModel(
     val title_english: String?,
     val title_japanese: String?,
     val title_synonyms: List<String>,
-    val type: String,
+    val type: String?,
     val source: String,
     val episodes: Int?,
     val status: String,

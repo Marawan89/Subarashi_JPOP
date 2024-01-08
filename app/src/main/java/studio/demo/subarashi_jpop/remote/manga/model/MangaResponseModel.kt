@@ -9,7 +9,7 @@ data class MangaResponseModel(
     val title: String,
     val title_english: String?,
     val title_japanese: String?,
-    val type: String,
+    val type: String?,
     val chapters: Int?,
     val volumes: Int?,
     val status: String,

@@ -21,6 +21,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment() {
+
+    // inflates the layout for this fragment
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,8 +31,10 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
         return inflater.inflate(R.layout.anime_details, container, false)
     }
 
+    // initializes the UI components and sets up event listeners
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val animeImage = view.findViewById<ImageView>(R.id.anime_image_detail)
         val animeTitle = view.findViewById<TextView>(R.id.anime_title)
         val animeStartDate = view.findViewById<TextView>(R.id.anime_start_Date)
@@ -38,21 +42,35 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
         val animeEpisodes = view.findViewById<TextView>(R.id.anime_episodes)
         val animeSynopsis = view.findViewById<TextView>(R.id.anime_synopsis)
 
+        // loads the anime image using Picasso
         Picasso.get().load(anime.images).into(animeImage)
+
         animeTitle.text = anime.title
-        animeStartDate.text = "Aired from: " + formatDate(anime.aired.from)
-        animeEndDate.text = "Aired to: " + if (formatDate(anime.aired?.to).isNullOrEmpty()) "Ongoing" else formatDate(anime.aired.to)
-        animeEpisodes.text = "Episodes: " + (anime.episodes?.toString() ?: "Ongoing")
+        // setting the "Aired from" text with formatted date so that the date is in the format dd-MM-yyyy
+        (getString(R.string.aired_from) + formatAiredDate(anime.aired.from)).also { animeStartDate.text = it }
+        // setting the "Aired to" text with formatted date so that the date is in the format dd-MM-yyyy or views "Ongoing" if the date is unknown yet
+        "${getString(R.string.aired_to)}${
+            if (formatAiredDate(anime.aired.to).isEmpty()) getString(R.string.ongoing) else formatAiredDate(
+                anime.aired.to
+            )
+        }".also { animeEndDate.text = it }
+        // setting the "Episodes" text with the number of episodes or views "Ongoing" if the episodes are unknown yet
+        "${getString(R.string.episodes)} ${(anime.episodes?.toString() ?: getString(R.string.ongoing))}".also { animeEpisodes.text = it }
 
         val truncatedSynopsis = anime.synopsis?.let { truncateSynopsis(it, 200) }
-        val fullSynopsis = truncatedSynopsis + " " + "Know more"
+        // combining the truncated synopsis with "Know more" with clickable link
+        val fullSynopsis = truncatedSynopsis + " " + getString(R.string.know_more)
         val spannableString = SpannableString(fullSynopsis)
+
+        // creating a clickable span to open the URL when clicked
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
                 openUrl(anime.url)
             }
         }
+
         if (truncatedSynopsis != null) {
+            // adding the clickable span to the "Know more" part of the synopsis
             spannableString.setSpan(clickableSpan, truncatedSynopsis.length + 1, fullSynopsis.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
 
@@ -60,7 +78,8 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
         animeSynopsis.movementMethod = LinkMovementMethod.getInstance()
     }
 
-    private fun formatDate(date: String?): String {
+    // transforms the date into the right format
+    private fun formatAiredDate(date: String?): String {
         return if (date.isNullOrEmpty()) {
             ""
         } else {
@@ -68,7 +87,7 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
                 val inputFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                 val outputFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
                 val parsedDate = inputFormat.parse(date)
-                outputFormat.format(parsedDate)
+                outputFormat.format(parsedDate ?: Date())
             } catch (e: ParseException) {
                 e.printStackTrace()
                 date
@@ -76,6 +95,7 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
         }
     }
 
+    // executes the truncation of the synopsis text
     private fun truncateSynopsis(synopsis: String, maxLength: Int): String {
         return if (synopsis.length > maxLength) {
             synopsis.substring(0, maxLength) + "..."
@@ -84,6 +104,7 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
         }
     }
 
+    // makes the link clickable
     private fun openUrl(url: String?) {
         if (!url.isNullOrEmpty()) {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
