@@ -2,7 +2,6 @@ package studio.demo.subarashi_jpop.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import studio.demo.subarashi_jpop.R
@@ -16,22 +15,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.main_activity)
 
-        Log.d("MainActivity","sono in MainActivity")
+        // initialize buttons and their click handlers
+        initializeButtons()
+    }
 
+    private fun initializeButtons() {
+        // initialize button for AnimeList activity
         animeButton = findViewById(R.id.animeButton)
-        animeButton.setOnClickListener{
-            Intent(this, AnimeListActivity::class.java).also{
-                startActivity(it)
-            }
+        animeButton.setOnClickListener {
+            // start AnimeList activity on button click
+            startActivity(Intent(this, AnimeListActivity::class.java))
         }
 
+        // initialize button for MangaList activity
         mangaButton = findViewById(R.id.mangaButton)
-        mangaButton.setOnClickListener{
-            Intent(this, MangaListActivity::class.java).also{
-                startActivity(it)
-            }
+        mangaButton.setOnClickListener {
+            // start MangaList activity on button click
+            startActivity(Intent(this, MangaListActivity::class.java))
         }
     }
 }

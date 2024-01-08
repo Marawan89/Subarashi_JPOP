@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-39:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "studio.demo.subarashi_jpop.app-mergeDebugResources-40:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\f477991c890bbea4aa301e4c803c6c66\\transformed\\material-1.11.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "C:\\Users\\maraw\\.gradle\\caches\\transforms-3\\88757cf97b0e3c0c1e0146695f4cbd8b\\transformed\\material-1.11.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

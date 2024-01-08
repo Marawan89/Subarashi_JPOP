@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- application -->
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -12,22 +16,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SubarashiJPOP"
         tools:targetApi="31">
+
+        <!-- anime-related activities -->
         <activity
             android:name=".activities.anime.AnimeListActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.anime.AnimeFavListActivity"
+            android:exported="false" />
+
+        <!-- manga-related activities -->
         <activity
             android:name=".activities.manga.MangaListActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
+
         <activity
-            android:name=".activities.anime.AnimeFavouriteList"
-            android:exported="false">
-        </activity>
-        <activity
-            android:name=".activities.manga.MangaFavouriteList"
-            android:exported="false">
-        </activity>
+            android:name=".activities.manga.MangaFavListActivity"
+            android:exported="false" />
+
+        <!-- main activity -->
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">
@@ -36,7 +44,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>

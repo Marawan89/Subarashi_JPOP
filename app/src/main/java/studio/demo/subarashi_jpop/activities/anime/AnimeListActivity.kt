@@ -32,60 +32,47 @@ class AnimeListActivity : AppCompatActivity() {
     private lateinit var searchInputLayout: TextInputLayout
     private lateinit var searchInputEditText: TextInputEditText
     private lateinit var buttonSearch: Button
-    private lateinit var lifecycleOwner: LifecycleOwner
+    private lateinit var animeLifecycleOwner: LifecycleOwner // is for displaying the right icon based on whether the anime is within the db or not
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_anime_list)
+        setContentView(R.layout.anime_list_activity)
 
+        // setup ViewModel and Adapter
+        setupViewModelAndAdapter()
 
-        // activity deve conoscere solo il viewmodel, il repository deve conoscere il localservice e l'altro, poi il localservice segue anime e mangadao
-        val animeDao = FavouriteDatabase.getDatabase(applicationContext).animeDao()
-        val mangaDao = FavouriteDatabase.getDatabase(applicationContext).mangaDao()
-        val localService = RoomFavouriteLocalService(animeDao, mangaDao)
-        val animeRepository = AnimeRepository(RemoteApi.animeService, localService)
+        // setup BottomNavigationView
+        setupBottomNavigationView()
 
+        // setup RecyclerView
+        setupRecyclerView()
 
-        // viewmodel dispone i dati all'activty
-        animeListViewModel = ViewModelProvider(this, AnimeListViewModelFactory(animeRepository))[AnimeListViewModel::class.java]
-        lifecycleOwner = this
-        bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
-        recyclerView = findViewById(R.id.recyclerView)
-        searchInputLayout = findViewById(R.id.anime_searchInputLayout)
-        searchInputEditText = findViewById(R.id.anime_searchInputEditText)
-        buttonSearch = findViewById(R.id.anime_buttonSearch)
+        // setup Search functionality
+        setupSearchFunctionality()
+    }
 
-        adapter = AnimeListAdapter(animeListViewModel.animeList.value ?: emptyList(), object : AnimeListAdapterListener{
+    private fun setupViewModelAndAdapter() {
+        // viewModel arranges data to the activity: it knows the viewModelFactory which knows the repository which knows both the service and the localService and finally the localService knows the dao
+        animeListViewModel = ViewModelProvider(this, AnimeListViewModelFactory(AnimeRepository(RemoteApi.animeService, RoomFavouriteLocalService(FavouriteDatabase.getDatabase(applicationContext).animeDao(), FavouriteDatabase.getDatabase(applicationContext).mangaDao()))))[AnimeListViewModel::class.java]
+        animeLifecycleOwner = this
+
+        adapter = AnimeListAdapter(animeListViewModel.animeList.value?: emptyList(), object : AnimeListAdapterListener{
+            // setting a listener to handle adding an anime to favorites
             override fun addAnimeToFavourite(anime: AnimeEntity) {
+                // calling the ViewModel to add the anime to the favorites database
                 animeListViewModel.addAnimeToDatabase(anime)
             }
-        }, animeRepository, lifecycleOwner)
+        }, AnimeRepository(RemoteApi.animeService, RoomFavouriteLocalService(FavouriteDatabase.getDatabase(applicationContext).animeDao(), FavouriteDatabase.getDatabase(applicationContext).mangaDao())), animeLifecycleOwner)
+    }
 
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
-        recyclerView.adapter = adapter
-
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int){
-                super.onScrolled(recyclerView, dx, dy)
-
-                val layoutManager = recyclerView.layoutManager as GridLayoutManager
-                val totalItemCount = layoutManager.itemCount
-                val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
-                if (totalItemCount <= lastVisibleItem + 2) {
-                    animeListViewModel.loadMoreAnime()
-                }
-            }
-        })
-
-        animeListViewModel.animeList.observe(this, Observer { anime ->
-            adapter.setData(anime)
-        })
-
+    private fun setupBottomNavigationView() {
+        // manages translation between one activity and another
+        bottomNavigationView = findViewById(R.id.animeBottomNavigationView)
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_animeList -> true
                 R.id.menu_animeFavouriteList -> {
-                    Intent(this, AnimeFavouriteList::class.java).also {
+                    Intent(this, AnimeFavListActivity::class.java).also {
                         startActivity(it)
                     }
                     true
@@ -98,11 +85,47 @@ class AnimeListActivity : AppCompatActivity() {
                 }
             }
         }
+        bottomNavigationView.selectedItemId = R.id.menu_animeList
+    }
 
+    // manages the visualization of data taken from the api
+    private fun setupRecyclerView() {
+        recyclerView = findViewById(R.id.recyclerView)
+        // displays data within a grid consisting of three columns
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.adapter = adapter
+
+        // increments the page keyword in the api to load more anime
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int){
+                super.onScrolled(recyclerView, dx, dy)
+
+                val layoutManager = recyclerView.layoutManager as GridLayoutManager
+                val totalItemCount = layoutManager.itemCount
+                val lastVisibleAnime = layoutManager.findLastVisibleItemPosition()
+                if (totalItemCount <= lastVisibleAnime + 2) {
+                    animeListViewModel.loadMoreAnime()
+                }
+            }
+        })
+
+        animeListViewModel.animeList.observe(this, Observer { anime ->
+            adapter.setData(anime)
+        })
+    }
+
+    private fun setupSearchFunctionality() {
+        // initializing UI components for search
+        searchInputLayout = findViewById(R.id.anime_searchInputLayout)
+        searchInputEditText = findViewById(R.id.anime_searchInputEditText)
+        buttonSearch = findViewById(R.id.anime_buttonSearch)
+
+        // setting a click listener for the search button
         buttonSearch.setOnClickListener {
+            // extracting the search term from the input field
             val searchTerm = searchInputEditText.text.toString()
+            // calling the ViewModel to perform anime search
             animeListViewModel.searchAnime(searchTerm)
         }
-        bottomNavigationView.selectedItemId = R.id.menu_animeList
     }
 }
