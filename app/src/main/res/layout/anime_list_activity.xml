@@ -22,14 +22,14 @@
             android:id="@+id/anime_searchInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Anime Name"
+            android:hint="@string/anime_name"
             tools:ignore="TouchTargetSizeCheck">
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/anime_buttonSearch"
-        android:text="Search"
+        android:text="@string/search"
         android:textAllCaps="false"
         app:layout_constraintTop_toTopOf="@id/anime_searchInputLayout"
         app:layout_constraintBottom_toBottomOf="@id/anime_searchInputLayout"

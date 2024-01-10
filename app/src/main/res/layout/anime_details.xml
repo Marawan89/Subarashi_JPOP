@@ -10,8 +10,9 @@
         android:layout_height="180dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:scaleType="fitXY"/>
-    
+        android:scaleType="fitXY"
+        android:contentDescription="@string/poster_of_the_anime" />
+
     <TextView
         android:id="@+id/anime_title"
         android:layout_width="0dp"
@@ -23,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/anime_image_detail"
         app:layout_constraintTop_toTopOf="parent"/>
-    
+
     <TextView
         android:id="@+id/anime_start_Date"
         android:layout_width="wrap_content"

@@ -14,28 +14,32 @@ class AnimeRepository(
     private val localService: RoomFavouriteLocalService
 ) : AnimeRepositoryInterface {
 
-    // controllo se l'anime è nei preferiti o meno
+    // check if the anime is in favorites or not
     override fun isAnimeFavourite(id: Int): LiveData<Boolean> {
         return localService.isAnimeFavourite(id)
     }
+
+    // get the anime favourite list from the local database
     override fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
         return localService.getFavouriteAnimeList()
     }
+
+    // add anime to the local database in a background thread
     @WorkerThread
-    override suspend fun addAnimeToDB(anime: AnimeEntity){
+    override suspend fun addAnimeToDB(anime: AnimeEntity) {
         localService.addAnimeToFavourites(anime)
     }
 
+    // remove anime from the local database in a background thread
     @WorkerThread
     override suspend fun removeAnimeFromDB(anime: AnimeEntity) {
         localService.removeAnimeFromFavourites(anime)
     }
 
-    override suspend fun getTopAnime(page: Int, perPage: Int) : AnimeListResponse{
+    // get the top anime from the remote API
+    override suspend fun getTopAnime(page: Int, perPage: Int): AnimeListResponse {
         try {
-            val result = animeService.getTopAnime(page, perPage)
-            Log.d("AnimeRepository", result.data.toString())
-            return result
+            return animeService.getTopAnime(page, perPage)
         } catch (e: HttpException) {
             Log.e("AnimeRepository", "HTTP Exception: ${e.code()}")
             throw e
@@ -45,11 +49,10 @@ class AnimeRepository(
         }
     }
 
+    // search for anime based on the provided query
     override suspend fun searchAnime(query: String): AnimeListResponse {
         try {
-            val result = animeService.searchAnime(query)
-            Log.d("AnimeRepository", result.data.toString())
-            return result
+            return animeService.searchAnime(query)
         } catch (e: HttpException) {
             Log.e("AnimeRepository", "HTTP Exception: ${e.code()}")
             throw e

@@ -10,7 +10,8 @@
         android:layout_height="180dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:contentDescription="@string/poster_of_the_manga" />
 
     <TextView
         android:id="@+id/manga_title"

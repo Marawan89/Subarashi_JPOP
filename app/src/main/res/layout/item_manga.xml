@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:padding="2dp">
 
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/animeCard"
         android:layout_width="match_parent"
@@ -20,7 +19,8 @@
                 android:id="@+id/itemMangaImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/poster_of_the_manga" />
 
             <ImageView
                 android:id="@+id/manga_add_icon"
@@ -29,9 +29,8 @@
                 android:background="#90000000"
                 android:src="@drawable/add_icon"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/the_add_botton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:title="Manga List"
+        android:title="@string/manga_list"
         android:id="@+id/menu_mangaList"
         android:icon="@drawable/list_icon"
-        android:contentDescription="Goes to the Manga List"/>
+        android:contentDescription="@string/goes_to_the_manga_list"/>
 
     <item
-        android:title="Favourites"
+        android:title="@string/favourites"
         android:id="@+id/menu_mangaFavouriteList"
         android:icon="@drawable/favourite_icon"
-        android:contentDescription="Goes to the favourite List"/>
+        android:contentDescription="@string/goes_to_the_favourite_list"/>
 
     <item
-        android:title="Exit"
+        android:title="@string/exit"
         android:id="@+id/menu_exit"
         android:icon="@drawable/exit_icon"
-        android:contentDescription="Goes back to the Anime World Manga World menu"/>
-
-
-
+        android:contentDescription="@string/goes_back_to_the_anime_world_manga_world_menu"/>
 </menu>

@@ -11,11 +11,34 @@
     <color name="white">#FFFFFFFF</color>
     <string name="aired_from">Aired from:</string>
     <string name="aired_to">Aired to:</string>
+    <string name="anime_list">Anime List</string>
+    <string name="anime_name">Anime Name</string>
+    <string name="anime_title">Anime Title</string>
+    <string name="anime_wallpaper">Anime Wallpaper</string>
+    <string name="anime_world">Anime World</string>
     <string name="app_name">Subarashi-JPOP</string>
     <string name="chapters">Chapters:</string>
+    <string name="deletes_anime_from_favourites">Deletes anime from favourites</string>
+    <string name="deletes_manga_from_favourites">Deletes manga from favourites</string>
     <string name="episodes">Episodes:</string>
+    <string name="exit">Exit</string>
+    <string name="favourites">Favourites</string>
+    <string name="goes_back_to_the_anime_world_manga_world_menu">Goes back to the Anime World Manga World menu</string>
+    <string name="goes_to_the_anime_list">Goes to the Anime List</string>
+    <string name="goes_to_the_favourite_list">Goes to the favourite List</string>
+    <string name="goes_to_the_manga_list">Goes to the Manga List</string>
     <string name="know_more">Know more</string>
+    <string name="manga_list">Manga List</string>
+    <string name="manga_title">Manga Title</string>
+    <string name="manga_wallpaper">Manga Wallpaper</string>
+    <string name="manga_world">Manga World</string>
+    <string name="no_synopsis_anime">No synopsis for this anime</string>
+    <string name="no_synopsis_manga">No synopsis for this manga</string>
     <string name="ongoing">Ongoing</string>
+    <string name="poster_of_the_anime">Poster of the Anime</string>
+    <string name="poster_of_the_manga">Poster of the anime</string>
+    <string name="search">Search</string>
+    <string name="the_add_botton">The add botton</string>
     <style name="Theme.SubarashiJPOP" parent="Theme.MaterialComponents.Light.NoActionBar">
         
         <item name="colorPrimary">@color/red</item>

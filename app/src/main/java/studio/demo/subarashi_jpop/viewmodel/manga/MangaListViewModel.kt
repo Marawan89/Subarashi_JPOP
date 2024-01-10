@@ -14,18 +14,23 @@ class MangaListViewModel (
     ) : ViewModel() {
     private var _mangaListLiveData = MutableLiveData<List<MangaModel>>()
     private var _mangaFavouriteLiveData = MutableLiveData<List<MangaEntity>>()
+
+    // variables to manage pagination
     private var initialPage = 1
     private var currentPage = initialPage
     private val perPage = 10
+    // variable to manage data loading
     private var isLoading = false
 
     var mangaList: LiveData<List<MangaModel>> = _mangaListLiveData
 
+    // initiates the function that fetches top anime from the repository to view manga
     init {
         getTopManga()
     }
 
-    fun getTopManga(page: Int = 1, perPage: Int = 10) {
+    // function to fetch top manga from the repository
+    private fun getTopManga(page: Int = 1, perPage: Int = 10) {
         viewModelScope.launch {
             try {
                 if (!isLoading){
@@ -73,12 +78,14 @@ class MangaListViewModel (
         }
     }
 
+    // function to add manga to the local database
     fun addMangaToDatabase(manga: MangaEntity){
         viewModelScope.launch {
             mangaRepository.addMangaToDB(manga)
         }
     }
 
+    // function to remove manga from the local database
     fun removeMangaFromDatabase(manga: MangaEntity){
         viewModelScope.launch {
             mangaRepository.removeMangaFromDB(manga)
@@ -87,10 +94,12 @@ class MangaListViewModel (
         }
     }
 
+    // function to get the list of favorite manga from the local database
     fun getFavouriteMangaList(): LiveData<List<MangaEntity>>{
         return mangaRepository.getFavouriteMangaList()
     }
 
+    // function to load more manga
     fun loadMoreManga() {
         viewModelScope.launch {
             try {
@@ -140,6 +149,7 @@ class MangaListViewModel (
         }
     }
 
+    // function to search an manga
     fun searchManga(query: String){
         viewModelScope.launch {
             try {

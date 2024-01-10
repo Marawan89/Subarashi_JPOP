@@ -58,8 +58,14 @@ class AnimeDetailDialogFragment(private val anime: AnimeModel) : DialogFragment(
         "${getString(R.string.episodes)} ${(anime.episodes?.toString() ?: getString(R.string.ongoing))}".also { animeEpisodes.text = it }
 
         val truncatedSynopsis = anime.synopsis?.let { truncateSynopsis(it, 200) }
-        // combining the truncated synopsis with "Know more" with clickable link
-        val fullSynopsis = truncatedSynopsis + " " + getString(R.string.know_more)
+
+        // check if synopsis is null or empty
+        val fullSynopsis = if (!truncatedSynopsis.isNullOrEmpty()) {
+            // combining the truncated synopsis with "Know more" with clickable link
+            truncatedSynopsis + " " + getString(R.string.know_more)
+        } else {
+            getString(R.string.no_synopsis_anime)
+        }
         val spannableString = SpannableString(fullSynopsis)
 
         // creating a clickable span to open the URL when clicked

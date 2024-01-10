@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import studio.demo.subarashi_jpop.favouriteLocalService.FavouriteLocalService
 import studio.demo.subarashi_jpop.favouriteLocalService.favouriteRoomDatabase.entities.AnimeEntity
 import studio.demo.subarashi_jpop.remote.anime.model.AnimeModel
 import studio.demo.subarashi_jpop.repositories.anime.AnimeRepositoryInterface
@@ -15,18 +14,23 @@ class AnimeListViewModel(
 ) : ViewModel() {
     private var _animeListLiveData = MutableLiveData<List<AnimeModel>>()
     private var _animeFavouriteLiveData = MutableLiveData<List<AnimeEntity>>()
+
+    // variables to manage pagination
     private var initialPage = 1
     private var currentPage = initialPage
     private val perPage = 10
+    // variable to manage data loading
     private var isLoading = false
 
     var animeList: LiveData<List<AnimeModel>> = _animeListLiveData
 
+    // initiates the function that fetches top anime from the repository to view anime
     init {
         getTopAnime()
     }
 
-    fun getTopAnime(page: Int = 1, perPage: Int = 10) {
+    // function to fetch top anime from the repository
+    private fun getTopAnime(page: Int = 1, perPage: Int = 10) {
         viewModelScope.launch {
             try {
                 if (!isLoading) {
@@ -80,25 +84,28 @@ class AnimeListViewModel(
         }
     }
 
-    fun addAnimeToDatabase(anime: AnimeEntity){
+    // function to add anime to the local database
+    fun addAnimeToDatabase(anime: AnimeEntity) {
         viewModelScope.launch {
             animeRepository.addAnimeToDB(anime)
         }
     }
 
+    // function to remove anime from the local database
     fun removeAnimeFromDatabase(anime: AnimeEntity) {
         viewModelScope.launch {
             animeRepository.removeAnimeFromDB(anime)
-            // aggiorna il LiveData dopo la rimozione
+            // Update LiveData after removal
             _animeFavouriteLiveData.value = animeRepository.getFavouriteAnimeList().value
         }
     }
 
-
+    // function to get the list of favorite anime from the local database
     fun getFavouriteAnimeList(): LiveData<List<AnimeEntity>> {
         return animeRepository.getFavouriteAnimeList()
     }
 
+    // function to load more anime
     fun loadMoreAnime() {
         viewModelScope.launch {
             try {
@@ -154,6 +161,7 @@ class AnimeListViewModel(
         }
     }
 
+    // function to search an anime
     fun searchAnime(query: String) {
         viewModelScope.launch {
             try {

@@ -59,7 +59,12 @@ class MangaDetailDialogFragment(private val manga: MangaModel) : DialogFragment(
 
         val truncatedSynopsis = manga.synopsis?.let { truncateSynopsis(it, 200) }
         // combining the truncated synopsis with "Know more" with clickable link
-        val fullSynopsis = truncatedSynopsis + " " + getString(R.string.know_more)
+        val fullSynopsis = if (!truncatedSynopsis.isNullOrEmpty()) {
+            // combining the truncated synopsis with "Know more" with clickable link
+            truncatedSynopsis + " " + getString(R.string.know_more)
+        } else {
+            getString(R.string.no_synopsis_manga)
+        }
         val spannableString = SpannableString(fullSynopsis)
 
         // creating a clickable span to open the URL when clicked

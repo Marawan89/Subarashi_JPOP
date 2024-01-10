@@ -5,7 +5,7 @@
     android:layout_height="150dp">
 
     <ImageView
-        android:contentDescription="Anime Image"
+        android:contentDescription="@string/poster_of_the_anime"
         android:id="@+id/itemAnimeImageView"
         android:layout_width="100dp"
         android:layout_height="150dp"/>
@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="Anime Title"
+            android:text="@string/anime_title"
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginEnd="8dp" />
@@ -40,6 +40,6 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:src="@drawable/delete_icon"
-        android:contentDescription="Deletes anime from favourites"/>
+        android:contentDescription="@string/deletes_anime_from_favourites"/>
 
 </RelativeLayout>
