@@ -29,7 +29,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
   </ol>
 </details>
@@ -66,15 +65,47 @@ If this is your first time installing the application you will need to connect t
 <p>Do you like an anime a lot? Or do you want to save it so you can watch it later? With the + button you have the option of adding an anime to your list of favorites.</p>
 <img src="screenshots/anime_added.png">
 
+<p>To view the favourite anime list click on the favourites botton on the nav bar</p>
+<img src="screenshots/favourite_anime.png">
+
+<p>Here you can add anime as much as you want. An anime is too old? You don't like it anymore? Click on the bin icon and get rid of it</p>
+<img src="screenshots/anime_deleted.png">
 
 
-<a name="usage"></a>
-## Usage
+## Manga
+<p>If you chose manga this is what you will display</p>
+<img src="screenshots/top_manga.png">
+<p>In this activity with the help of recyclerview and pagination we have the possibility to scroll through the cores and view a lot of them</p>
 
-<!-- ... (rest of your "Usage" section) -->
+<p>Wait but what if I need some information of the manga? The poster is cool but I wanna know how many chapters does it have. Just click on the image</p>
+<img src="screenshots/manga_details.png">
+<p>A little window will open with the number of chapters, the serialized from and serialized to date, a synopsis, and a link with the official page of the manga on the MyAnimeList site.</p>
+
+<p>You can also search for your favorite manga in the search bar</p>
+<img src="screenshots/manga_searched.png">
+
+<p>Do you like a manga a lot? Or do you want to save it so you can read it later? With the + button, you have the option of adding a manga to your list of favorites.</p>
+<img src="screenshots/manga_added.png">
+
+<p>To view the favourite manga list click on the favorites button on the nav bar</p>
+<img src="screenshots/favourite_manga.png">
+
+<p>Here you can add manga as much as you want. A manga is too old? You don't like it anymore? Click on the bin icon and get rid of it</p>
+<img src="screenshots/manga_deleted.png">
 
 <!-- ROADMAP -->
 <a name="roadmap"></a>
-## Steps
+## Roadmap
+Mandatory features:
+- [x] Project structure (separations of concerns)
+- [x] Logic behind every activity
+- [x] Managing api calls (remote, model)
+- [x] LiveData, ViewModels and Adapters
+- [x] Repositories
+- [x] RoomDatabase implementation (daos, entities)
+- [x] Background thread Implementation
 
-<!-- ... (rest of your "Roadmap" section) -->
+Optional features:
+- [x] Details dialog
+- [x] Add icon that turns into check icon
+- [x] Toast messages
