@@ -56,6 +56,7 @@ class AnimeFavListAdapter : RecyclerView.Adapter<AnimeFavListAdapter.AnimeFavour
 
         holder.titleTextView.text = anime.title
 
+
         // on click of the delete icon the query that deletes the anime from the db gets called
         holder.deleteIconImageView.setOnClickListener {
 
@@ -68,6 +69,8 @@ class AnimeFavListAdapter : RecyclerView.Adapter<AnimeFavListAdapter.AnimeFavour
             // when an anime gets deleted this toast message pops up
             Toast.makeText(holder.itemView.context, "Anime removed from favourites successfully", Toast.LENGTH_SHORT).show()
         }
+
+
     }
 
     // method to get the item count in the adapter
