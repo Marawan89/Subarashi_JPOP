@@ -4,10 +4,6 @@
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-42:/menu_anime_bottom_nav.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-44:/menu/anime_bottom_nav.xml"
-    },
-    {
         "merged": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-merged_res-42:\\drawable_anime_wall.jpg.flat",
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\drawable\\anime_wall.jpg"
     },
@@ -30,10 +26,6 @@
     {
         "merged": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-merged_res-42:\\drawable_favourite_icon.xml.flat",
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\drawable\\favourite_icon.xml"
-    },
-    {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-42:/layout_manga_list_activity.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-44:/layout/manga_list_activity.xml"
     },
     {
         "merged": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-merged_res-42:\\drawable_ic_launcher_background.xml.flat",
@@ -100,14 +92,6 @@
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\layout\\activity_main.xml"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-42:/menu_manga_bottom_nav.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-44:/menu/manga_bottom_nav.xml"
-    },
-    {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-42:/layout_manga_details.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-44:/layout/manga_details.xml"
-    },
-    {
         "merged": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-merged_res-42:\\drawable_check_icon.xml.flat",
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\drawable\\check_icon.xml"
     },
@@ -128,6 +112,10 @@
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\xml\\backup_rules.xml"
     },
     {
+        "merged": "studio.demo.subarashi_jpop.app-merged_res-42:/layout_item_favourite_manga.xml.flat",
+        "source": "studio.demo.subarashi_jpop.app-main-44:/layout/item_favourite_manga.xml"
+    },
+    {
         "merged": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-merged_res-42:\\layout_manga_fav_list_activity.xml.flat",
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\layout\\manga_fav_list_activity.xml"
     },
@@ -136,16 +124,8 @@
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-42:/layout_main_activity.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-44:/layout/main_activity.xml"
-    },
-    {
         "merged": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-merged_res-42:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-main-44:\\mipmap-xhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "studio.demo.subarashi_jpop.app-merged_res-42:/xml_data_extraction_rules.xml.flat",
-        "source": "studio.demo.subarashi_jpop.app-main-44:/xml/data_extraction_rules.xml"
     },
     {
         "merged": "C:\\Users\\maraw\\.gradle\\daemon\\8.2\\studio.demo.subarashi_jpop.app-merged_res-42:\\drawable_list_icon.xml.flat",
