@@ -32,9 +32,6 @@
     <li><a href="#roadmap">Roadmap</a></li>
       <li>
         <a href="#technologies">Technologies adopted</li>
-      <li>
-        <a href="#APK">APK Download
-      </li>
   </ol>
 </details>
 
@@ -193,7 +190,3 @@ Possible Future Improvements:
 - [ ] Ability to keep track of seasons/episodes/chapters/volumes
 - [ ] Ability to watch episodes in streaming
 - [ ] Ability to read manga in Scan
-
-
-<a name="APK"></a>
-So what are you waiting for [Download the apk](app-debug.apk).
