@@ -196,4 +196,4 @@ Possible Future Improvements:
 
 
 <a name="APK"></a>
-So what are you waiting for [Download the apk](.apk).
+So what are you waiting for [Download the apk](app-debug.apk).
