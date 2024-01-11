@@ -1,4 +1,4 @@
-<a name="readme-top"></a>
+ <a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -30,20 +30,98 @@
       <a href="#getting-started">Getting Started</a>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
+      <li>
+        <a href="#technologies">Technologies adopted</li>
+      <li>
+        <a href="#APK">APK Download
+      </li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 <a name="about-the-project"></a>
-## The Project
+## Project goal
 <p>
-  As said before in this project you can view the list of the top anime and manga, this list gets update using the MyAnimeList rating so it's pretty accurate. You can add your favourite anime and manga by clicking the + botton and view your favourite list in the favourite page.
+  As said before in this project you can view the list of the top anime and manga, this list gets update using the MyAnimeList API so it's pretty accurate. You can add your favourite anime and manga by clicking the + botton and view your favourite list in the favourite page.
 </p>
 
-<p>The technologies used in this project are LiveData, RecyclerView, ViewModel, Repositories, RoomDatabase, Dao, Entities and dialogs</p>
+
+<!-- What technologies have helped me get to my goal -->
+<a name="technologies"></a>
+## Technologies adopted
+<p>The technologies used in this project are LiveData, RecyclerView, ViewModel, Repositories, RoomDatabase, Dao, Entities, LifecycleOwner and dialogs</p>
+<p><strong>* = anime/manga</strong></p>
+
+### LiveData
+The ViewModel `*ListViewModel` uses LiveData to dynamically manage data related to the list of *. Here is how this management is implemented:
+
+```
+private var _*ListLiveData = MutableLiveData<List<*Model>>()
+private var _*FavouriteLiveData = MutableLiveData<List<*Entity>>()
+```
+The variables `_*ListLiveData` e `_*FavouriteLiveData` are LiveData that contain the list of * and the list of * favorites, respectively.
+
+`_*ListLiveData` is used by the `*Model` to display the list of the top * while `_*FavouriteLiveData` uses the `*Entity` to view the favourite list 
+
+### RecyclerView / ViewModel
+The `RecyclerView` in the `*ListActivity` is a critical component responsible for displaying the list of * items. This is how it is configured and how it interacts with the `*ListAdapter`:
+
+The `RecyclerView` is configured with a `GridLayoutManager` to organize the * items in a grid layout with three columns. This provides a visually appealing and organized presentation of the * list.
+
+```
+recyclerView = findViewById(R.id.recyclerView)
+recyclerView.layoutManager = GridLayoutManager(this, 3)
+recyclerView.adapter = adapter
+```
+#### Pagination
+To enhance the user experience and allow for seamless browsing of the * list, a pagination mechanism is implemented. When the user scrolls to the end of the list, the *ListViewModel's loadMore * method is triggered to fetch additional * items from the repository.
+
+```
+recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+        super.onScrolled(recyclerView, dx, dy)
+
+        val layoutManager = recyclerView.layoutManager as GridLayoutManager
+        val totalItemCount = layoutManager.itemCount
+        val lastVisible* = layoutManager.findLastVisibleItemPosition()
+
+        if (totalItemCount <= lastVisible* + 2) {
+            *ListViewModel.loadMore*()
+        }
+    }
+})
+```
+
+#### Data Observation
+The *ListAdapter observes changes in the *List LiveData from the associated *ListViewModel. Whenever the underlying data changes, the adapter is notified, and the setData method is called to update the displayed * list.
+
+```
+*ListViewModel.*List.observe(this, Observer { * ->
+    adapter.setData(*)
+})
+```
+This combination of configuration, pagination, and LiveData observation ensures that the * list is dynamically updated and provides a smooth and engaging user experience in navigating through the diverse world of *.
+
+### LifecycleOwner 
+
+<p>The LifecycleOwner is a crucial component in Android development, especially when dealing with architectural components like ViewModels. In your *ListActivity, the *LifecycleOwner plays a significant role in managing the lifecycle of the associated ViewModel</p>
+
+#### Purpose
+The *LifecycleOwner is initialized with the current activity (this), which implements the LifecycleOwner interface. This association allows the ViewModel (*ListViewModel) to observe LiveData changes and perform actions (+ icon or 🗸 icon) based on the lifecycle state of the activity.
+
 
 <!-- GETTING STARTED -->
 <a name="getting-started"></a>
+
+### Repository / RemoteService API / RoomFavouriteLocalService
+
+The `*Repository` acts as a bridge between the remote *Service API and the local RoomFavouriteLocalService database. Its primary purpose is to manage data retrieval and storage for *-related information.
+
+The repository incorporates exception handling to deal with potential issues, such as HTTP exceptions during API calls. Logs are generated to provide insight into the nature of encountered errors.
+
+By encapsulating these operations within the repository, the rest of the application can interact with a unified interface, making it easier to manage and update data between the remote API and the local database seamlessly.
+
+
 ## Getting Started
 If this is your first time installing the application you will need to connect to internet or you will not view anything (the list of the anime/manga needs internet but the favourite list can be viewed offline).After that you will select the category you want (AnimeWorld or MangaWorld) <br />
 <img src="screenshots/main_activity.png">
@@ -107,5 +185,15 @@ Mandatory features:
 
 Optional features:
 - [x] Details dialog
-- [x] Add icon that turns into check icon
+- [x] + icon that turns into 🗸 icon
 - [x] Toast messages
+      
+Possible Future Improvements:
+- [ ] Deatils dialog in the Favourite list
+- [ ] Ability to keep track of seasons/episodes/chapters/volumes
+- [ ] Ability to watch episodes in streaming
+- [ ] Ability to read manga in Scan
+
+
+<a name="APK"></a>
+So what are you waiting for [Download the apk](.apk).
